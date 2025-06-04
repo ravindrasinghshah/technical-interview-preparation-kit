@@ -6,7 +6,6 @@
 function isPalindrome(str) {
     let start = 0; let end = str.length - 1;
     while (start < end) {
-        console.log(start, end)
         const left = str[start];
         const right = str[end];
         if (left !== right) return false;
