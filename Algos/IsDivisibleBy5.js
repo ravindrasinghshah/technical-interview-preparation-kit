@@ -17,21 +17,9 @@ function IsDivisibleBy5(nums) {
     while (n >= 0) {
         const count = m.get(n) || 0;
         if (count > 0) {
-            if (n === 5 && hasZero > 0) {
-                for (let k = 0; k < count; k++) {
-                    arr.push(n);
-                }
-            }
-            else if (n === 5 && hasZero === 0) {
-                for (let k = 0; k < count - 1; k++) {
-                    arr.push(n);
-                }
-            }
-            else {
-                for (let k = 0; k < count; k++) {
-                    arr.push(n);
-                }
-            }
+            if (n === 5 && hasZero > 0) { for (let k = 0; k < count; k++) { arr.push(n); } }
+            else if (n === 5 && hasZero === 0) { for (let k = 0; k < count - 1; k++) { arr.push(n); } }
+            else { for (let k = 0; k < count; k++) { arr.push(n); } }
         }
         n--;
     }
