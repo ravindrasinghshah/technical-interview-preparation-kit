@@ -35,3 +35,11 @@ console.log(`${nums} - largest number possible: ${result}`);
 nums = [5, 1, 2, 5];
 result = IsDivisibleBy5(nums);
 console.log(`${nums} - largest number possible: ${result}`);
+
+nums = [5, 1, 2];
+result = IsDivisibleBy5(nums);
+console.log(`${nums} - largest number possible: ${result}`);
+
+nums = [1];
+result = IsDivisibleBy5(nums);
+console.log(`${nums} - largest number possible: ${result}`);
