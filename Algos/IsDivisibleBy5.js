@@ -4,6 +4,8 @@
    Constraint: nums is an array of positive numbers [0-9]
  */
 function IsDivisibleBy5(nums) {
+    if (nums.indexOf(0) === -1 && nums.indexOf(5) === -1) return 0;
+
     let m = new Map();
     for (let i = 0; i < nums.length; i++) {
         m.set(nums[i], (m.get(nums[i]) || 0) + 1);
