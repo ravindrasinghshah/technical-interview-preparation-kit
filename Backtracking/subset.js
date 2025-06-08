@@ -3,7 +3,7 @@
 Given an integer array nums of unique elements, return all subsets in any order without duplicates.
 This is a very common method of avoiding duplicates in backtracking problems
  - having an integer argument that represents a starting point for iteration at each function call.
- * Worst case complexity - O(n!)
+ * Time Complexity - O(N∗2N)
  */
 
 function subset(nums) {

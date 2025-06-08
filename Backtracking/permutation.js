@@ -4,7 +4,7 @@ Backtracking is an algorithm which uses recursion for solving problem.
 Its a way to efficiently run through all possibilities in a problem.
 Backtracking is a great tool whenever a problem wants you to find all of something, 
 or there isn't a clear way to find a solution without checking all logical possibilities.
- * Worst case complexity - O(n!)
+ * Worst case complexity - O(N!∗N^2)
  */
 
 function permutation(nums) {
