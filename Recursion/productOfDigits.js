@@ -16,3 +16,7 @@ console.log(`Product of digits ${num} is ${result}`);
 num = 123;
 result = productOfDigits(num);
 console.log(`Product of digits ${num} is ${result}`);
+
+num = 10;
+result = productOfDigits(num);
+console.log(`Product of digits ${num} is ${result}`);
