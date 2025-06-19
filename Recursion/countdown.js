@@ -9,7 +9,7 @@ function countdown(n) {
         return;
     }
     console.log(n);
-    return countdown(n - 1);
+    countdown(n - 1);
 }
 
 countdown(10);
