@@ -1,5 +1,14 @@
 # Maths for solving algorithms
 
+### Minimum Number
+
+Use `Number.MIN_SAFE_INTEGER` to assign minimum negative number.
+It's value is -9007199254740991, which is equal to -(2^53 - 1).
+
+### Maximum Number
+Use `Number.MAX_SAFE_INTEGER` to assign maximum positive number.
+It's value is 9007199254740991, which is equal to (2^53 - 1).
+
 ### Math floor()
 
 Return the nearest small number of value.
