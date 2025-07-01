@@ -18,7 +18,7 @@ class DoublyLinkedList {
         this.head.next = this.tail;
         this.tail.prev = this.head;
     }
-    isEmpty() { return this.head === null; }
+    isEmpty() { return this.head.data === -1; }
     insertFirst(node) {
         if (this.head.data === -1) {
             this.head.data = node.data;
@@ -29,11 +29,12 @@ class DoublyLinkedList {
         }
     }
     add(node) {
-        const h_next = this.head.next;
-        h_next.prev = node;
-        node.next = h_next;
-        node.prev = this.head;
-        this.head.next = node;
+        if (this.tail.data === -1) this.tail.data = node.data;
+        else {
+            node.prev = this.tail;
+            this.tail.next = node;
+            this.tail = node;
+        }
     }
     delete(value) {
         let curr = this.head;
@@ -43,6 +44,7 @@ class DoublyLinkedList {
                     curr.prev.next = curr.next;
                 }
                 else curr = curr.next;
+                this.head = curr;
                 return;
             }
             curr = curr.next;
@@ -63,18 +65,22 @@ class DoublyLinkedList {
             console.log(curr.data);
             curr = curr.next;
         }
+        console.log('---------------');
     }
 }
 
 const list = new DoublyLinkedList(2);
-
+console.log("Is list empty? ", list.isEmpty());
 list.insertFirst(new Node('a'));
-list.insertFirst(new Node('b'));
-list.insertFirst(new Node('c'));
-list.insertFirst(new Node('d'));
-list.insertFirst(new Node('e'));
+list.add(new Node('b'));
+list.add(new Node('c'));
+list.add(new Node('d'));
+list.add(new Node('e'));
 list.print();
 console.log('Does list contains "d"?', list.contains('d'));
 console.log('Does list contains "f"?', list.contains('f'));
 list.delete('a');
 list.print();
+list.insertFirst(new Node('z'));
+list.print();
+
