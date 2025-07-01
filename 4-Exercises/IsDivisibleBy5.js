@@ -1,5 +1,5 @@
 /**
- * cd to Algos folder and then run "node IsDivisibleBy5.js"
+ * cd to 4-Exercises folder and then run "node IsDivisibleBy5.js"
    Form a largest number which is divisible by 5
    Constraint: nums is an array of positive numbers [0-9]
  */

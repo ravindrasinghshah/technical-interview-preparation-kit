@@ -1,5 +1,5 @@
 /**
- * cd to Algos folder and then run "node fizzBuzz.js"
+ * cd to 4-Exercises folder and then run "node fizzBuzz.js"
   Write a program that console logs the numbers from 1 to n.
   For multiples of three print 'fizz' instead of the number 
   For the multiples of five print 'buzz'

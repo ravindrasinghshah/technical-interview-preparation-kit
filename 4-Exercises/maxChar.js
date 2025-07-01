@@ -1,5 +1,5 @@
 /**
- * cd to Algos folder and then run "node maxChar.js"
+ * cd to 4-Exercises folder and then run "node maxChar.js"
    Given a string, return the character that is most commonly used in the string.
    Examples:
     maxChar("abcccccccd") === "c"

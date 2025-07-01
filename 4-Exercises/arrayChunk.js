@@ -1,5 +1,5 @@
 /**
- * cd to Algos folder and then run "node arrayChunk.js"
+ * cd to 4-Exercises folder and then run "node arrayChunk.js"
    Given an array and chunk size, divide the array into many subarrays where each subarray is of the provided size.
    Examples:
     // Chunk size two:
