@@ -11,8 +11,7 @@ class Node {
 }
 
 class DoublyLinkedList {
-    constructor(size) {
-        this.size = this.size;
+    constructor() {
         this.head = new Node(-1);
         this.tail = new Node(-1);
         this.head.next = this.tail;
@@ -50,6 +49,16 @@ class DoublyLinkedList {
             curr = curr.next;
         }
     }
+    reverse() {
+        let curr = this.head; let prevNode = null;
+        while (curr) {
+            let nextNode = curr.next;
+            curr.next = prevNode;
+            prevNode = curr;
+            curr = nextNode;
+        }
+        this.head = prevNode;
+    }
     contains(value) {
         let slow = this.head; let fast = this.head;
         while (fast && fast.next) {
@@ -69,7 +78,7 @@ class DoublyLinkedList {
     }
 }
 
-const list = new DoublyLinkedList(2);
+const list = new DoublyLinkedList();
 console.log("Is list empty? ", list.isEmpty());
 list.insertFirst(new Node('a'));
 list.add(new Node('b'));
@@ -83,4 +92,7 @@ list.delete('a');
 list.print();
 list.insertFirst(new Node('z'));
 list.print();
+console.log("Reverse list:");
+list.reverse();
+list.print()
 

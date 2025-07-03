@@ -83,3 +83,11 @@ Formula: Math.floor(number / Math.pow(10, Math.floor(Math.log10(number))));
 Math.floor(12345 / Math.pow(10, Math.floor(Math.log10(12345)))) = 1;
 Math.floor(2345 / Math.pow(10, Math.floor(Math.log10(2345)))) = 2;
 ```
+
+### Is number even or odd?
+
+To find this we can do a bitwise comparison. `(num & 1) === 0`.
+```
+Example: (2 & 1) === 0 ==> true
+(3 & 1) === 0 ==> false
+```

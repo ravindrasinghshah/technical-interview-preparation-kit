@@ -1,20 +1,31 @@
-# Non-Functional Requirements (NFR) Cheat Sheet
-
-Efficient estimation of NFRs is critical for system design interviews. Here's a concise breakdown with formulas and examples.
-
----
-
 ## Common Number Conversions
 
-| Unit     | Value                 | Bytes Equivalent             |
-|----------|-----------------------|------------------------------|
-| 1K       | 1,000                 | -                            |
-| 1M       | 1,000,000             | ~10^6                        |
-| 1B       | 1,000,000,000         | ~10^9                        |
-| 1 KB     | 1024 bytes            | 10^3 bytes (approx)          |
-| 1 MB     | 1024 KB = 1,048,576 B | 10^6 bytes (approx)          |
-| 1 GB     | 1024 MB = 10^9 bytes  | 10^9 bytes                   |
-| Seconds/day | 86400              |                              |
+| Unit | Value                 | Bytes Equivalent    |
+| ---- | --------------------- | ------------------- |
+| 1K   | 1,000                 | ~10^3               |
+| 1M   | 1,000,000             | ~10^6               |
+| 1B   | 1,000,000,000         | ~10^9               |
+| 1 KB | 1024 bytes            | 10^3 bytes (approx) |
+| 1 MB | 1024 KB = 1,048,576 B | 10^6 bytes (approx) |
+| 1 GB | 1024 MB = 10^9 bytes  | 10^9 bytes          |
+| 1 TB | 1024 GB = 10^12 bytes | 10^12 bytes         |
+| 1 PB | 1024 TB = 10^15 bytes | 10^15 bytes         |
+
+## Traffic Estimates
+
+#### Requests per Second (RPS/QPS)
+
+Seconds per day => 24 \* 60 \* 60 = 86400
+
+RPS = Total requests per day / (24 \* 60 \* 60)
+
+### Data Size
+
+Data per request \* RPS \* seconds per day
+
+### Storage Estimation
+
+Total Storage = Users \* Items per user \* Size per item \* Retention time
 
 ---
 
