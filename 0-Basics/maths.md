@@ -50,6 +50,9 @@ Example 1:
 0 % 10 = 0;
 ```
 
+If number can be negative then use this formula to calculate mod: (((X % K) + K ) % K);
+Example: (((-3 % 5) + 5) % 5) = 2;
+
 ### Math log10
 
 Returns the number of times can divide a number by 10 before we get 1.
