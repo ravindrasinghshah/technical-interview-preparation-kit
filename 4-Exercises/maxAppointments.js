@@ -19,12 +19,12 @@ function maxAppointments(s, f) {
     let meetings = [];
     for (let i = 0; i < s.length; i++) { meetings.push([i, s[i], f[i]]); }
     meetings.sort((a, b) => a[2] - b[2]);
-console.log(meetings)
-    let endTime = 0;
+    let prevEndTime = 0;
     for (let i = 0; i < meetings.length; i++) {
-        if (meetings[i][1] >= endTime) {
-            console.log(meetings[i][0]);
-            endTime = meetings[i][2];
+        const startTime = meetings[i][1];
+        if (startTime >= prevEndTime) {
+            prevEndTime = meetings[i][2];
+            console.log(startTime, prevEndTime);
         }
     }
 }
