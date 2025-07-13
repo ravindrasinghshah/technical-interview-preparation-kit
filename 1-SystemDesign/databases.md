@@ -77,28 +77,3 @@ Strength: Extremely fast read and write, low latency.
 Examples: Redis, VoltDB
 
 Use Case: Caching, high frequency trading, real time analytics.
-
-## Redis
-
-It's a in-memory & single threaded, key value data strucuture - which makes it very fast and easy.
-Keys are string and Values can be any datastructure supported by Redis: binary data, sets, lists, hashes, sorted sets, geospatial indexes, time series etc.
-
-Redis can run as a single node, with high availability replica, or as a cluster. When operating as a cluster, Redis clients caches a set of "hash slots", which maps to the node.
-
-It's really fast and can handle O(100K) writes per second and read latency is often in microsecond range.
-
-### Use-Cases
-
-1. Cache - This is a most common scenario of using Redis. Its a good practice to employ a TTL on each key, that ensures stale data is not kept in the cache. Expiration policy such as LRU and other are used to manage the data within capacity.
-
-2. Distributed Locks - In certain use-cases it might be required that resource is locked to maintain consistency (such as ticket booking etc.) - if database cannot gaurantee locks then Redis is a good option to lock the resource to bring high consistency. Locks can auto-expire and free up the resouce.
-
-3. Leaderboards - Sorted sets can be maintained in the Redis, which can be queried in log time. For example - find the post which contain given keyword and which have the most likes. Periodically, low ranked items can be removed from the sorted sets.
-
-4. Rate limiting - A variety of rate-limiting algorithms can be used in redis. Commonly used is fixed window limiter - where it guarantees number of requests should not exceed `N` over fixed window time `W`. Implementation is simple, use INCR to increment when request comes in and checks if its greater than `N` then drop request else proceed.
-
-5. Proximity Search - Redis supports Geospatial indexes with commands like GEOADD and GEOSEARCH.
-
-6. Event Sourcing (Stream) - Redis' streams are appended logs, similar to kafka. Add items to a log and distributed workers can consume itemds from the logs. Redis add log with XADD command and consumer groups can read and claim using XREADGROUP and XCLAIM. A simple example is a work queue, add items to the queue and have it processed.
-
-7. Pub/Sub - It natively supports publish and subscribe messaging pattern, allowing to broadcast message to multiple subscribers in real time. Useful for building chat system, real time notifications. It's simple and fast, but not durable. It guarentees delivery of "at most once" - which means if the subscriber is offline then message is missed - for guarantee use streams or a dedicated message broker like kafka.

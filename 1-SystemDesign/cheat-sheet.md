@@ -159,6 +159,7 @@ Required Servers = Peak QPS / QPS per Server
 
 | Metric               | Value      |
 | -------------------- | ---------- |
+| 1 byte               | 8 bits     |
 | 1 KB                 | 1024 bytes |
 | 1 MB                 | 1024 KB    |
 | 1 GB                 | 1024 MB    |
@@ -168,3 +169,20 @@ Required Servers = Peak QPS / QPS per Server
 | Disk IOPS (HDD)      | ~100       |
 
 ---
+
+| Zeros    | Traffic    | Storage |
+| -------- | ---------- | ------- |
+| 3 zeros  | thousand   | KB      |
+| 6 zeros  | million    | MB      |
+| 9 zeros  | billion    | GB      |
+| 12 zeros | trillion   | TB      |
+| 15 zeros | quadrilion | PB      |
+
+ASCII = 1 byte
+Unicode = 2 bytes
+Char = 2 bytes
+Long / Double = 8 bytes
+Image = ~100 KB - 500 KB(compressed) - for social media ~500 KB
+Video = 1 min video is ~5 MB - 10 MB (compressed)
+1 hour video is ~1-2 GB
+`bitrate formula to estimate video size: 2 Megabits × 120 seconds = 240 megabits / 8 bits = 30 MB per video`
