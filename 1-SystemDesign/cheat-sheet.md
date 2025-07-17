@@ -186,3 +186,9 @@ Image = ~100 KB - 500 KB(compressed) - for social media ~500 KB
 Video = 1 min video is ~5 MB - 10 MB (compressed)
 1 hour video is ~1-2 GB
 `bitrate formula to estimate video size: 2 Megabits × 120 seconds = 240 megabits / 8 bits = 30 MB per video`
+
+### Useful tips
+
+**ULIDS** - Universally Unique Lexicographically Sortable Identifier. It's a 128-bit identifier designed to be both unique and sortable, often used as an alternative to UUIDs. ULIDs incorporate a timestamp (48 bits) and random data (80 bits).
+
+`Use-case: It is a natural ordering for efficient pagination in an infinite scroll feed.`

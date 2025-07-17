@@ -77,3 +77,18 @@ Strength: Extremely fast read and write, low latency.
 Examples: Redis, VoltDB
 
 Use Case: Caching, high frequency trading, real time analytics.
+
+## How to Decide If Sharding Is Needed?
+
+Understand system scale: total number of users, read and write per second, data growth-rate (daily/monthly)
+
+Following is a high level estimation for database performance:
+
+| Resource   | Approx Threshold (depends on DB engine)  |
+| ---------- | ---------------------------------------- |
+| Storage    | 1–2 TB per node (for performant queries) |
+| Read QPS   | ~1k–10k/sec (depends on indexes/caching) |
+| Write QPS  | ~1k–5k/sec (for relational DBs)          |
+| Index size | Should fit in memory (RAM)               |
+
+If any of these numbers are exceeding in calculation then its possible that sharding is needed. Should start with vertical scaling + replication + partitioning, then sharding if needed.

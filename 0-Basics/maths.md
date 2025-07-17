@@ -6,6 +6,7 @@ Use `Number.MIN_SAFE_INTEGER` to assign minimum negative number.
 It's value is -9007199254740991, which is equal to -(2^53 - 1).
 
 ### Maximum Number
+
 Use `Number.MAX_SAFE_INTEGER` to assign maximum positive number.
 It's value is 9007199254740991, which is equal to (2^53 - 1).
 
@@ -90,7 +91,18 @@ Math.floor(2345 / Math.pow(10, Math.floor(Math.log10(2345)))) = 2;
 ### Is number even or odd?
 
 To find this we can do a bitwise comparison. `(num & 1) === 0`.
+
 ```
 Example: (2 & 1) === 0 ==> true
 (3 & 1) === 0 ==> false
+```
+
+### Convert binary number to decimal
+
+Use parseInt function in javscript with value and base 2.
+
+```
+Example: parseInt(101, 2) = 5
+Example: parseInt("101", 2) = 5
+
 ```
