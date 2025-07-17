@@ -21,7 +21,7 @@ It's really fast and can handle O(100K) writes per second and read latency is of
 
 5. Proximity Search - Redis supports Geospatial indexes with commands like GEOADD and GEOSEARCH.
 
-6. Event Sourcing (Stream) - Redis' streams are appended logs, similar to kafka. Add items to a log and distributed workers can consume itemds from the logs. Redis add log with XADD command and consumer groups can read and claim using XREADGROUP and XCLAIM. A simple example is a work queue, add items to the queue and have it processed.
+6. Event Sourcing (Stream) - Redis' streams are appended logs, similar to kafka. Add items to a log and distributed workers can consume items from the logs. Redis add log with XADD command and consumer groups can read and claim using XREADGROUP and XCLAIM. A simple example is a work queue, add items to the queue and have it processed.
 
 7. Pub/Sub - It natively supports publish and subscribe messaging pattern, allowing to broadcast message to multiple subscribers in real time. Useful for building chat system, real time notifications. It's simple and fast, but not durable. It guarentees delivery of "at most once" - which means if the subscriber is offline then message is missed - for guarantee use streams or a dedicated message broker like kafka.
 
@@ -71,9 +71,13 @@ API Gateway can be scaled horizontally and load balancer is used before it to di
 Its an open-source distributed event streaming platform that can be used for message queue or as a stream processing system. It's highly scalable, durable and performant - handles vast amount of data in real-time, ensuring no message is lost ever.
 
 **Brokers**: Kafka cluster is made up of multiple brokers. They are individual servers - each broker is responsible for storing data and serving clients. More brokers can store more data and serve more clients.
+
 **Partitions**: Each broker has number of partitions - each partition is an immutable sequence of message that is continually appended to. This is how kafka scales, as they allow for messages to be consumed in parallel.
+
 **Topic**: Logical grouping of partitions is called topics - this is how you publish and subscribe to data in kafka. When you publish a message, its published in topic and when consumed, its consumed from topic.
+
 **Producers**: Ones who writes data into the topic.
+
 **Consumers**: Ones who reads data from the topic.
 
 Each message in the partition is assigned a unique offset, which is a sequential identifier - indicating the position of the message in the partition. This is used by consumer to track of their progress in reading messages from the topic. Consumers periodically commit this offset back to kafka - this helps them resume reading from where they left off in case of failure or restart.
@@ -92,10 +96,11 @@ Consider using it when:
 
 ### More
 
-In case we need more brokers then we can horizontally scale by adding more brokers in the cluster or partitioning. 
+In case we need more brokers then we can horizontally scale by adding more brokers in the cluster or partitioning.
+
 - To take advantage of more brokers, it is essential that topics have sufficient partitions.
 - Partitioning strategy is important for scaling strategy. This can be done by chosing a key for partition and hashing the key.
-`partition = hashFunc(key) % num_of_partitions`
+  `partition = hashFunc(key) % num_of_partitions`
 
 In kafka, we usually wants to scale the topics rather than entire cluster. Some topics may get more traffic than other. To scale topic, increase the number of partitions, which allows to take the advantage of more brokers.
 
