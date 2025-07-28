@@ -2,6 +2,7 @@
  * cd to Sorting folder and then run "node mergeSort.js"
  * Merge sort
  * Worst case complexity - O(nlog(n))
+ * https://www.geeksforgeeks.org/dsa/merge-sort/
  */
 
 function mergeSort(arr) {

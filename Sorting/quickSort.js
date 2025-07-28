@@ -3,6 +3,7 @@
 QuickSort is a sorting algorithm based on the Divide and Conquer.
 It picks an element as a pivot & partitions the given array around the pivot by placing the pivot in its correct position in the sorted array.
  * Worst case complexity - O(n^2), Average and Best case is O(n log n)
+* https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
  */
 
 function quickSort(arr) {

@@ -3,6 +3,7 @@
  * Bubble sort repeatedly steps through a list, compares adjacent elements and swaps them if they are in the wrong order. 
  * This process is repeated until the list is sorted.
  * Worst case complexity - O(n^2)
+ * https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/
  */
 
 function bubbleSort(arr) {

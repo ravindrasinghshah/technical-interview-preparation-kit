@@ -4,6 +4,7 @@
  * Selection sort is a simple, in-place comparison-based sorting algorithm that works by repeatedly finding the minimum element 
  * from the unsorted portion of the array and swapping it with the first element of that portion.
  * Worst case complexity - O(n^2)
+ * https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/
  */
 
 function selectionSort(arr) {
