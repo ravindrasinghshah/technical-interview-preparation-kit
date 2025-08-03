@@ -30,6 +30,6 @@ console.log(`Number ${n} in base 2 is ${result}`);
 n = 17;
 result = decimalToBase2(n);
 console.log(`Number ${n} in base 2 is ${result}`);
-n = 18;
+n = 14698;
 result = decimalToBase2(n);
 console.log(`Number ${n} in base 2 is ${result}`);

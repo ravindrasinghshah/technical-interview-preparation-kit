@@ -57,7 +57,7 @@ Example: (((-3 % 5) + 5) % 5) = 2;
 ### Math log10
 
 Returns the number of times can divide a number by 10 before we get 1.
-Whenever want to find the length of the number can use this function with floor to get the length.
+Whenever want to [find the length](../Bitwise/NumberSystem/findNoOfDigits.js) of the number can use this function with floor to get the length.
 
 ```
 Example:
@@ -79,8 +79,8 @@ Math.pow(10,3) = 10 * 10 * 10 = 1000;
 ```
 Trick!
 Find the left most digit in the number: 12345
-Step 1: find the length of number: Math.floor(Math.log10(12345)) = 4;
-Step 2: Divide the number by 10 with power of n times: 12345 / Math.pow(10, 4) = 12345/10000 = 1.2
+Step 1: find the length of number: Math.floor(Math.log10(12345)) + 1 = 5;
+Step 2: Divide the number by 10 with power of n-1 times: 12345 / Math.pow(10, (5 - 1)) = 12345/10000 = 1.2
 Step 3: Take the lowest number using floor(): Math.floor(1.2) = 1;
 
 Formula: Math.floor(number / Math.pow(10, Math.floor(Math.log10(number))));
@@ -106,3 +106,46 @@ Example: parseInt(101, 2) = 5
 Example: parseInt("101", 2) = 5
 
 ```
+
+### Bitwise operator
+
+1. **AND** if any one condition is false then expression is false.
+
+   _Observation_: if `& 1` applied to any number then digit remains the same `Example: 0 & 1 = 0; 1 & 1 = 1;`
+
+2. **OR** if any one condition is true then expression is true. `Example: 0 || 1 = 1;`
+
+3. **XOR (^) [if and only if]** - Only one should be true in expression.
+
+```
+Example: (0 ^ 1) = 1;
+(1 ^ 0) = 1;
+(1 ^ 1) = 0;
+(0 ^ 0) = 0;
+```
+
+_Observation_: num ^ 1 = complement of num; num ^ 0 = num; num ^ num = 0;
+
+**_Complement (~)_** number inverted: 011001 => 100110
+
+4. **Left Shift (<<)** - Every time number left shift is done, number converted into binary and 0 is added in the last which in turn doubles the number.
+   `Example: (4 << 1) => 8; (4 << 2) => 16`
+
+   _Observation_: (a << b) ==> (a \* 2^b);
+
+5. **Right Shift (>>)** - Right most number is removed from the binary number. It helps dividing number by 2.
+   `Example: (4 >> 1) ==> 2`
+
+   _Observation_: (a >> b) ==> (a / 2^b);
+
+### Number Systems - Can only use numbers allowed in the system
+
+1. Decimal - 0,1,2,3,4,5,6,7,8,9 - represents in Base 10. `Example: (551)10 , (10)10`.
+2. [Binary](../Bitwise/Conversions/decimalToBase2.js) - 0 & 1 - Base 2 `Example: (10)10 ==> (1010)2`.
+3. [Octal](../Bitwise/Conversions/decimalToOctal.js) - 0,1,2,3,4,5,6,7 - represents in Base 8. `Example: (9)10 ==> (11)8`.
+4. Hexadecimal - 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F - represents in Base 16. `Example: 10(10) ==> (A)16`
+
+#### Conversions:
+
+1. [Decimal to base b](../Bitwise/Conversions/decimalToBase2.js): Keep dividing number by base and write remainder in opposite.
+2. [Base b to decimal](../Bitwise/Conversions/binaryToDecimal.js): Multiple and add power of base with digit in reverse order and increment power of base with every number.

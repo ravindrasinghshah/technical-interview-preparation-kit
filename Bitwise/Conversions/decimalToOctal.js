@@ -25,6 +25,6 @@ console.log(`Number ${n} in octal is ${result}`);
 n = 18;
 result = decimalToOctal(n);
 console.log(`Number ${n} in octal is ${result}`);
-n = 22;
+n = 14698;
 result = decimalToOctal(n);
 console.log(`Number ${n} in octal is ${result}`);
