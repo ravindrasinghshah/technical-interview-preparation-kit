@@ -10,8 +10,9 @@
 4. Hashmap/Set based problems
 5. Cyclic Sort for O(n) result in range based array (1,n)
 6. Recursion - DFS, BFS, Fibonacci, Factorial etc.
-7. Arrays, Matrix - 2D
+7. Arrays, Matrix 2D - rotate 90 degree
 8. Stacks and Queues - paranthesis, monotonic
+9. Binary Search - order agnostic, rotated, pivot
 
 ### Patterns
 
@@ -97,4 +98,43 @@ while(l <= h ){
     else l = mid + 1;
 }
 return l;
+```
+
+#### Binary Tree - Depth First Search (recursive)
+
+```
+if(root == null) return;
+//== logic
+dfs(root.left);
+dfs(root.right);
+return ans;
+```
+
+#### Binary Tree - DFS (iterative)
+
+```
+let stack = [root];
+while(stack.length){
+  const node = stack.pop();
+  if(node.left) stack.push(node.left);
+  if(node.right) stack.push(node.right);
+}
+return ans;
+```
+
+#### Binary Tree - Breadth First Search
+
+```
+let queue = [root];
+while(queue.length){
+    const len = queue.length;
+    let nextQ = [];
+    for(let i = 0; i < len; i++){
+        const node = queue[i];
+        if(node.left) nextQ.push(node.left);
+        if(node.right) nextQ.push(node.right);
+    }
+    queue = nextQ;
+}
+return ans;
 ```
