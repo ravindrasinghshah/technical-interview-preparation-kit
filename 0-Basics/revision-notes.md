@@ -29,6 +29,10 @@
 1. Cyclic Sort - Use it when given range (1,N) - this algo takes O(n) complexity.
    - find missing number, duplicate numbers etc.
 
+### Tricks
+
+1. For rotation array, its an efficient trick to optimize the rotation count by taking modulo of k by nums.length. Because after every nums.length rotation array is in its original state. `k %= nums.length` [problem](https://leetcode.com/problems/rotate-array/)
+
 ### Code Templates
 
 #### Two Pointers
