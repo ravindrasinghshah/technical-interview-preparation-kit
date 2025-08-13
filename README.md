@@ -1,6 +1,6 @@
-# DSA Study Repository
+# Technical Interview Study Repository
 
-[![JavaScript](https://img.shields.io/badge/Language-JavaScript-yellow.svg)](https://github.com/ravindrasinghshah/DSAlgo)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue.svg)](https://github.com/ravindrasinghshah/technical-interview-preparation-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -21,8 +21,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/ravindrasinghshah/DSAlgo.git
-cd DSAlgo
+git clone https://github.com/ravindrasinghshah/technical-interview-preparation-kit.git
+cd technical-interview-preparation-kit
 
 # Install dependencies
 npm install
@@ -36,21 +36,25 @@ npm test
 ### 🎯 30-Day Interview Prep
 
 **Week 1: Foundations**
+
 - Day 1-2: [Complexity Analysis](./1-Complexity/)
 - Day 3-4: [Arrays & Strings](./2-DataStructures/Arrays/)
 - Day 5-7: [Linked Lists](./2-DataStructures/LinkedLists/)
 
 **Week 2: Core Data Structures**
+
 - Day 8-10: [Stacks & Queues](./2-DataStructures/StacksQueues/)
 - Day 11-12: [Trees & Binary Trees](./2-DataStructures/Trees/)
 - Day 13-14: [Hash Tables](./2-DataStructures/HashTables/)
 
 **Week 3: Advanced Concepts**
+
 - Day 15-17: [Graphs](./2-DataStructures/Graphs/)
 - Day 18-19: [Heaps](./2-DataStructures/Heaps/)
 - Day 20-21: [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
 
 **Week 4: Problem Patterns & Mock Interviews**
+
 - Day 22-24: [Common Patterns](./4-Patterns/)
 - Day 25-27: [System Design Basics](./0-SystemDesign/)
 - Day 28-30: Mock interviews and review
@@ -58,10 +62,12 @@ npm test
 ### 🔥 Intensive 2-Week Sprint
 
 **Week 1: High-Frequency Problems**
+
 - Focus on [Top 100 LeetCode Questions](./6-Exercises/Top100/)
 - Practice [Common Patterns](./4-Patterns/) daily
 
 **Week 2: Company-Specific Prep**
+
 - [FAANG Questions](./6-Exercises/FAANG/)
 - [System Design Interview](./0-SystemDesign/)
 - Mock technical interviews
@@ -69,16 +75,19 @@ npm test
 ### 📚 Comprehensive 3-Month Program
 
 **Month 1: Fundamentals**
+
 - Complete all [Basics](./0-Basics/)
 - Master [Core Data Structures](./2-DataStructures/)
 - Practice [Fundamental Algorithms](./3-Algorithms/)
 
 **Month 2: Advanced Topics**
+
 - Advanced algorithms and optimization
 - Complex problem-solving patterns
 - System design fundamentals
 
 **Month 3: Interview Mastery**
+
 - Company-specific preparation
 - Advanced system design
 - Behavioral interview prep
@@ -86,68 +95,72 @@ npm test
 ## 🏗️ Repository Structure
 
 ```
-DSAlgo/
-├── 0-Basics/                  # Programming fundamentals
-│   ├── JavaScript/            # Language-specific basics
-│   ├── ProblemSolving/        # Problem-solving strategies
-│   └── BigO/                  # Complexity analysis intro
+technical-interview-preparation-kit/
+├── 0-Basics/                 # Basics revisions
+│   ├── maths.md              # Basic maths fundamental for algorithms
+│   ├── revision-notes.md     # Revision notes before interview
+│   └── revision-problems.md  # Problems to revise before interview
 ├── 0-SystemDesign/           # System design concepts
-│   ├── Basics/               # Fundamental concepts
-│   ├── Patterns/             # Common design patterns
-│   └── Examples/             # Real-world examples
+│   ├── cheet-sheet.md/       # Cheat Sheet
+│   ├── databases.md/         # Databases
+│   ├── how-to-do.md/         # How to deliver system design
+│   └── key-technologies.md   # Key technologies
 ├── 1-Complexity/             # Time & space complexity
-│   ├── Analysis/             # Complexity analysis
-│   ├── Examples/             # Practical examples
-│   └── Exercises/            # Practice problems
+│   ├── complexity-chart.png  # Complexity chart
+│   ├── space-complexity.md   # Space Complexity
+│   └── time-complexity.md    # Time Complexity
 ├── 2-DataStructures/         # Core data structures
 │   ├── Arrays/               # Array operations & algorithms
-│   ├── LinkedLists/          # Singly, doubly, circular lists
+│   ├── BinarySearchTree/     # Binary Search Tree
+│   ├── DoublyLinkedLists/    # Doubly linked lists
+│   ├── LinkedLists/          # Singly, circular lists
 │   ├── StacksQueues/         # Stack & queue implementations
 │   ├── Trees/                # Binary trees, BST, AVL, etc.
 │   ├── Graphs/               # Graph representations & algorithms
 │   ├── HashTables/           # Hash maps & collision handling
 │   └── Heaps/                # Min/max heaps & priority queues
-├── 3-Algorithms/             # Algorithm implementations
-│   ├── Sorting/              # Sorting algorithms
-│   ├── Searching/            # Search algorithms
-│   ├── Recursion/            # Recursive solutions
-│   ├── DynamicProgramming/   # DP patterns & solutions
-│   ├── Greedy/               # Greedy algorithms
-│   └── GraphAlgorithms/      # BFS, DFS, shortest path, etc.
-├── 4-Patterns/               # Common problem patterns
+├── 3-Patterns/               # Common problem patterns
 │   ├── TwoPointers/          # Two pointer technique
 │   ├── SlidingWindow/        # Sliding window pattern
 │   ├── FastSlow/             # Fast & slow pointers
 │   ├── MergeIntervals/       # Interval problems
 │   ├── CyclicSort/           # Cyclic sort pattern
 │   └── TreeBFS_DFS/          # Tree traversal patterns
+├── 4-Algorithms/             # Algorithm implementations
+│   ├── Backtracking/         # Backtracking algorithms
+│   ├── Bitwise/              # Bitwise algorithms
+│   ├── Maths/                # Maths algorithms and common problems
+│   ├── Recursion/            # Recursive solutions
+│   ├── Searching/            # Search algorithms - Binary, Linear
+│   ├── Sorting/              # Sorting algorithms - Bubble, Cyclic, Merge, Quick, Selection
+│   ├── DynamicProgramming/   # DP patterns & solutions
+│   ├── Greedy/               # Greedy algorithms
+│   └── GraphAlgorithms/      # BFS, DFS, shortest path, etc.
 ├── 5-Strings/                # String algorithms
-│   ├── Manipulation/         # String operations
+│   ├── Palindromes/          # String operations
 │   ├── Matching/             # Pattern matching
 │   └── Advanced/             # KMP, Rabin-Karp, etc.
 └── 6-Exercises/              # Practice problems
-    ├── Easy/                 # Beginner problems
-    ├── Medium/               # Intermediate problems
-    ├── Hard/                 # Advanced problems
-    ├── Top100/               # Top interview questions
-    └── FAANG/                # Company-specific problems
 ```
 
 ## 🎯 Learning Path
 
 ### For Beginners
+
 1. Start with [Basics](./0-Basics/) - programming fundamentals
 2. Learn [Complexity Analysis](./1-Complexity/) - understand Big O
 3. Master core [Data Structures](./2-DataStructures/) one by one
 4. Practice [Easy Problems](./6-Exercises/Easy/) regularly
 
 ### For Intermediate
+
 1. Review and strengthen data structure knowledge
 2. Focus on [Algorithm Implementation](./3-Algorithms/)
 3. Learn [Problem Patterns](./4-Patterns/)
 4. Tackle [Medium Problems](./6-Exercises/Medium/)
 
 ### For Advanced
+
 1. Master [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
 2. Study [System Design](./0-SystemDesign/)
 3. Solve [Hard Problems](./6-Exercises/Hard/)
@@ -158,12 +171,14 @@ DSAlgo/
 ### 📝 Coding Interview Checklist
 
 **Before the Interview:**
+
 - [ ] Review [Big O Complexity](./1-Complexity/)
 - [ ] Practice [Common Patterns](./4-Patterns/)
 - [ ] Solve recent problems from [Top 100](./6-Exercises/Top100/)
 - [ ] Review [String Algorithms](./5-Strings/)
 
 **During the Interview:**
+
 - [ ] Clarify requirements and constraints
 - [ ] Discuss approach before coding
 - [ ] Start with brute force, then optimize
@@ -171,6 +186,7 @@ DSAlgo/
 - [ ] Analyze time and space complexity
 
 **Common Interview Topics:**
+
 - Arrays and String manipulation
 - Linked List operations
 - Tree and Graph traversals
@@ -188,17 +204,20 @@ DSAlgo/
 ## 🛠️ Practice Resources
 
 ### Online Platforms
+
 - [LeetCode](https://leetcode.com/) - Primary practice platform
 - [HackerRank](https://www.hackerrank.com/) - Additional practice
 - [CodeSignal](https://codesignal.com/) - Interview simulation
 - [Pramp](https://www.pramp.com/) - Mock interviews
 
 ### Books
+
 - "Cracking the Coding Interview" by Gayle McDowell
 - "Elements of Programming Interviews" by Aziz, Lee, and Prakash
 - "Algorithm Design Manual" by Steven Skiena
 
 ### YouTube Channels
+
 - Back To Back SWE
 - Tech Dose
 - Abdul Bari
@@ -206,6 +225,7 @@ DSAlgo/
 ## 📋 Coding Conventions
 
 ### File Structure
+
 ```
 Topic/
 ├── README.md              # Topic overview and concepts
@@ -217,6 +237,7 @@ Topic/
 ```
 
 ### Code Style
+
 ```javascript
 /**
  * Problem: [Problem Title]
@@ -224,15 +245,15 @@ Topic/
  * Pattern: [Algorithm Pattern if applicable]
  * Time Complexity: O(n)
  * Space Complexity: O(1)
- * 
+ *
  * Approach:
  * 1. Step-by-step explanation
  * 2. Key insights
  * 3. Edge cases to consider
  */
 function solutionName(input) {
-    // Implementation with comments
-    // explaining key steps
+  // Implementation with comments
+  // explaining key steps
 }
 
 // Test cases
@@ -241,6 +262,7 @@ console.log(solutionName(test2)); // Expected output
 ```
 
 ### Documentation Standards
+
 - Each folder contains a comprehensive README
 - Code includes time/space complexity analysis
 - Examples include multiple test cases
@@ -251,6 +273,7 @@ console.log(solutionName(test2)); // Expected output
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ### How to Contribute
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/new-algorithm`
 3. Commit changes: `git commit -am 'Add new sorting algorithm'`
@@ -258,6 +281,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 5. Submit a Pull Request
 
 ### Areas for Contribution
+
 - New algorithm implementations
 - Additional practice problems
 - Improved explanations
@@ -272,6 +296,7 @@ Use the following template to track your progress:
 ## My Study Progress
 
 ### Data Structures
+
 - [ ] Arrays
 - [ ] Linked Lists
 - [ ] Stacks & Queues
@@ -281,6 +306,7 @@ Use the following template to track your progress:
 - [ ] Heaps
 
 ### Algorithms
+
 - [ ] Sorting
 - [ ] Searching
 - [ ] Recursion
@@ -289,6 +315,7 @@ Use the following template to track your progress:
 - [ ] Graph Algorithms
 
 ### Problem Patterns
+
 - [ ] Two Pointers
 - [ ] Sliding Window
 - [ ] Fast & Slow Pointers
@@ -311,4 +338,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Happy Coding! 🚀**
 
-*Star ⭐ this repository if you find it helpful for your interview preparation!*
+_Star ⭐ this repository if you find it helpful for your interview preparation!_
