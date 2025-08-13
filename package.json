@@ -1,12 +1,15 @@
 {
-  "name": "dsalgo",
+  "name": "technical-interview-preparation-kit",
   "version": "1.0.0",
-  "description": "DS Algo Exercise",
-  "main": "index.js",
-  "type": "module",
+  "description": "Technical Interview - Preparation Kit",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ravindra Singh Shah",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
 }
