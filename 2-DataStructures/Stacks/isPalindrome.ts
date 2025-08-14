@@ -1,9 +1,9 @@
 /**
- * cd to Palindrome folder and then run "npx ts-node stack.ts"
+ * run "npx ts-node 2-DataStructures\Stacks\isPalindrome.ts"
    Palindrome is a string which is same after reversing characters.
  */
 
-function isPalindrome(str: string) {
+function isPalindrome(str: string): boolean {
   let start = 0;
   let end = str.length;
   let mid = Math.floor(end / 2);

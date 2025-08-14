@@ -141,11 +141,11 @@ _Observation_: num ^ 1 = complement of num; num ^ 0 = num; num ^ num = 0;
 ### Number Systems - Can only use numbers allowed in the system
 
 1. Decimal - 0,1,2,3,4,5,6,7,8,9 - represents in Base 10. `Example: (551)10 , (10)10`.
-2. [Binary](../Bitwise/Conversions/decimalToBase2.js) - 0 & 1 - Base 2 `Example: (10)10 ==> (1010)2`.
-3. [Octal](../Bitwise/Conversions/decimalToOctal.js) - 0,1,2,3,4,5,6,7 - represents in Base 8. `Example: (9)10 ==> (11)8`.
+2. [Binary](../4-Algorithms//Bitwise/Problems/Conversions/decimalToBase2.ts) - 0 & 1 - Base 2 `Example: (10)10 ==> (1010)2`.
+3. [Octal](../4-Algorithms//Bitwise/Problems/Conversions/decimalToOctal.ts) - 0,1,2,3,4,5,6,7 - represents in Base 8. `Example: (9)10 ==> (11)8`.
 4. Hexadecimal - 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F - represents in Base 16. `Example: 10(10) ==> (A)16`
 
 #### Conversions:
 
-1. [Decimal to base b](../Bitwise/Conversions/decimalToBase2.js): Keep dividing number by base and write remainder in opposite.
-2. [Base b to decimal](../Bitwise/Conversions/binaryToDecimal.js): Multiple and add power of base with digit in reverse order and increment power of base with every number.
+1. [Decimal to base b](../4-Algorithms//Bitwise/Problems/Conversions/decimalToBase2.ts): Keep dividing number by base and write remainder in opposite.
+2. [Base b to decimal](../4-Algorithms//Bitwise/Problems/Conversions/binaryToDecimal.ts): Multiple and add power of base with digit in reverse order and increment power of base with every number.

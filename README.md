@@ -63,12 +63,12 @@ npm test
 
 **Week 1: High-Frequency Problems**
 
-- Focus on [Top 100 LeetCode Questions](./6-Exercises/Top100/)
+- Focus on [Top 100 LeetCode Questions](./5-Exercises/Top100/)
 - Practice [Common Patterns](./4-Patterns/) daily
 
 **Week 2: Company-Specific Prep**
 
-- [FAANG Questions](./6-Exercises/FAANG/)
+- [FAANG Questions](./5-Exercises/FAANG/)
 - [System Design Interview](./0-SystemDesign/)
 - Mock technical interviews
 
@@ -114,7 +114,9 @@ technical-interview-preparation-kit/
 │   ├── BinarySearchTree/     # Binary Search Tree
 │   ├── DoublyLinkedLists/    # Doubly linked lists
 │   ├── LinkedLists/          # Singly, circular lists
-│   ├── StacksQueues/         # Stack & queue implementations
+│   ├── Queues/               # Queue implementations
+│   ├── Stacks/               # Stack implementations
+│   ├── Strings/              # Strings implementations
 │   ├── Trees/                # Binary trees, BST, AVL, etc.
 │   ├── Graphs/               # Graph representations & algorithms
 │   ├── HashTables/           # Hash maps & collision handling
@@ -136,11 +138,7 @@ technical-interview-preparation-kit/
 │   ├── DynamicProgramming/   # DP patterns & solutions
 │   ├── Greedy/               # Greedy algorithms
 │   └── GraphAlgorithms/      # BFS, DFS, shortest path, etc.
-├── 5-Strings/                # String algorithms
-│   ├── Palindromes/          # String operations
-│   ├── Matching/             # Pattern matching
-│   └── Advanced/             # KMP, Rabin-Karp, etc.
-└── 6-Exercises/              # Practice problems
+└── 5-Exercises/              # Practice problems
 ```
 
 ## 🎯 Learning Path
@@ -150,21 +148,21 @@ technical-interview-preparation-kit/
 1. Start with [Basics](./0-Basics/) - programming fundamentals
 2. Learn [Complexity Analysis](./1-Complexity/) - understand Big O
 3. Master core [Data Structures](./2-DataStructures/) one by one
-4. Practice [Easy Problems](./6-Exercises/Easy/) regularly
+4. Practice [Easy Problems](./5-Exercises/Easy/) regularly
 
 ### For Intermediate
 
 1. Review and strengthen data structure knowledge
-2. Focus on [Algorithm Implementation](./3-Algorithms/)
-3. Learn [Problem Patterns](./4-Patterns/)
-4. Tackle [Medium Problems](./6-Exercises/Medium/)
+2. Focus on [Algorithm Implementation](./4-Algorithms/)
+3. Learn [Problem Patterns](./3-Patterns/)
+4. Tackle [Medium Problems](./5-Exercises/Medium/)
 
 ### For Advanced
 
 1. Master [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
 2. Study [System Design](./0-SystemDesign/)
-3. Solve [Hard Problems](./6-Exercises/Hard/)
-4. Practice [FAANG-level questions](./6-Exercises/FAANG/)
+3. Solve [Hard Problems](./5-Exercises/Hard/)
+4. Practice [FAANG-level questions](./5-Exercises/FAANG/)
 
 ## 💼 Interview Preparation
 
@@ -258,7 +256,7 @@ Use the following template to track your progress:
 ## My Study Progress
 
 ### Data Structures
-
+- [ ] String
 - [ ] Arrays
 - [ ] Linked Lists
 - [ ] Stacks & Queues
