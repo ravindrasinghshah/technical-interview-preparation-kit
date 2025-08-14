@@ -173,9 +173,9 @@ technical-interview-preparation-kit/
 **Before the Interview:**
 
 - [ ] Review [Big O Complexity](./1-Complexity/)
-- [ ] Practice [Common Patterns](./4-Patterns/)
-- [ ] Solve recent problems from [Top 100](./6-Exercises/Top100/)
-- [ ] Review [String Algorithms](./5-Strings/)
+- [ ] Practice [Common Patterns](./3-Patterns/)
+- [ ] Review [Notes](./0-Basics/revision-notes.md)
+- [ ] Review Common [Problems](./0-Basics/revision-problems.md)
 
 **During the Interview:**
 
@@ -218,48 +218,10 @@ technical-interview-preparation-kit/
 
 ### YouTube Channels
 
-- Back To Back SWE
-- Tech Dose
-- Abdul Bari
+- [Complete Java DSA playlist - By Kunal Kushwaha](https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ)
+- [System Design - By Hello Interview](https://www.youtube.com/@hello_interview)
 
 ## 📋 Coding Conventions
-
-### File Structure
-
-```
-Topic/
-├── README.md              # Topic overview and concepts
-├── implementation.js      # Basic implementation
-├── variations.js          # Different variations
-├── examples.js           # Practical examples
-├── exercises.js          # Practice problems
-└── solutions.js          # Solutions with explanations
-```
-
-### Code Style
-
-```javascript
-/**
- * Problem: [Problem Title]
- * Difficulty: Easy/Medium/Hard
- * Pattern: [Algorithm Pattern if applicable]
- * Time Complexity: O(n)
- * Space Complexity: O(1)
- *
- * Approach:
- * 1. Step-by-step explanation
- * 2. Key insights
- * 3. Edge cases to consider
- */
-function solutionName(input) {
-  // Implementation with comments
-  // explaining key steps
-}
-
-// Test cases
-console.log(solutionName(test1)); // Expected output
-console.log(solutionName(test2)); // Expected output
-```
 
 ### Documentation Standards
 
