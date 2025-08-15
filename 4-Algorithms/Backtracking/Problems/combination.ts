@@ -1,19 +1,20 @@
 /**
- * cd to Backtracking folder and then run "npx ts-node combination.ts"
-Given two integers n and k, return all combinations of k numbers out of the range [1, n] in any order.
+ * run "npx ts-node 4-Algorithms\Backtracking\Problems\combination.ts"
+ * Given two integers n and k, return all combinations of k numbers out of the range [1, n] in any order.
  * Time Complexity - O(k × C(n, k)) [combinations of k elements from n]
+ * https://leetcode.com/problems/combinations/
  */
 
-function combinations(n: number, len: number): Array<number>[] {
+function combinations(n: number, k: number): Array<number>[] {
   function backtracking(arr: Array<number>, depth: number) {
     //== base case to break the recursion
-    if (arr.length === len) {
+    if (arr.length === k) {
       ans.push([...arr]);
       return;
     }
 
     //== for each element call backtracking and pop once returned
-    for (let i = depth; i < n; i++) {
+    for (let i = depth; i <= n; i++) {
       if (!arr.includes(i)) {
         arr.push(i);
         backtracking(arr, i + 1); //== when passing +1 then it ensures to pass only elements after this for all future calls in subtree

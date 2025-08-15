@@ -1,5 +1,5 @@
 /**
- * cd to Palindrome folder and then run "npx ts-node twoPointer.ts"
+ * run "npx ts-node 3-Patterns\TwoPointers\isPalindrome.ts"
    Palindrome is a string which is same after reversing characters.
  */
 
