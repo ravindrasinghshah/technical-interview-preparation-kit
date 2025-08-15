@@ -4,93 +4,82 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-> A comprehensive Data Structures and Algorithms study repository designed for technical interview preparation.
+> Your TypeScript-powered interview prep notebook — organized, concise and ready when you are.
 
 ## 📚 Table of Contents
 
 - [Quick Start](#-quick-start)
-- [Study Plans](#-study-plans)
+- [How to use this repository?](#-how-to-use-this-repository)
 - [Repository Structure](#-repository-structure)
 - [Learning Path](#-learning-path)
 - [Interview Preparation](#-interview-preparation)
 - [Practice Resources](#-practice-resources)
 - [Coding Conventions](#-coding-conventions)
 - [Contributing](#-contributing)
+- [Progress Tracking](#-progress-tracking)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
 ## 🚀 Quick Start
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/ravindrasinghshah/technical-interview-preparation-kit.git
 cd technical-interview-preparation-kit
 
-# Install dependencies
+# 2. Install dependencies
 npm install
 
-# Run tests
-npm test
+# 3. Explore the Structure
+ - Start with 0-Basics to warm up your fundamentals.
+ - Browse 2-DataStructures and 4-Algorithms for topic-based learning.
+ - Dive into 5-Exercises for hands-on problem solving.
+
+# 4. Start Solving Problems
+ - Pick a folder → read the notes → try the problems yourself.
+ - Compare your solution with the provided one, noting time/space complexity.
+
+# 5. Make It Yours
+ - Fork the repo and add your own solutions, notes, or optimizations.
+ - Keep it updated as your personal interview playbook.
+
 ```
 
-## 📅 Study Plans
+## 📅 How to use this repository?
 
-### 🎯 30-Day Interview Prep
+This is your **all-in-one interview preparation notebook** for **system design**, **data structures** and **algorithms** in TypeScript.  
+Rather than just reading theory, you’ll **learn by solving real interview-style problems** — organized for maximum efficiency.
 
-**Week 1: Foundations**
+### How to Get Started
 
-- Day 1-2: [Complexity Analysis](./1-Complexity/)
-- Day 3-4: [Arrays & Strings](./2-DataStructures/Arrays/)
-- Day 5-7: [Linked Lists](./2-DataStructures/LinkedLists/)
+1. **Follow the Learning Path**
 
-**Week 2: Core Data Structures**
+   - Start with **Basics** to build a solid foundation.
+   - Move through **Complexity Analysis**, **Core Data Structures** and **Algorithms**.
+   - Progress into **Problem Patterns** and **System Design** for advanced preparation.
 
-- Day 8-10: [Stacks & Queues](./2-DataStructures/StacksQueues/)
-- Day 11-12: [Trees & Binary Trees](./2-DataStructures/Trees/)
-- Day 13-14: [Hash Tables](./2-DataStructures/HashTables/)
+2. **Practice with Purpose**
 
-**Week 3: Advanced Concepts**
+   - Use the **Exercises** folder to code hands-on solutions.
+   - Review explanations, analyze time/space complexity and test with provided cases.
 
-- Day 15-17: [Graphs](./2-DataStructures/Graphs/)
-- Day 18-19: [Heaps](./2-DataStructures/Heaps/)
-- Day 20-21: [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
+3. **Customize Your Notes**
 
-**Week 4: Problem Patterns & Mock Interviews**
+   - Fork the repo and add your own solutions or optimizations.
+   - Bookmark tricky problems for quick revision before interviews.
 
-- Day 22-24: [Common Patterns](./4-Patterns/)
-- Day 25-27: [System Design Basics](./0-SystemDesign/)
-- Day 28-30: Mock interviews and review
+4. **Stay Interview-Ready**
+   - Treat this like your **exam revision notes** — structured for quick refreshers when time is short.
 
-### 🔥 Intensive 2-Week Sprint
+### 🆚 How Is This Different from LeetCode or Other Platforms?
 
-**Week 1: High-Frequency Problems**
+While platforms like LeetCode are great for volume practice, this repo is **centralized, curated and customizable**:
 
-- Focus on [Top 100 LeetCode Questions](./5-Exercises/Top100/)
-- Practice [Common Patterns](./4-Patterns/) daily
+- **Time-Saving:** No endless searching — everything you need is here.
+- **Easy to Navigate:** Organized by topic, difficulty and problem pattern.
+- **Customizable:** Extend it with your own study notes and problem sets.
 
-**Week 2: Company-Specific Prep**
-
-- [FAANG Questions](./5-Exercises/FAANG/)
-- [System Design Interview](./0-SystemDesign/)
-- Mock technical interviews
-
-### 📚 Comprehensive 3-Month Program
-
-**Month 1: Fundamentals**
-
-- Complete all [Basics](./0-Basics/)
-- Master [Core Data Structures](./2-DataStructures/)
-- Practice [Fundamental Algorithms](./3-Algorithms/)
-
-**Month 2: Advanced Topics**
-
-- Advanced algorithms and optimization
-- Complex problem-solving patterns
-- System design fundamentals
-
-**Month 3: Interview Mastery**
-
-- Company-specific preparation
-- Advanced system design
-- Behavioral interview prep
+In short: **Think of it as your personal exam notes — organized, concise and perfect for revisiting right before you step into the interview room.**
 
 ## 🏗️ Repository Structure
 
@@ -148,21 +137,20 @@ technical-interview-preparation-kit/
 1. Start with [Basics](./0-Basics/) - programming fundamentals
 2. Learn [Complexity Analysis](./1-Complexity/) - understand Big O
 3. Master core [Data Structures](./2-DataStructures/) one by one
-4. Practice [Easy Problems](./5-Exercises/Easy/) regularly
+4. Practice [Easy Problems](./5-Exercises/) regularly
 
 ### For Intermediate
 
 1. Review and strengthen data structure knowledge
 2. Focus on [Algorithm Implementation](./4-Algorithms/)
 3. Learn [Problem Patterns](./3-Patterns/)
-4. Tackle [Medium Problems](./5-Exercises/Medium/)
+4. Tackle [Medium Problems](./5-Exercises/)
 
 ### For Advanced
 
-1. Master [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
+1. Master [Dynamic Programming](./4-Algorithms/DynamicProgramming/)
 2. Study [System Design](./0-SystemDesign/)
-3. Solve [Hard Problems](./5-Exercises/Hard/)
-4. Practice [FAANG-level questions](./5-Exercises/FAANG/)
+3. Solve [Hard Problems](./5-Exercises/)
 
 ## 💼 Interview Preparation
 
@@ -194,10 +182,10 @@ technical-interview-preparation-kit/
 
 ### 🏢 Company-Specific Preparation
 
-- **Google**: Focus on [Graph Algorithms](./3-Algorithms/GraphAlgorithms/) and [System Design](./0-SystemDesign/)
-- **Amazon**: Emphasize [Trees](./2-DataStructures/Trees/) and [Dynamic Programming](./3-Algorithms/DynamicProgramming/)
-- **Microsoft**: Practice [Arrays](./2-DataStructures/Arrays/) and [String Problems](./5-Strings/)
-- **Facebook/Meta**: Master [Graph Problems](./2-DataStructures/Graphs/) and [DFS/BFS](./3-Algorithms/GraphAlgorithms/)
+- **Google**: Focus on [Graph Algorithms](./4-Algorithms/GraphAlgorithms/) and [System Design](./0-SystemDesign/)
+- **Amazon**: Emphasize [Trees](./2-DataStructures/Trees/) and [Dynamic Programming](./4-Algorithms/DynamicProgramming/)
+- **Microsoft**: Practice [Arrays](./2-DataStructures/Arrays/) and [String Problems](./2-DataStructures/Strings/)
+- **Facebook/Meta**: Master [Graph Problems](./2-DataStructures/Graphs/) and [DFS/BFS](./4-Algorithms/GraphAlgorithms/)
 
 ## 🛠️ Practice Resources
 
@@ -256,6 +244,7 @@ Use the following template to track your progress:
 ## My Study Progress
 
 ### Data Structures
+
 - [ ] String
 - [ ] Arrays
 - [ ] Linked Lists
