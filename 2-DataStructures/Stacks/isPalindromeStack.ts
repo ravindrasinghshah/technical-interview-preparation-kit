@@ -1,9 +1,9 @@
 /**
- * run "npx ts-node 2-DataStructures\Stacks\isPalindrome.ts"
+ * run "npx ts-node 2-DataStructures\Stacks\isPalindromeStack.ts"
    Palindrome is a string which is same after reversing characters.
  */
 
-function isPalindrome(str: string): boolean {
+function isPalindromeStack(str: string): boolean {
   let start = 0;
   let end = str.length;
   let mid = Math.floor(end / 2);
@@ -21,10 +21,10 @@ function isPalindrome(str: string): boolean {
 
 (() => {
   let str = "10s01";
-  let result = isPalindrome(str);
+  let result = isPalindromeStack(str);
   console.log(`Is ${str} palindrome? ${result}`);
 
   str = "10sa01";
-  result = isPalindrome(str);
+  result = isPalindromeStack(str);
   console.log(`Is ${str} palindrome? ${result}`);
 })();
