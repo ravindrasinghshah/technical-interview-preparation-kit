@@ -218,7 +218,7 @@ technical-interview-preparation-kit/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+Contributions are welcome! Please see for guidelines.
 
 ### How to Contribute
 
