@@ -30,7 +30,19 @@ Rule 1: Ignore all constants: O( ~~3~~ n^3 + ~~2~~ n^2 + ~~5~~ n + ~~9~~)\
 Rule 2: Ignore less dominating terms: O( n^3 + ~~n^2~~ + ~~n~~)\
 Rule 3: O(n^3)
 
-## Common examples of Time Complexity
+## Time Complexity Comparison
+
+| Complexity   | Notation   | Description                                          | Examples                                                                |
+| ------------ | ---------- | ---------------------------------------------------- | ----------------------------------------------------------------------- |
+| Constant     | O(1)       | Complexity remains the same regardless of input size | Accessing an array by index, HashMap lookups                            |
+| Logarithmic  | O(log n)   | Complexity grows logarithmically with input size     | Binary search, finding an element in a balanced BST                     |
+| Linear       | O(n)       | Complexity grows linearly with input size            | Finding an element in an array, counting elements in a list             |
+| Linearithmic | O(n log n) | Complexity grows linearithmically with input size    | Merging two sorted arrays, sorting an array with quicksort or mergesort |
+| Quadratic    | O(n^2)     | Complexity grows quadratically with input size       | Bubble sort, insertion sort, finding pairs in an array                  |
+| Exponential  | O(2^n)     | Complexity grows exponentially with input size       | Recursive Fibonacci, finding all subsets of a set                       |
+| Factorial    | O(n!)      | Complexity grows factorially with input size         | Brute-force solution for the traveling salesman problem                 |
+
+### Common examples
 
 1. Sorting: O(n log n)
 2. Array traversing: O(n)
@@ -38,7 +50,5 @@ Rule 3: O(n^3)
 4. Nested loop of 2 different arrays: O(n\*m)
 5. Binary Search: O(log n)
 6. Hashmap lookup: O(1)
-
-Read more in leetcode: https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/713/interviews-and-tools/4547/
 
 ![Big-O-Chart](complexity-chart.png)
