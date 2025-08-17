@@ -1,5 +1,5 @@
 /**
- * cd to Arrays folder and then run "npx ts-node print_cols.ts"
+ * run "npx ts-node 2-DataStructures\Arrays\Problems\print_cols.ts"
  * Size of individual row (i.e. columns) doesn't matter.
  * Length of array is number of rows.
  * Worst case complexity - O(n*m)

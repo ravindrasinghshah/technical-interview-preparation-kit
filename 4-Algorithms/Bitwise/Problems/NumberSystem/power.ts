@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node power.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\power.ts"
  * Find the power of number
  * Complexity log n
  */

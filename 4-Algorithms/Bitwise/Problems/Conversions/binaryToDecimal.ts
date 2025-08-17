@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/Conversions folder and then run "npx ts-node binaryToDecimal.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\Conversions\binaryToDecimal.ts"
  * Convert binary number to decimal - Multiple and add power of base with digit in reverse order and increment power of base with every number.
  * Note: Number has limit of 2^53 - 1 (~16 digits) - for more length number use string.
  */

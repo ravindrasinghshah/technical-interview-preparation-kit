@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node isPowerOf2.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\isPowerOf2.ts"
  */
 
 function isPowerOf2(num: number) {

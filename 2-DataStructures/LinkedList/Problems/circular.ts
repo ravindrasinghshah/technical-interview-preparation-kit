@@ -1,5 +1,5 @@
 /**
- * cd to 2-DataStructures\LinkedList\Problems folder and then run "npx ts-node circular.ts"
+ * run "npx ts-node 2-DataStructures\LinkedList\Problems\circular.ts"
  */
 // check if the linked list is circular
 import { LinkedList, Node } from "./index";

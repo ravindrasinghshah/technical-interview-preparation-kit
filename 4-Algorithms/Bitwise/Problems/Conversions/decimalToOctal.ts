@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/Conversions folder and then run "npx ts-node decimalToOctal.ts"
+ *run "npx ts-node 4-Algorithms\Bitwise\Problems\Conversions\decimalToOctal.ts"
  * Convert decimal number to octal number
  * Octal numbers: 0, 1, 2, 3, 4, 5, 6, 7 - Base 8
  */

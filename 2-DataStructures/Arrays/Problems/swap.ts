@@ -1,5 +1,5 @@
 /**
- * cd to Arrays folder and then run "npx ts-node swap.ts"
+ * run "npx ts-node 2-DataStructures\Arrays\Problems\swap.ts"
  * Swap item in array
  * Worst case complexity - O(1)
  */

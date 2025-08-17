@@ -1,5 +1,5 @@
 /*
- * cd to 4-Exercises folder and then run "npx ts-node mergeIntervals.ts"
+ * run "npx ts-node 5-Exercises\mergeIntervals.ts"
  * Complete the 'getMergedIntervals' function below.
  *
  * The function is expected to return a 2D_INTEGER_ARRAY.

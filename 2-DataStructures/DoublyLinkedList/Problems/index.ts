@@ -1,5 +1,5 @@
 /**
- * cd to DoublyLinkedList and run npx ts-node index.ts
+ * run npx ts-node 2-DataStructures\DoublyLinkedList\Problems\index.ts
  */
 
 class ListNode {

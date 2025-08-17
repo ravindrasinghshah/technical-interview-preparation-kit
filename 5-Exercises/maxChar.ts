@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node maxChar.ts"
+ * run "npx ts-node 5-Exercises\maxChar.ts"
    Given a string, return the character that is most commonly used in the string.
    Examples:
     maxChar("abcccccccd") === "c"

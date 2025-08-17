@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node pascalTriangleSumOfRow.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\pascalTriangleSumOfRow.ts"
  * https://en.wikipedia.org/wiki/Pascal%27s_triangle
  * The formula (1 << (n - 1)) is a bitwise trick to compute (2 ^ (n−1)), which is the sum of the nth row of Pascal’s Triangle (starting from row 1).
  */

@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises/CyclicSort folder and then run "npx ts-node findDuplicate.ts"
+ * run "npx ts-node 5-Exercises\CyclicSort\findDuplicate.ts"
  * Cyclic sort is applicable when array values are continuous. 
    https://leetcode.com/problems/find-the-duplicate-number/description/
    Q: Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.

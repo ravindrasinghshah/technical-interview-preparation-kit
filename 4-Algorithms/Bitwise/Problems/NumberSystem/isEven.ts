@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node isEven.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\isEven.ts"
  */
 
 function isEven(num: number) {

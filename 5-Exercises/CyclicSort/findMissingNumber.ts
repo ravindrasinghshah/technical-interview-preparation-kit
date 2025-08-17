@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises/CyclicSort folder and then run "npx ts-node findMissingNumber.ts"
+ * run "npx ts-node 5-Exercises\CyclicSort\findMissingNumber.ts"
  * Cyclic sort is applicable when array values are continuous. 
    https://leetcode.com/problems/missing-number/
    Q: Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
@@ -8,11 +8,11 @@
  *      If range is [1,N] then element will be at index = value - 1; [1,2,3,4...N] -> N values;
  */
 
-function findMissingNumber(arr: Array<number>) {
+function findMissingNumber(nums: Array<number>) {
   let idx = 0;
-  while (idx < arr.length) {
-    const correctIndex = arr[idx];
-    if (nums[idx] !== arr.length && nums[idx] !== nums[correctIndex]) {
+  while (idx < nums.length) {
+    const correctIndex = nums[idx];
+    if (nums[idx] !== nums.length && nums[idx] !== nums[correctIndex]) {
       //== swap
       const temp = nums[idx];
       nums[idx] = nums[correctIndex];
@@ -20,10 +20,10 @@ function findMissingNumber(arr: Array<number>) {
     } else idx++;
   }
   //== search missing number
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] != i) return i;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] != i) return i;
   }
-  return arr.length;
+  return nums.length;
 }
 
 (() => {

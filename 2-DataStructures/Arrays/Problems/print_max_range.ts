@@ -1,5 +1,5 @@
 /**
- * cd to Arrays folder and then run "npx ts-node print_max_range.ts"
+ * run "npx ts-node 2-DataStructures\Arrays\Problems\print_max_range.ts"
  * Swap item in array
  * Worst case complexity - O(n)
  */

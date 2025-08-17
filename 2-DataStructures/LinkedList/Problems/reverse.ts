@@ -1,5 +1,5 @@
 /**
- * cd to folder and then run "npx ts-node reverse.ts"
+ * run "npx ts-node 2-DataStructures\LinkedList\Problems\reverse.ts"
  * Given a linked list, return reversed list.
  */
 import { LinkedList } from "./index";

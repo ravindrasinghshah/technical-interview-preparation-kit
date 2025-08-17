@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node IsDivisibleBy5.ts"
+ * run "npx ts-node 5-Exercises\IsDivisibleBy5.ts"
    Form a largest number which is divisible by 5
    Constraint: nums is an array of positive numbers [0-9]
  */

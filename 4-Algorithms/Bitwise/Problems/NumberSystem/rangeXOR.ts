@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node rangeXOR.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\rangeXOR.ts"
  * Find the xor of range
  * Complexity O(1)
  */

@@ -1,4 +1,4 @@
-/* cd to Tree/Problems folder and then run "npx ts-node index.ts"
+/* run "npx ts-node 2-DataStructures\Tree\Problems\index.ts"
 Trees are DS which contains left and right node.
 Any node without child is a leaf node.
 */

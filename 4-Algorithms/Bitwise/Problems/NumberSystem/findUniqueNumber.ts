@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node findUniqueNumber.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\findUniqueNumber.ts"
  */
 
 function findUniqueNumber(nums: Array<number>) {

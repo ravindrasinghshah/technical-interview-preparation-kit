@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node findNoOfDigits.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\findNoOfDigits.ts"
  * Complexity - log n
  */
 

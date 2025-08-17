@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/Conversions folder and then run "npx ts-node decimalToBase2.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\Conversions\decimalToBase2.ts"
  * Convert decimal number to base 2 number
  */
 

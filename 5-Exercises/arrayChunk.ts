@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node arrayChunk.ts"
+ * run "npx ts-node 5-Exercises\arrayChunk.ts"
    Given an array and chunk size, divide the array into many subarrays where each subarray is of the provided size.
    Examples:
     // Chunk size two:

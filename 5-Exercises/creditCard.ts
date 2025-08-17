@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node creditCard.ts"
+ * run "npx ts-node 5-Exercises\creditCard.ts"
  */
 // Credit Card Type | Prefix            | Length
 // ---------------------------------------------

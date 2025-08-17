@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node movies.ts"
+ * run "npx ts-node 5-Exercises\movies.ts"
  * Implement a class to add movies, create a watchlist and once watched then remove from the list and to watched.
  */
 

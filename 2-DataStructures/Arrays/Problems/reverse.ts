@@ -1,5 +1,5 @@
 /**
- * cd to Arrays folder and then run "npx ts-node reverse.ts"
+ * run "npx ts-node 2-DataStructures\Arrays\Problems\reverse.ts"
  * Swap item in array
  * Worst case complexity - O(1)
  */

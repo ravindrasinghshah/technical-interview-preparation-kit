@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node levelWidth.ts"
+ * run "npx ts-node 2-DataStructures\Tree\Problems\levelWidth.ts"
  * Coding Exercise - Level Width
    Given the root node of a tree, return an array where each element is the width of the tree at each level.
 

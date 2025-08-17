@@ -1,5 +1,5 @@
 /**
- * cd to folder and then run "npx ts-node midpoint.ts"
+ * run "npx ts-node 2-DataStructures\LinkedList\Problems\midpoint.ts"
  */
 // find the midpoint of the linked list
 import { LinkedList } from "./index";

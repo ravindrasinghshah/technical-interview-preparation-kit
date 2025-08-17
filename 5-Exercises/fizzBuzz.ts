@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises folder and then run "npx ts-node fizzBuzz.ts"
+ * run "npx ts-node 5-Exercises\fizzBuzz.ts"
   Write a program that console logs the numbers from 1 to n.
   For multiples of three print 'fizz' instead of the number 
   For the multiples of five print 'buzz'

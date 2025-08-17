@@ -1,5 +1,5 @@
 /**
- * cd to Backtracking folder and then run "npx ts-node permutation.ts"
+ * run "npx ts-node 4-Algorithms\Backtracking\Problems\permutation.ts"
 Backtracking is an algorithm which uses recursion for solving problem.
 Its a way to efficiently run through all possibilities in a problem.
 Backtracking is a great tool whenever a problem wants you to find all of something, 

@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node validate.ts"
+ * run "npx ts-node 2-DataStructures\BinarySearchTree\Problems\validate.ts"
  * Coding Exercise - Validating Binary Search Trees
 Given a node of a binary search tree, validate the binary search tree.
 Ensure that every node's left hand child is less than the parent node's value

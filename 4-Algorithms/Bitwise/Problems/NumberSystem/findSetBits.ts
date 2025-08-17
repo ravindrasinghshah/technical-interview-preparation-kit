@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/NumberSystem folder and then run "npx ts-node findSetBits.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\findSetBits.ts"
  * Find the set bits of binary number
  * Complexity log n
  */

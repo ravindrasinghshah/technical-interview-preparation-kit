@@ -1,5 +1,5 @@
 /**
- * cd to Backtracking folder and then run "npx ts-node subset.ts"
+ * run "npx ts-node 4-Algorithms\Backtracking\Problems\subset.ts"
 Given an integer array nums of unique elements, return all subsets in any order without duplicates.
 This is a very common method of avoiding duplicates in backtracking problems
  - having an integer argument that represents a starting point for iteration at each function call.

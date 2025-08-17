@@ -1,5 +1,5 @@
 /**
- * cd to Bitwise/Conversions folder and then run "npx ts-node octalToDecimal.ts"
+ * run "npx ts-node 4-Algorithms\Bitwise\Problems\Conversions\octalToDecimal.ts"
  * Convert octalToDecimal to decimal - Multiple and add power of base with digit in reverse order and increment power of base with every number.
  * Note: Number has limit of 2^53 - 1 (~16 digits) - for more length number use string.
  */

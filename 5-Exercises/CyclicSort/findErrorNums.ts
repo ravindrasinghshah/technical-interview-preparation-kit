@@ -1,5 +1,5 @@
 /**
- * cd to 4-Exercises/CyclicSort folder and then run "npx ts-node findErrorNums.ts"
+ * run "npx ts-node 5-Exercises\CyclicSort\findErrorNums.ts"
  * Cyclic sort is applicable when array values are continuous. 
    https://leetcode.com/problems/set-mismatch/
    Q: You have a set of integers s, which originally contains all the numbers from 1 to n.
