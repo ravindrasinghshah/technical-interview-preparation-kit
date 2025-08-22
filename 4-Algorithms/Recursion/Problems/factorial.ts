@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node factorial.ts
+ * run npx ts-node 4-Algorithms\Recursion\Problems\factorial.ts
  */
 
 function factorial(n: number): number {

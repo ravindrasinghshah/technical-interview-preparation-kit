@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node factorial_dp.ts
+ * run npx ts-node 4-Algorithms\Recursion\Problems\factorial_dp.ts
  */
 function factorial_dp(n: number) {
   function memo(n: number, m: Map<number, number>): number {
