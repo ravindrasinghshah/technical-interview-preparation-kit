@@ -2,6 +2,8 @@
  * run npx ts-node 2-DataStructures\Arrays\Problems\returnSubSequence.ts
  */
 
+import { Log } from "../../../Log";
+
 //== TC = O(2^n) - This results in a binary tree with height n and 2^n leaf nodes, each representing a subsequence.
 function returnSubSequence(str: string, seq: string = ""): string[] {
   if (!str) {
@@ -17,9 +19,9 @@ function returnSubSequence(str: string, seq: string = ""): string[] {
 (() => {
   let str = "abc";
   let result = returnSubSequence(str); //== a, b, c, ab, ac, bc, abc
-  console.log(`${str} sequences : [${result}]`);
+  Log.info(`${str} sequences : [${result}]`);
 
   str = "abcd";
   result = returnSubSequence(str);
-  console.log(`${str} sequences : [${result}]`);
+  Log.info(`${str} sequences : [${result}]`);
 })();

@@ -4,6 +4,8 @@
  * Complexity log n
  */
 
+import { Log } from "../../../../Log";
+
 function power(pow: number, base: number) {
   let ans = 1;
   while (pow > 0) {
@@ -20,13 +22,13 @@ function power(pow: number, base: number) {
   let pow = 4,
     base = 2;
   let result = power(pow, base);
-  console.log(`${base} to the power of ${pow} is ${result}`);
+  Log.info(`${base} to the power of ${pow} is ${result}`);
 
   (pow = 3), (base = 5);
   result = power(pow, base);
-  console.log(`${base} to the power of ${pow} is ${result}`);
+  Log.info(`${base} to the power of ${pow} is ${result}`);
 
   (pow = 2), (base = 10);
   result = power(pow, base);
-  console.log(`${base} to the power of ${pow} is ${result}`);
+  Log.info(`${base} to the power of ${pow} is ${result}`);
 })();

@@ -9,6 +9,8 @@
  *      If range is [1,N] then element will be at index = value - 1; [1,2,3,4...N] -> N values;
  */
 
+import { Log } from "../../Log";
+
 function findErrorNums(arr: Array<number>) {
   let idx = 0;
   while (idx < arr.length) {
@@ -30,9 +32,9 @@ function findErrorNums(arr: Array<number>) {
 (() => {
   let nums = [1, 2, 2, 4]; // [2,3]
   let result = findErrorNums(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [1, 1]; // [1,2]
   result = findErrorNums(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 })();

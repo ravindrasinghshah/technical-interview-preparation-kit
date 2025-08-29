@@ -4,6 +4,8 @@
  * Generator functions concept used to print the fib series
  */
 
+import { Log } from "../../../Log";
+
 function* print_fibonacci(n: number) {
   let [a, b] = [0, 1];
   while (n > 0) {
@@ -20,9 +22,9 @@ function* print_fibonacci(n: number) {
   for (let value of generator) {
     result.push(value);
   }
-  console.log(`fibonacci of ${num} is ${result}`);
+  Log.info(`fibonacci of ${num} is ${result}`);
 
   // num = 6;
   // result = print_fibonacci(num);
-  // console.log(`fibonacci of ${num} is ${result}`);
+  // Log.info(`fibonacci of ${num} is ${result}`);
 })();

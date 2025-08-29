@@ -3,6 +3,9 @@
  * Find the xor of range
  * Complexity O(1)
  */
+
+import { Log } from "../../../../Log";
+
 //== this is a formula based on xor patter
 function xor(a: number) {
   if (a % 4 === 0) return a;
@@ -20,5 +23,5 @@ function rangeXOR(a: number, b: number) {
   let a = 3,
     b = 9;
   let result = rangeXOR(a, b);
-  console.log(`XOR of range ${a}-${b} is ${result}`);
+  Log.info(`XOR of range ${a}-${b} is ${result}`);
 })();

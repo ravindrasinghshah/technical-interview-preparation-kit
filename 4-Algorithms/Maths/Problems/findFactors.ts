@@ -2,6 +2,8 @@
  * run npx ts-node 4-Algorithms\Maths\Problems\findFactors.ts
  */
 
+import { Log } from "../../../Log";
+
 function findFactors(n: number): number[] {
   let factors: number[] = [];
   for (let i = 1; i <= n; i++) {
@@ -30,13 +32,13 @@ function findFactorsSqrt(n: number): number[] {
 (() => {
   let num = 4;
   let result = findFactors(num);
-  console.log(`Factors of ${num} are [${result}]`);
+  Log.info(`Factors of ${num} are [${result}]`);
 
   num = 21;
   result = findFactorsSqrt(num);
-  console.log(`Factors of ${num} are [${result}]`);
+  Log.info(`Factors of ${num} are [${result}]`);
 
   num = 36;
   result = findFactorsSqrt(num);
-  console.log(`Factors of ${num} are [${result}]`);
+  Log.info(`Factors of ${num} are [${result}]`);
 })();

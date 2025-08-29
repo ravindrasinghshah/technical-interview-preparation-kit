@@ -1,3 +1,5 @@
+import { Log } from "../Log";
+
 /*
  * run "npx ts-node 5-Exercises\mergeIntervals.ts"
  * Complete the 'getMergedIntervals' function below.
@@ -32,7 +34,7 @@ function mergeIntervals(intervals: Array<Array<number>>) {
     [15, 18],
   ];
   let result = mergeIntervals(intervals);
-  console.log(result);
+  Log.info(result);
   intervals = [
     [2, 3],
     [4, 5],
@@ -41,5 +43,5 @@ function mergeIntervals(intervals: Array<Array<number>>) {
     [1, 10],
   ];
   result = mergeIntervals(intervals);
-  console.log(result);
+  Log.info(result);
 })();

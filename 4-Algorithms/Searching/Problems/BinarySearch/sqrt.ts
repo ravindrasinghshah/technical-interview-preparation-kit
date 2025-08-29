@@ -5,6 +5,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function sqrt(x: number) {
   if (x < 2) return x;
   let low = 2,
@@ -22,5 +24,5 @@ function sqrt(x: number) {
 (() => {
   let num = 8;
   let result = sqrt(num);
-  console.log(`Square root of ${num} is ${result}`);
+  Log.info(`Square root of ${num} is ${result}`);
 })();

@@ -6,6 +6,8 @@ This is a very common method of avoiding duplicates in backtracking problems
  * Time Complexity - O(N∗2N)
  */
 
+import { Log } from "../../../Log";
+
 function subset(nums: Array<number>): Array<number>[] {
   function backtracking(arr: Array<number>, depth: number) {
     //== base case to break the recursion
@@ -31,12 +33,12 @@ function subset(nums: Array<number>): Array<number>[] {
 
 (() => {
   let nums = [1, 2, 3];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   let result = subset(nums);
-  console.log(`Subset:`, result);
+  Log.info(`Subset:`, result);
 
   nums = [2, 3, 5, 7, 0, 1];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   result = subset(nums);
-  console.log(`Subset:`, result);
+  Log.info(`Subset:`, result);
 })();

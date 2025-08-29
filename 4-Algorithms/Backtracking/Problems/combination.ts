@@ -5,6 +5,8 @@
  * https://leetcode.com/problems/combinations/
  */
 
+import { Log } from "../../../Log";
+
 function combinations(n: number, k: number): Array<number>[] {
   function backtracking(arr: Array<number>, depth: number) {
     //== base case to break the recursion
@@ -31,12 +33,12 @@ function combinations(n: number, k: number): Array<number>[] {
 (() => {
   let n = 4,
     k = 2;
-  console.log(`Number provided: ${n} and combinations of: ${k}`);
+  Log.info(`Number provided: ${n} and combinations of: ${k}`);
   let result = combinations(n, k);
-  console.log(`Combinations: ${result.length}`, result);
+  Log.info(`Combinations: ${result.length}`, result);
 
   (n = 6), (k = 3);
-  console.log(`Number provided: ${n} and combinations of: ${k}`);
+  Log.info(`Number provided: ${n} and combinations of: ${k}`);
   result = combinations(n, k);
-  console.log(`Combinations: ${result.length}`, result);
+  Log.info(`Combinations: ${result.length}`, result);
 })();

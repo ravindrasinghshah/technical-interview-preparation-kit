@@ -4,6 +4,8 @@
  * TC: O(n) - size of the string
  */
 
+import { Log } from "../../../Log";
+
 function skipWord(str: string | null, word: string): string {
   if (str === null || str === "") return "";
 
@@ -15,9 +17,9 @@ function skipWord(str: string | null, word: string): string {
   let str = "recursion_is_noteasy",
     word = "not";
   let result = skipWord(str, word);
-  console.log(`${str} : ${result}`);
+  Log.info(`${str} : ${result}`);
 
   (str = "i_want_to_be_breakfree"), (word = "break");
   result = skipWord(str, word);
-  console.log(`${str} : ${result}`);
+  Log.info(`${str} : ${result}`);
 })();

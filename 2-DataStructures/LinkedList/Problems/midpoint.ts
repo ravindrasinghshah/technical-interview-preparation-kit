@@ -2,6 +2,7 @@
  * run "npx ts-node 2-DataStructures\LinkedList\Problems\midpoint.ts"
  */
 // find the midpoint of the linked list
+import { Log } from "../../../Log";
 import { LinkedList } from "./index";
 
 function midpoint(list: LinkedList) {
@@ -22,5 +23,5 @@ function midpoint(list: LinkedList) {
   list.insertLast(4);
   list.insertLast(5);
   const result = midpoint(list);
-  console.log("midpoint of given list:", result?.value);
+  Log.info("midpoint of given list:", result?.value);
 })();

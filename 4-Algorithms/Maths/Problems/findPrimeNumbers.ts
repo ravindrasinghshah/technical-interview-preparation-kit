@@ -3,6 +3,8 @@
  * SC O(n) - TC O(n * log(log n)) (Harmonic progression of primes)
  */
 
+import { Log } from "../../../Log";
+
 function findPrimeNumbers(num: number) {
   let nums = Array(num + 1).fill(0);
   for (let i = 2; i * i <= num; i++) {
@@ -17,7 +19,7 @@ function findPrimeNumbers(num: number) {
   for (let i = 2; i < nums.length; i++) {
     if (nums[i] === 0) res.push(i);
   }
-  console.log(`Prime numbers in range from 1 - ${num} : ${res.toString()} `);
+  Log.info(`Prime numbers in range from 1 - ${num} : ${res.toString()} `);
 }
 
 (() => {

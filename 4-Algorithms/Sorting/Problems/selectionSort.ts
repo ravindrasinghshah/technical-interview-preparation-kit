@@ -7,6 +7,8 @@
  * https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/
  */
 
+import { Log } from "../../../Log";
+
 function selectionSort(arr: Array<number>) {
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i;
@@ -26,7 +28,7 @@ function selectionSort(arr: Array<number>) {
 
 (() => {
   const nums = [100, -40, 500, -124, 0, 21, 7];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   const result = selectionSort(nums);
-  console.log(`Sorted array: ${result}`);
+  Log.info(`Sorted array: ${result}`);
 })();

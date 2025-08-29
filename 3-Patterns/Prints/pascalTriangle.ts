@@ -7,10 +7,12 @@
 1  3  3  1
  */
 
+import { Log } from "../../Log";
+
 function pascalTriangle(n: number) {
   let triangle: Array<number>[] = [];
   triangle.push([1]);
-  console.log(triangle);
+  Log.info(triangle);
   for (let i = 1; i < n; i++) {
     const prevRow = triangle[triangle.length - 1];
     const row = [];
@@ -20,7 +22,7 @@ function pascalTriangle(n: number) {
     }
     row.push(1);
     triangle.push(row);
-    console.log(triangle[triangle.length - 1]);
+    Log.info(triangle[triangle.length - 1]);
   }
 
   return triangle;
@@ -28,10 +30,10 @@ function pascalTriangle(n: number) {
 
 (() => {
   let rows = 5; //== [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
-  console.log(`Pascal Triangle for ${rows} :`);
+  Log.info(`Pascal Triangle for ${rows} :`);
   let result = pascalTriangle(rows);
 
   rows = 6; //== [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
-  console.log(`Pascal Triangle for ${rows} :`);
+  Log.info(`Pascal Triangle for ${rows} :`);
   result = pascalTriangle(rows);
 })();

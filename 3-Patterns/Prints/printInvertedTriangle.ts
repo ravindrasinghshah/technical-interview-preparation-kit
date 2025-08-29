@@ -5,6 +5,8 @@
  *  *  *
  */
 
+import { Log } from "../../Log";
+
 function printInvertedTriangle(n: number) {
   for (let row = 1; row <= n; row++) {
     let rowPattern = "";
@@ -16,7 +18,7 @@ function printInvertedTriangle(n: number) {
     for (let col = 1; col <= cols; col++) {
       rowPattern += "* ";
     }
-    console.log(rowPattern);
+    Log.info(rowPattern);
   }
 }
 (() => {

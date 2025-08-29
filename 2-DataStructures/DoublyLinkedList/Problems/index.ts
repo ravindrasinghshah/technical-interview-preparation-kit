@@ -2,6 +2,8 @@
  * run npx ts-node 2-DataStructures\DoublyLinkedList\Problems\index.ts
  */
 
+import { Log } from "../../../Log";
+
 class ListNode {
   data: string | number;
   prev: ListNode | null;
@@ -83,29 +85,29 @@ class DoublyLinkedList {
   print() {
     let curr = this.head;
     while (curr) {
-      console.log(curr.data);
+      Log.info(curr.data);
       curr = curr.next;
     }
-    console.log("---------------");
+    Log.info("---------------");
   }
 }
 
 (() => {
   const list = new DoublyLinkedList();
-  console.log("Is list empty? ", list.isEmpty());
+  Log.info("Is list empty? ", list.isEmpty());
   list.insertFirst(new ListNode("a"));
   list.add(new ListNode("b"));
   list.add(new ListNode("c"));
   list.add(new ListNode("d"));
   list.add(new ListNode("e"));
   list.print();
-  console.log('Does list contains "d"?', list.contains("d"));
-  console.log('Does list contains "f"?', list.contains("f"));
+  Log.info('Does list contains "d"?', list.contains("d"));
+  Log.info('Does list contains "f"?', list.contains("f"));
   list.delete("a");
   list.print();
   list.insertFirst(new ListNode("z"));
   list.print();
-  console.log("Reverse list:");
+  Log.info("Reverse list:");
   list.reverse();
   list.print();
 })();

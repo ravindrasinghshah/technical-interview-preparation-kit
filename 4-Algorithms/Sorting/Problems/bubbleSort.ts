@@ -6,6 +6,8 @@
  * https://www.geeksforgeeks.org/dsa/bubble-sort-algorithm/
  */
 
+import { Log } from "../../../Log";
+
 function bubbleSort(arr: Array<number>) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -21,7 +23,7 @@ function bubbleSort(arr: Array<number>) {
 
 (() => {
   const nums = [2, 3, 5, 7, 0, 1];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   const result = bubbleSort(nums);
-  console.log(`Sorted array: ${result}`);
+  Log.info(`Sorted array: ${result}`);
 })();

@@ -2,10 +2,12 @@
  * run npx ts-node 2-DataStructures\Strings\Problems\printSubSequence.ts
  */
 
+import { Log } from "../../../Log";
+
 //== TC = O(2^n) - This results in a binary tree with height n and 2^n leaf nodes, each representing a subsequence.
 function printSubSequence(seq: string, str: string): void {
   if (!str) {
-    if (seq && seq !== undefined) console.log(seq);
+    if (seq && seq !== undefined) Log.info(seq);
     return;
   }
   const char = str[0];

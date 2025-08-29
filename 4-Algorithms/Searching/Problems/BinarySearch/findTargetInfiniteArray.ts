@@ -6,6 +6,8 @@
   size of sub-array: (end - start + 1)
  */
 
+import { Log } from "../../../../Log";
+
 function findTargetInfiniteArray(nums: Array<number>, target: number) {
   function bs(left: number, right: number) {
     while (left <= right) {
@@ -35,14 +37,14 @@ function findTargetInfiniteArray(nums: Array<number>, target: number) {
   let nums = [1, 2, 3, 5, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
   let target = 19;
   let result = findTargetInfiniteArray(nums, target);
-  console.log(`${target} index position in [${nums}] is ${result}`);
+  Log.info(`${target} index position in [${nums}] is ${result}`);
   nums = [3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170];
   target = 10;
   result = findTargetInfiniteArray(nums, target);
-  console.log(`${target} index position in [${nums}] is [${result}]`);
+  Log.info(`${target} index position in [${nums}] is [${result}]`);
 
   nums = [2, 5, 7, 9];
   target = 3;
   result = findTargetInfiniteArray(nums, target);
-  console.log(`${target} index position in [${nums}] is [${result}]`);
+  Log.info(`${target} index position in [${nums}] is [${result}]`);
 })();

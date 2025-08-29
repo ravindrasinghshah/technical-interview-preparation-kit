@@ -2,6 +2,8 @@
  * cd to algos folder and then run "npx ts-node searchIn2D.ts"
  */
 
+import { Log } from "../../../../Log";
+
 function searchIn2D(nums: Array<number>[], target: number) {
   for (let row = 0; row < nums.length; row++) {
     for (let col = 0; col < nums[row].length; col++) {
@@ -18,7 +20,7 @@ function searchIn2D(nums: Array<number>[], target: number) {
     ],
     target = 1;
   let result = searchIn2D(nums, target);
-  console.log(`Does ${target} exists in [${nums}] array? ${result}`);
+  Log.info(`Does ${target} exists in [${nums}] array? ${result}`);
 
   (nums = [
     [3, 2, 5, 9],
@@ -26,5 +28,5 @@ function searchIn2D(nums: Array<number>[], target: number) {
   ]),
     (target = -11);
   result = searchIn2D(nums, target);
-  console.log(`Does ${target} exists in [${nums}] array? ${result}`);
+  Log.info(`Does ${target} exists in [${nums}] array? ${result}`);
 })();

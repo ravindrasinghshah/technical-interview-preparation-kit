@@ -5,6 +5,8 @@
  * This relationship is based on the property that the product of two numbers is equal to the product of their LCM and GCD.
  */
 
+import { Log } from "../../../Log";
+
 function gcd(num1: number, num2: number) {
   if (num2 == 0) return num1; //= base case
   return gcd(num2, num1 % num2);
@@ -18,13 +20,13 @@ function findLCM(a: number, b: number): number {
   let a = 4,
     b = 16;
   let result = findLCM(a, b);
-  console.log(`LCM of ${a} and ${b} is ${result}`);
+  Log.info(`LCM of ${a} and ${b} is ${result}`);
 
   (a = 2), (b = 7);
   result = findLCM(a, b);
-  console.log(`LCM of ${a} and ${b} is ${result}`);
+  Log.info(`LCM of ${a} and ${b} is ${result}`);
 
   (a = 5), (b = 10);
   result = findLCM(a, b);
-  console.log(`LCM of ${a} and ${b} is ${result}`);
+  Log.info(`LCM of ${a} and ${b} is ${result}`);
 })();

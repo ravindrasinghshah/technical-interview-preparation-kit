@@ -6,6 +6,8 @@
     maxChar("apple 1231111") === "1"
  */
 
+import { Log } from "../Log";
+
 function maxChar(str: string) {
   let m = new Map();
   for (const char of str) {
@@ -25,9 +27,9 @@ function maxChar(str: string) {
 (() => {
   let str = "abcccccccd";
   let result = maxChar(str);
-  console.log(`${str} - most commonly used: ${result}`);
+  Log.info(`${str} - most commonly used: ${result}`);
 
   str = "apple 1231111";
   result = maxChar(str);
-  console.log(`${str} - most commonly used: ${result}`);
+  Log.info(`${str} - most commonly used: ${result}`);
 })();

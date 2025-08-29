@@ -1,3 +1,5 @@
+import { Log } from "../Log";
+
 /**
  * run "npx ts-node 5-Exercises\IsDivisibleBy5.ts"
    Form a largest number which is divisible by 5
@@ -40,17 +42,17 @@ function IsDivisibleBy5(nums: Array<number>) {
 (() => {
   let nums = [1, 0, 0, 1];
   let result = IsDivisibleBy5(nums);
-  console.log(`${nums} - largest number possible: ${result}`);
+  Log.info(`${nums} - largest number possible: ${result}`);
 
   nums = [5, 1, 2, 5];
   result = IsDivisibleBy5(nums);
-  console.log(`${nums} - largest number possible: ${result}`);
+  Log.info(`${nums} - largest number possible: ${result}`);
 
   nums = [5, 1, 2];
   result = IsDivisibleBy5(nums);
-  console.log(`${nums} - largest number possible: ${result}`);
+  Log.info(`${nums} - largest number possible: ${result}`);
 
   nums = [1];
   result = IsDivisibleBy5(nums);
-  console.log(`${nums} - largest number possible: ${result}`);
+  Log.info(`${nums} - largest number possible: ${result}`);
 })();

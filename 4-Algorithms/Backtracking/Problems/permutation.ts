@@ -7,6 +7,8 @@ or there isn't a clear way to find a solution without checking all logical possi
  * Worst case complexity - O(N!∗N^2)
  */
 
+import { Log } from "../../../Log";
+
 function permutation(nums: Array<number>): Array<number>[] {
   function backtracking(arr: Array<number>) {
     //== base case to break the recursion
@@ -31,12 +33,12 @@ function permutation(nums: Array<number>): Array<number>[] {
 
 (() => {
   let nums = [1, 2, 3];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   let result = permutation(nums);
-  console.log(`Permutations:`, result);
+  Log.info(`Permutations:`, result);
 
   nums = [2, 3, 5, 7, 0, 1];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   result = permutation(nums);
-  console.log(`Permutations:`, result);
+  Log.info(`Permutations:`, result);
 })();

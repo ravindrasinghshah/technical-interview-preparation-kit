@@ -6,6 +6,8 @@
  * https://www.geeksforgeeks.org/dsa/find-nth-magic-number/
  */
 
+import { Log } from "../../../../Log";
+
 function findNthMagicNumber(num: number) {
   let base = 5,
     ans = 0;
@@ -20,9 +22,9 @@ function findNthMagicNumber(num: number) {
 (() => {
   let n = 2;
   let result = findNthMagicNumber(n);
-  console.log(`Magic number of ${n} is ${result}`);
+  Log.info(`Magic number of ${n} is ${result}`);
 
   n = 5;
   result = findNthMagicNumber(n);
-  console.log(`Magic number of ${n} is ${result}`);
+  Log.info(`Magic number of ${n} is ${result}`);
 })();

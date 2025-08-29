@@ -1,6 +1,9 @@
 /**
  * cd to Recursion and run node reverseNumber.ts
  */
+
+import { Log } from "../../../Log";
+
 //== if we have to pass additional values then better create a new function
 function reverseNumber(n: number) {
   let sum = 0;
@@ -18,17 +21,17 @@ function reverseNumber(n: number) {
 (() => {
   let num = 12345;
   let result = reverseNumber(num);
-  console.log(`Reverse of digits ${num} is ${result}`);
+  Log.info(`Reverse of digits ${num} is ${result}`);
 
   num = 123;
   result = reverseNumber(num);
-  console.log(`Reverse of digits ${num} is ${result}`);
+  Log.info(`Reverse of digits ${num} is ${result}`);
 
   num = 100;
   result = reverseNumber(num);
-  console.log(`Reverse of digits ${num} is ${result}`);
+  Log.info(`Reverse of digits ${num} is ${result}`);
 
   num = 102;
   result = reverseNumber(num);
-  console.log(`Reverse of digits ${num} is ${result}`);
+  Log.info(`Reverse of digits ${num} is ${result}`);
 })();

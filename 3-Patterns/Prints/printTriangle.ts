@@ -5,6 +5,8 @@
  *  *  *
  */
 
+import { Log } from "../../Log";
+
 function printTriangle(n: number) {
   for (let row = 1; row <= n; row++) {
     let rowPattern = "";
@@ -15,7 +17,7 @@ function printTriangle(n: number) {
     for (let col = 1; col <= row; col++) {
       rowPattern += "* ";
     }
-    console.log(rowPattern);
+    Log.info(rowPattern);
   }
 }
 

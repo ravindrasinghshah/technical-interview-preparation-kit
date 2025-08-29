@@ -1,3 +1,5 @@
+type MessageType = string | number | Array<string | number>;
+
 export class Log {
   private static colors = {
     green: "\x1b[32m",
@@ -6,14 +8,15 @@ export class Log {
     bold: "\x1b[1m",
     reset: "\x1b[0m",
   };
-  static info(message: string, ...args: any[]): void {
+
+  static info(message: MessageType, ...args: any[]): void {
     console.log(
       `${Log.colors.green}INFO:${Log.colors.reset} ${message}`,
       ...args
     );
   }
 
-  static warn(message: string, ...args: any[]): void {
+  static warn(message: MessageType, ...args: any[]): void {
     console.warn(`%cWARN: ${message}`, Log.colors.orange, ...args);
     console.log(
       `${Log.colors.orange}WARN:${Log.colors.reset} ${message}`,
@@ -21,7 +24,7 @@ export class Log {
     );
   }
 
-  static debug(message: string, ...args: any[]): void {
+  static debug(message: MessageType, ...args: any[]): void {
     console.log(
       `${Log.colors.blue}DEBUG:${Log.colors.reset} ${message}`,
       ...args

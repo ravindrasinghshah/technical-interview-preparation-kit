@@ -2,6 +2,8 @@
  * cd to algos folder and then run "npx ts-node findEvenDigitsCount.ts"
  */
 
+import { Log } from "../../../../Log";
+
 function findEvenDigitsCount(nums: Array<number>) {
   let count = 0;
   for (const num of nums) {
@@ -13,9 +15,9 @@ function findEvenDigitsCount(nums: Array<number>) {
 (() => {
   let nums = [3, 2, 5, 8, 1, 9];
   let result = findEvenDigitsCount(nums);
-  console.log(`In [${nums}] array count of even digits is: ${result}`);
+  Log.info(`In [${nums}] array count of even digits is: ${result}`);
 
   nums = [3, 2, 5, 8, -12, -90];
   result = findEvenDigitsCount(nums);
-  console.log(`In [${nums}] array count of even digits is: ${result}`);
+  Log.info(`In [${nums}] array count of even digits is: ${result}`);
 })();

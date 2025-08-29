@@ -5,6 +5,8 @@ https://www.geeksforgeeks.org/dsa/find-rotation-count-rotated-sorted-array/
  * Complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function rotationCount(nums: Array<number>) {
   let l = 0,
     r = nums.length - 1;
@@ -21,17 +23,17 @@ function rotationCount(nums: Array<number>) {
 (() => {
   let nums = [15, 18, 2, 3, 6, 12];
   let result = rotationCount(nums); //= 2
-  console.log(`# Array [${nums}] is rotated: ${result} times`);
+  Log.info(`# Array [${nums}] is rotated: ${result} times`);
 
   nums = [7, 9, 11, 12, 5];
   result = rotationCount(nums); //= 4
-  console.log(`# Array [${nums}] is rotated: ${result} times`);
+  Log.info(`# Array [${nums}] is rotated: ${result} times`);
 
   nums = [7, 9, 11, 12, 15];
   result = rotationCount(nums); //= 5
-  console.log(`# Array [${nums}] is rotated: ${result} times`);
+  Log.info(`# Array [${nums}] is rotated: ${result} times`);
 
   nums = [5, 6, 7, 0, 1, 2, 3];
   result = rotationCount(nums); //= 3
-  console.log(`# Array [${nums}] is rotated: ${result} times`);
+  Log.info(`# Array [${nums}] is rotated: ${result} times`);
 })();

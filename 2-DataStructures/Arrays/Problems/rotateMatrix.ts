@@ -8,6 +8,8 @@
  * 7, 8, 9     9, 6, 3
  */
 
+import { Log } from "../../../Log";
+
 function rotateMatrix(matrix: Array<number>[]) {
   let len = matrix.length;
   //== transpose
@@ -31,7 +33,7 @@ function rotateMatrix(matrix: Array<number>[]) {
       e--;
     }
   }
-  console.log(matrix);
+  Log.info(matrix);
 }
 
 (() => {
@@ -40,7 +42,7 @@ function rotateMatrix(matrix: Array<number>[]) {
     [4, 5, 6],
     [7, 8, 9],
   ]; // [[7,4,1],[8,5,2],[9,6,3]]
-  console.log(`# Rotate matrix`, matrix);
+  Log.info(`# Rotate matrix`, matrix);
   rotateMatrix(matrix);
 
   matrix = [
@@ -49,6 +51,6 @@ function rotateMatrix(matrix: Array<number>[]) {
     [13, 3, 6, 7],
     [15, 14, 12, 16],
   ]; // [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
-  console.log(`# Rotate matrix`, matrix);
+  Log.info(`# Rotate matrix`, matrix);
   rotateMatrix(matrix);
 })();

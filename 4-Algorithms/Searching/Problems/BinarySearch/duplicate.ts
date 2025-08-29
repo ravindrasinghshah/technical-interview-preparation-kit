@@ -4,6 +4,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function bs_duplicate(nums: Array<number>, target: number) {
   let left = 0;
   let right = nums.length;
@@ -19,11 +21,11 @@ function bs_duplicate(nums: Array<number>, target: number) {
 
 (() => {
   const nums = [1, 2, 3, 5, 7, 10, 10];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   let result = bs_duplicate(nums, 5);
-  console.log(`Left most index of duplicate: ${result}`);
+  Log.info(`Left most index of duplicate: ${result}`);
   result = bs_duplicate(nums, 10);
-  console.log(`# Left most index of duplicate: ${result}`);
+  Log.info(`# Left most index of duplicate: ${result}`);
 
   /**
    * [1, 2, 3, 5, 7, 10]

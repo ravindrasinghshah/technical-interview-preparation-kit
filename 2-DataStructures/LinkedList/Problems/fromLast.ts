@@ -4,6 +4,7 @@
  * Do not call the 'size' method of the linked list
  * Assume that n will always be less than the length of the list.
  */
+import { Log } from "../../../Log";
 import { LinkedList } from "./index";
 
 function fromLast(list: LinkedList, n: number) {
@@ -24,5 +25,5 @@ function fromLast(list: LinkedList, n: number) {
   list.insertLast("d");
 
   const result = fromLast(list, 2);
-  console.log("From last: ", result);
+  Log.info("From last: ", result);
 })();

@@ -4,6 +4,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function bs_right_most_insertion(nums: Array<number>, target: number) {
   let left = 0;
   let right = nums.length;
@@ -18,13 +20,13 @@ function bs_right_most_insertion(nums: Array<number>, target: number) {
 
 (() => {
   const nums = [1, 2, 3, 5, 7, 10];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   let result = bs_right_most_insertion(nums, 4);
-  console.log(
+  Log.info(
     `# When target is within sorted array, right most insertion index: ${result}`
   );
   result = bs_right_most_insertion(nums, 14);
-  console.log(
+  Log.info(
     `# When target is not within sorted array, right most insertion index: ${result}`
   );
 

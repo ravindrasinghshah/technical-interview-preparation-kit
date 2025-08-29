@@ -2,6 +2,8 @@
  * cd to Recursion/array and run npx ts-node findAllIndexesOfK.ts
  */
 
+import { Log } from "../../../Log";
+
 // function findAllIndexesOfK(nums, target) {
 //     function findElement(arr, i, indexes) {
 //         //== base condition: traversed all indexes
@@ -34,10 +36,10 @@ function findAllIndexesOfK(nums: Array<number>, target: number) {
   let nums = [1, 2, 4, 8, 10];
   let target = 8;
   let result = findAllIndexesOfK(nums, target);
-  console.log(`Index position of ${target} in [${nums}] array is: [${result}]`);
+  Log.info(`Index position of ${target} in [${nums}] array is: [${result}]`);
 
   nums = [1, 2, 4, 5, 1];
   target = 1;
   result = findAllIndexesOfK(nums, target);
-  console.log(`Index position of ${target} in [${nums}] array is: [${result}]`);
+  Log.info(`Index position of ${target} in [${nums}] array is: [${result}]`);
 })();

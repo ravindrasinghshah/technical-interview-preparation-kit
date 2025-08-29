@@ -102,26 +102,26 @@ class LinkedList {
 
 // --- Test the LinkedList class ---
 // const list = new LinkedList();
-// console.log("list head:", list.head);
+// Log.info("list head:", list.head);
 // list.insertFirst(10);
-// console.log("list head and next", list.head, list.head.next);
+// Log.info("list head and next", list.head, list.head.next);
 // list.insertFirst(20);
-// console.log("list head and next", list.head, list.head.next);
+// Log.info("list head and next", list.head, list.head.next);
 // list.insertFirst(30);
-// console.log("list head and next", list.head, list.head.next);
-// console.log("Size of list:", list.size());
-// console.log("Get first value:", list.getFirst());
-// console.log("Get last value:", list.getLast());
+// Log.info("list head and next", list.head, list.head.next);
+// Log.info("Size of list:", list.size());
+// Log.info("Get first value:", list.getFirst());
+// Log.info("Get last value:", list.getLast());
 // // list.clear();
-// // console.log("After clear, list:", list.head);
+// // Log.info("After clear, list:", list.head);
 // list.removeFirst();
-// console.log("After remove first, list:", list.head);
+// Log.info("After remove first, list:", list.head);
 // list.removeLast();
-// console.log("After remove last, list:", list.head);
+// Log.info("After remove last, list:", list.head);
 // list.insertLast(4);
-// console.log("After insert last, list:", list.head);
+// Log.info("After insert last, list:", list.head);
 // list.insertLast(5);
-// list.removeAt(1); console.log("After remove at, list:", list.head);
-// list.insertAt(10, 99); console.log("After insert at, list:", list.head);
+// list.removeAt(1); Log.info("After remove at, list:", list.head);
+// list.insertAt(10, 99); Log.info("After insert at, list:", list.head);
 
 export { Node, LinkedList };

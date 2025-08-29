@@ -4,6 +4,8 @@
  * Complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function findFirstAndLastPosition(nums: Array<number>, target: number) {
   let ans = [];
   function findIndexPos(findFirst = false) {
@@ -32,9 +34,9 @@ function findFirstAndLastPosition(nums: Array<number>, target: number) {
   let nums = [1, 2, 3, 5, 7, 10, 10];
   let target = 10;
   let result = findFirstAndLastPosition(nums, target);
-  console.log(`First and Last index of ${target} in [${nums}] is [${result}]`);
+  Log.info(`First and Last index of ${target} in [${nums}] is [${result}]`);
   nums = [5, 7, 7, 8, 8, 10];
   target = 6;
   result = findFirstAndLastPosition(nums, target);
-  console.log(`First and Last index of ${target} in [${nums}] is [${result}]`);
+  Log.info(`First and Last index of ${target} in [${nums}] is [${result}]`);
 })();

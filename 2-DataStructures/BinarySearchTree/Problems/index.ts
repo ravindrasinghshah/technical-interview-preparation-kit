@@ -40,9 +40,4 @@ class Node {
   }
 }
 
-// let root = new Node(0);
-// root.insert(-1);
-// root.insert(2); root.insert(3);
-// console.log("BST :", root);
-
 export { Node };

@@ -4,6 +4,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function binarySearch(nums: Array<number>, target: number) {
   let left = 0;
   let right = nums.length - 1;
@@ -22,13 +24,13 @@ function binarySearch(nums: Array<number>, target: number) {
 
 (() => {
   const nums = [1, 2, 3, 5, 7, 10];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   const result1 = binarySearch(nums, 7);
-  console.log(`Target found on index: ${result1}`);
+  Log.info(`Target found on index: ${result1}`);
 
   const result2 = binarySearch(nums, 17);
-  console.log(`${17} not in array, insertion index: ${result2}`);
+  Log.info(`${17} not in array, insertion index: ${result2}`);
 
   const result3 = binarySearch(nums, 4);
-  console.log(`${4} not in array, insertion index: ${result3}`);
+  Log.info(`${4} not in array, insertion index: ${result3}`);
 })();

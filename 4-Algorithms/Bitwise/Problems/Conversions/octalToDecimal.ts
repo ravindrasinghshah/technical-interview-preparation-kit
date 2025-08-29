@@ -4,6 +4,8 @@
  * Note: Number has limit of 2^53 - 1 (~16 digits) - for more length number use string.
  */
 
+import { Log } from "../../../../Log";
+
 function octalToDecimal(num: number) {
   let decimal = 0;
   let n = 0;
@@ -19,9 +21,9 @@ function octalToDecimal(num: number) {
 (() => {
   let n = 21;
   let result = octalToDecimal(n);
-  console.log(`Octal ${n} in decimal is ${result}`);
+  Log.info(`Octal ${n} in decimal is ${result}`);
 
   n = 15;
   result = octalToDecimal(n);
-  console.log(`Octal ${n} in decimal is ${result}`);
+  Log.info(`Octal ${n} in decimal is ${result}`);
 })();

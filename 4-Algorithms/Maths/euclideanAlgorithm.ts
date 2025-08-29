@@ -11,6 +11,8 @@
    Step 5: return 6
  */
 
+import { Log } from "../../Log";
+
 function findGCD(num1: number, num2: number) {
   if (num2 == 0) return num1; //= base case
   return findGCD(num2, num1 % num2);
@@ -20,9 +22,9 @@ function findGCD(num1: number, num2: number) {
   let num1 = 5,
     num2 = 3;
   let result = findGCD(num1, num2);
-  console.log(`GCD of ${num1} and ${num2} is ${result}`);
+  Log.info(`GCD of ${num1} and ${num2} is ${result}`);
 
   (num1 = 18), (num2 = 9);
   result = findGCD(num1, num2);
-  console.log(`GCD of ${num1} and ${num2} is ${result}`);
+  Log.info(`GCD of ${num1} and ${num2} is ${result}`);
 })();

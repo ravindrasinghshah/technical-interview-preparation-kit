@@ -2,6 +2,7 @@
  * run "npx ts-node 2-DataStructures\LinkedList\Problems\circular.ts"
  */
 // check if the linked list is circular
+import { Log } from "../../../Log";
 import { LinkedList, Node } from "./index";
 
 function circular(list: LinkedList) {
@@ -27,5 +28,5 @@ function circular(list: LinkedList) {
   c.next = b;
 
   const result = circular(list); // true
-  console.log("Given list is circular: ", result);
+  Log.info("Given list is circular: ", result);
 })();

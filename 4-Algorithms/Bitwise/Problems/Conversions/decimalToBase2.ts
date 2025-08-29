@@ -3,6 +3,8 @@
  * Convert decimal number to base 2 number
  */
 
+import { Log } from "../../../../Log";
+
 function decimalToBase2(num: number) {
   let base2 = "";
   while (num >= 1) {
@@ -23,15 +25,15 @@ function decimalToBase2_recursion(num: number, remainder: string = "") {
 (() => {
   let n = 2;
   let result = decimalToBase2(n);
-  console.log(`Number ${n} in base 2 is ${result}`);
+  Log.info(`Number ${n} in base 2 is ${result}`);
 
   n = 16;
   result = decimalToBase2(n);
-  console.log(`Number ${n} in base 2 is ${result}`);
+  Log.info(`Number ${n} in base 2 is ${result}`);
   n = 17;
   result = decimalToBase2(n);
-  console.log(`Number ${n} in base 2 is ${result}`);
+  Log.info(`Number ${n} in base 2 is ${result}`);
   n = 14698;
   result = decimalToBase2(n);
-  console.log(`Number ${n} in base 2 is ${result}`);
+  Log.info(`Number ${n} in base 2 is ${result}`);
 })();

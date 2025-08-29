@@ -5,6 +5,8 @@
  * Complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function rotatedArrayWithPivot(nums: Array<number>, target: number) {
   //== find pivot to know the start and end of rotated array, then search index of target/
   function findPivotIndex() {
@@ -59,17 +61,17 @@ function rotatedArray(nums: Array<number>, target: number) {
   let nums = [4, 5, 6, 7, 0, 1, 2],
     target = 7; //== 3
   let result = rotatedArray(nums, target);
-  console.log(`# Index position of ${target} in [${nums}] is : ${result}`);
+  Log.info(`# Index position of ${target} in [${nums}] is : ${result}`);
 
   (nums = [4, 5, 6, 7, 0, 1, 2]), (target = 4); //== 0
   result = rotatedArray(nums, target);
-  console.log(`# Index position of ${target} in [${nums}] is : ${result}`);
+  Log.info(`# Index position of ${target} in [${nums}] is : ${result}`);
 
   (nums = [4, 5, 6, 7, 0, 1, 2]), (target = 2); //== 6
   result = rotatedArray(nums, target);
-  console.log(`# Index position of ${target} in [${nums}] is : ${result}`);
+  Log.info(`# Index position of ${target} in [${nums}] is : ${result}`);
 
   (nums = [4, 5, 6, 7, 0, 1, 2]), (target = 3); //== -1
   result = rotatedArray(nums, target);
-  console.log(`# Index position of ${target} in [${nums}] is : ${result}`);
+  Log.info(`# Index position of ${target} in [${nums}] is : ${result}`);
 })();

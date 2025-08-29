@@ -2,6 +2,7 @@
  * run "npx ts-node 2-DataStructures\LinkedList\Problems\reverse.ts"
  * Given a linked list, return reversed list.
  */
+import { Log } from "../../../Log";
 import { LinkedList } from "./index";
 function reverse(list: LinkedList) {
   let reverseList = null;
@@ -23,5 +24,5 @@ function reverse(list: LinkedList) {
   list.insertLast("4");
 
   const result = reverse(list);
-  console.log("Reversed: ", JSON.stringify(result));
+  Log.info("Reversed: ", JSON.stringify(result));
 })();

@@ -9,6 +9,8 @@
  *      If range is [1,N] then element will be at index = value - 1; [1,2,3,4...N] -> N values;
  */
 
+import { Log } from "../../Log";
+
 function findDuplicate(arr: Array<number>) {
   let idx = 0;
   while (idx < arr.length) {
@@ -26,17 +28,17 @@ function findDuplicate(arr: Array<number>) {
 (() => {
   let nums = [1, 3, 4, 2, 2]; // 2
   let result = findDuplicate(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [3, 1, 3, 4, 2]; // 3
   result = findDuplicate(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [3, 3, 3, 3, 3]; // 3
   result = findDuplicate(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [1, 2, 3, 4, 5]; // -1
   result = findDuplicate(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 })();

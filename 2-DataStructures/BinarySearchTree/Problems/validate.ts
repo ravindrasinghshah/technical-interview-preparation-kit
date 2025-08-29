@@ -22,6 +22,7 @@ Answer: True
 Answer: false
  */
 
+import { Log } from "../../../Log";
 import { Node } from "./index";
 
 //== Depth First Search - recursive
@@ -80,11 +81,11 @@ function validate_bfs(root: Node) {
   root.insert(0);
   root.insert(3);
   root.insert(5);
-  console.log("BST 1: ", root);
+  Log.info("BST 1: ", root);
   const result1 = validate_bfs(root);
-  console.log("Is BST 1 valid? ", result1);
+  Log.info("Is BST 1 valid? ", result1);
   root.left = new Node(10);
-  console.log("BST 2: ", root);
+  Log.info("BST 2: ", root);
   const result2 = validate_bfs(root);
-  console.log("Is BST 2 valid? ", result2);
+  Log.info("Is BST 2 valid? ", result2);
 })();

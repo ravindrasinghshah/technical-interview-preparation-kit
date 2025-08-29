@@ -6,11 +6,13 @@
  * output: [ ['cat', 'sand', 'dog'], ['cats', 'and', 'dog'] ]
  */
 
+import { Log } from "../Log";
+
 function findWords(word_list: Array<string>, str: string) {}
 
 (() => {
   let word_list = ["dog", "cats", "sand", "cat", "and"],
     str = "catsanddog";
   let result = findWords(word_list, str);
-  console.log("Words: ", result);
+  Log.info("Words: ", result);
 })();

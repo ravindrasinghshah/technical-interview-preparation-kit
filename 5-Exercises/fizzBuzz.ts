@@ -5,13 +5,15 @@
   For the multiples of five print 'buzz'
   For numbers which are multiples of both three and five print 'fizzbuzz'
    Examples: fizzBuzz(5);
-    // Output from console.log:
+    // Output:
     // 1
     // 2
     // fizz
     // 4
     // buzz
  */
+
+import { Log } from "../Log";
 
 function fizzBuzz(n: number) {
   let arr = [];
@@ -34,9 +36,9 @@ function fizzBuzz(n: number) {
 (() => {
   let n = 5;
   let result = fizzBuzz(n);
-  console.log(`${n} : ${result}`);
+  Log.info(`${n} : ${result}`);
 
   n = 18;
   result = fizzBuzz(n);
-  console.log(`${n} : ${result}`);
+  Log.info(`${n} : ${result}`);
 })();

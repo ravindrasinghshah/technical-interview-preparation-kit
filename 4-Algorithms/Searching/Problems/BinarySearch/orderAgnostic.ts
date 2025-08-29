@@ -1,3 +1,5 @@
+import { Log } from "../../../../Log";
+
 /**
  * cd to algos folder and then run "npx ts-node orderAgnostic.ts"
    Find the left-most index of duplicate item.
@@ -25,7 +27,7 @@ function orderAgnostic(nums: Array<number>, target: number) {
 (() => {
   const nums = [10, 9, 8, 5, 3],
     target = 5;
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   let result = orderAgnostic(nums, target);
-  console.log(`Index position of ${target} : ${result}`);
+  Log.info(`Index position of ${target} : ${result}`);
 })();

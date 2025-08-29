@@ -2,6 +2,8 @@
  * cd to algos folder and then run "npx ts-node findLengthOfDigits.ts"
  */
 
+import { Log } from "../../../../Log";
+
 function findLengthOfDigits(nums: number) {
   let count = 0;
   while (nums > 0) {
@@ -14,9 +16,9 @@ function findLengthOfDigits(nums: number) {
 (() => {
   let nums = 15647;
   let result = findLengthOfDigits(nums);
-  console.log(`Length of ${nums} is: ${result}`);
+  Log.info(`Length of ${nums} is: ${result}`);
 
   nums = 98;
   result = findLengthOfDigits(nums);
-  console.log(`Length of ${nums} is: ${result}`);
+  Log.info(`Length of ${nums} is: ${result}`);
 })();

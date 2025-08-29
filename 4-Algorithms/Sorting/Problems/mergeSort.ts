@@ -5,6 +5,8 @@
  * https://www.geeksforgeeks.org/dsa/merge-sort/
  */
 
+import { Log } from "../../../Log";
+
 function mergeSort(arr: Array<number>): Array<number> {
   if (arr.length === 1) return arr;
   let middleIndex = Math.floor(arr.length / 2);
@@ -28,7 +30,7 @@ function merge(left: Array<number>, right: Array<number>): Array<number> {
 
 (() => {
   const nums = [100, -40, 500, -124, 0, 21, 7];
-  console.log(`Array provided: ${nums}`);
+  Log.info(`Array provided: ${nums}`);
   const result = mergeSort(nums);
-  console.log(`Sorted array: ${result}`);
+  Log.info(`Sorted array: ${result}`);
 })();

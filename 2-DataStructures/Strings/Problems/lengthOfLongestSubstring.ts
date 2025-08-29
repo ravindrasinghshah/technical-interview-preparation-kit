@@ -5,6 +5,8 @@
  *  https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  */
 
+import { Log } from "../../../Log";
+
 function lengthOfLongestSubstring(s: string): number {
   let max = 0,
     seen = new Set(),
@@ -28,18 +30,18 @@ function lengthOfLongestSubstring(s: string): number {
   let str = "abcabcbb"; // 3 - abc
   let result = lengthOfLongestSubstring(str);
   // The answer is "abc", with the length of 3.
-  console.log(
+  Log.info(
     `The length of longest substring for ${str} is, length of ${result}`
   );
 
   str = "bbbbb"; // 1 - b
   result = lengthOfLongestSubstring(str);
-  console.log(
+  Log.info(
     `The length of longest substring for ${str} is, length of ${result}`
   );
   str = "pwwkew"; // 3 - wke
   result = lengthOfLongestSubstring(str);
-  console.log(
+  Log.info(
     `The length of longest substring for ${str} is, length of ${result}`
   );
 })();

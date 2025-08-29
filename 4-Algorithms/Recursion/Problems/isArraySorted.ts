@@ -2,6 +2,8 @@
  * cd to Recursion/array and run npx ts-node isArraySorted.ts
  */
 
+import { Log } from "../../../Log";
+
 function isArraySorted(nums: Array<number>) {
   function isSorted(arr: Array<number>, i: number): boolean {
     //== base condition: traversed all indexes
@@ -15,9 +17,9 @@ function isArraySorted(nums: Array<number>) {
 (() => {
   let nums = [1, 2, 4, 8, 10];
   let result = isArraySorted(nums);
-  console.log(`Is [${nums}] array sorted? ${result}`);
+  Log.info(`Is [${nums}] array sorted? ${result}`);
 
   nums = [1, 2, 4, 5, 1];
   result = isArraySorted(nums);
-  console.log(`Is [${nums}] array sorted? ${result}`);
+  Log.info(`Is [${nums}] array sorted? ${result}`);
 })();

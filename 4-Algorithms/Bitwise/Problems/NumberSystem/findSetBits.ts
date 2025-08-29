@@ -4,6 +4,8 @@
  * Complexity log n
  */
 
+import { Log } from "../../../../Log";
+
 function findSetBits(num: number) {
   let count = 0;
   while (num > 0) {
@@ -16,7 +18,7 @@ function findSetBits(num: number) {
 (() => {
   let num = 4; // 100 -> 1
   let result = findSetBits(num);
-  console.log(
+  Log.info(
     `Decimal number ${num} binary format is ${num.toString(
       2
     )} and set bits are ${result}`
@@ -24,7 +26,7 @@ function findSetBits(num: number) {
 
   num = 40; // 101000 -> 2
   result = findSetBits(num);
-  console.log(
+  Log.info(
     `Decimal number ${num} binary format is ${num.toString(
       2
     )} and set bits are ${result}`

@@ -2,6 +2,8 @@
  * cd to Recursion and run npx ts-node numberOfSteps.ts
  */
 
+import { Log } from "../../../Log";
+
 function numberOfSteps_s(n: number, steps: number = 0) {
   if (n === 0) {
     return steps;
@@ -21,9 +23,9 @@ function numberOfSteps(n: number): number {
 (() => {
   let num = 5;
   let result = numberOfSteps(num);
-  console.log(`Total zeros in ${num} is ${result}`);
+  Log.info(`Total zeros in ${num} is ${result}`);
 
   num = 10;
   result = numberOfSteps(num);
-  console.log(`Total zeros in ${num} is ${result}`);
+  Log.info(`Total zeros in ${num} is ${result}`);
 })();

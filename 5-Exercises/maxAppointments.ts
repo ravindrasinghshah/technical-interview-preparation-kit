@@ -14,6 +14,8 @@ Example: Input : s[] = {75250, 50074, 43659, 8931, 11273, 27545, 50879, 77924}, 
 Output : 6 7 1
  */
 
+import { Log } from "../Log";
+
 function maxAppointments(s: Array<number>, f: Array<number>) {
   let meetings = [];
   for (let i = 0; i < s.length; i++) {
@@ -25,7 +27,7 @@ function maxAppointments(s: Array<number>, f: Array<number>) {
     const startTime = meetings[i][1];
     if (startTime >= prevEndTime) {
       prevEndTime = meetings[i][2];
-      console.log(startTime, prevEndTime);
+      Log.info(startTime, prevEndTime);
     }
   }
 }
@@ -35,7 +37,7 @@ function maxAppointments(s: Array<number>, f: Array<number>) {
     f = [2, 4, 6, 7, 9, 9];
   maxAppointments(s, f);
 
-  console.log(`=================`);
+  Log.info(`=================`);
   (s = [75250, 50074, 43659, 8931, 11273, 27545, 50879, 77924]),
     (f = [112960, 114515, 81825, 93424, 54316, 35533, 73383, 160252]);
   maxAppointments(s, f);

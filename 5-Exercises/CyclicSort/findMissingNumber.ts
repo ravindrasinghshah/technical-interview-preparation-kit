@@ -8,6 +8,8 @@
  *      If range is [1,N] then element will be at index = value - 1; [1,2,3,4...N] -> N values;
  */
 
+import { Log } from "../../Log";
+
 function findMissingNumber(nums: Array<number>) {
   let idx = 0;
   while (idx < nums.length) {
@@ -29,13 +31,13 @@ function findMissingNumber(nums: Array<number>) {
 (() => {
   let nums = [3, 0, 1]; // 2
   let result = findMissingNumber(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]; // 8
   result = findMissingNumber(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 
   nums = [0, 1]; // 2
   result = findMissingNumber(nums);
-  console.log(`[${nums}] : ${result}`);
+  Log.info(`[${nums}] : ${result}`);
 })();

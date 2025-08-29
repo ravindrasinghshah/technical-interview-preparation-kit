@@ -4,6 +4,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function findPivot(nums: Array<number>) {
   let left = 0;
   let right = nums.length - 1;
@@ -20,9 +22,9 @@ function findPivot(nums: Array<number>) {
 (() => {
   let nums = [1, 2, 3, 5, 7, 10];
   let result = findPivot(nums); //== -1
-  console.log(`# Pivot in array [${nums}] is ${result}`);
+  Log.info(`# Pivot in array [${nums}] is ${result}`);
 
   nums = [4, 5, 6, 7, 0, 1, 2];
   result = findPivot(nums); //== 3
-  console.log(`# Pivot in array [${nums}] is ${result}`);
+  Log.info(`# Pivot in array [${nums}] is ${result}`);
 })();

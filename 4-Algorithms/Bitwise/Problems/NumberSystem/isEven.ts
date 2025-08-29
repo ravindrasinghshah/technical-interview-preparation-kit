@@ -2,6 +2,8 @@
  * run "npx ts-node 4-Algorithms\Bitwise\Problems\NumberSystem\isEven.ts"
  */
 
+import { Log } from "../../../../Log";
+
 function isEven(num: number) {
   return (num & 1) === 0;
 }
@@ -9,9 +11,9 @@ function isEven(num: number) {
 (() => {
   let n = 21;
   let result = isEven(n);
-  console.log(`Is ${n} an even number? ${result}`);
+  Log.info(`Is ${n} an even number? ${result}`);
 
   n = 22;
   result = isEven(n);
-  console.log(`Is ${n} an even number? ${result}`);
+  Log.info(`Is ${n} an even number? ${result}`);
 })();

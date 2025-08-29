@@ -3,6 +3,8 @@
    Palindrome is a string which is same after reversing characters.
  */
 
+import { Log } from "../../Log";
+
 function isPalindromeStack(str: string): boolean {
   let start = 0;
   let end = str.length;
@@ -22,9 +24,9 @@ function isPalindromeStack(str: string): boolean {
 (() => {
   let str = "10s01";
   let result = isPalindromeStack(str);
-  console.log(`Is ${str} palindrome? ${result}`);
+  Log.info(`Is ${str} palindrome? ${result}`);
 
   str = "10sa01";
   result = isPalindromeStack(str);
-  console.log(`Is ${str} palindrome? ${result}`);
+  Log.info(`Is ${str} palindrome? ${result}`);
 })();

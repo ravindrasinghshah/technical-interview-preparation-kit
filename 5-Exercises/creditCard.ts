@@ -8,6 +8,8 @@
 // Visa             | 4                 | 16
 // Visa Electron    | 4026              | 16
 
+import { Log } from "../Log";
+
 const CREDIT_CARD_TYPE_CONFIG = [
   {
     name: "American Express",
@@ -51,29 +53,29 @@ function getCreditCardType(ccNumber: string) {
   let result = null,
     num = "340000000000000";
   result = getCreditCardType(num); // American Express
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "36000000000000";
   result = getCreditCardType(num); // Diners Club
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "360000000000000";
   result = getCreditCardType(num); // null unsupported length + prefix combo
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "34000000000000";
   result = getCreditCardType(num); // unsupported length + prefix combo
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "1234";
   result = getCreditCardType(num); // unsupported length + prefix combo
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "4000000000000000";
   result = getCreditCardType(num);
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "4026000000000000";
   result = getCreditCardType(num);
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "4036000000000000";
   result = getCreditCardType(num);
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
   num = "400000000000000";
   result = getCreditCardType(num); // unsupported length + prefix combo
-  console.log(`${num} is ${result}`);
+  Log.info(`${num} is ${result}`);
 })();

@@ -1,3 +1,5 @@
+import { Log } from "../../../Log";
+
 /**
  * run npx ts-node 4-Algorithms\Recursion\Problems\factorial_dp.ts
  */
@@ -20,9 +22,9 @@ function factorial_dp(n: number) {
 (() => {
   let num = 4;
   let result = factorial_dp(num);
-  console.log(`factorial of ${num} is ${result}`);
+  Log.info(`factorial of ${num} is ${result}`);
 
   num = 20;
   result = factorial_dp(num);
-  console.log(`factorial of ${num} is ${result}`);
+  Log.info(`factorial of ${num} is ${result}`);
 })();

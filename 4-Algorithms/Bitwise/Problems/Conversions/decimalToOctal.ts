@@ -4,6 +4,8 @@
  * Octal numbers: 0, 1, 2, 3, 4, 5, 6, 7 - Base 8
  */
 
+import { Log } from "../../../../Log";
+
 function decimalToOctal(num: number) {
   let base8 = "";
   while (num >= 1) {
@@ -16,17 +18,17 @@ function decimalToOctal(num: number) {
 (() => {
   let n = 4;
   let result = decimalToOctal(n);
-  console.log(`Number ${n} in octal is ${result}`);
+  Log.info(`Number ${n} in octal is ${result}`);
   n = 9;
   result = decimalToOctal(n);
-  console.log(`Number ${n} in octal is ${result}`);
+  Log.info(`Number ${n} in octal is ${result}`);
   n = 17;
   result = decimalToOctal(n);
-  console.log(`Number ${n} in octal is ${result}`);
+  Log.info(`Number ${n} in octal is ${result}`);
   n = 18;
   result = decimalToOctal(n);
-  console.log(`Number ${n} in octal is ${result}`);
+  Log.info(`Number ${n} in octal is ${result}`);
   n = 14698;
   result = decimalToOctal(n);
-  console.log(`Number ${n} in octal is ${result}`);
+  Log.info(`Number ${n} in octal is ${result}`);
 })();

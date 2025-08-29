@@ -2,6 +2,8 @@
  * cd to Recursion and run npx ts-node countZeros.ts
  */
 
+import { Log } from "../../../Log";
+
 function countZeros_without_arg(n: number) {
   let zeros = 0;
   function rec(n: number) {
@@ -29,9 +31,9 @@ function countZeros(n: number, zeros = 0) {
 (() => {
   let num = 12321;
   let result = countZeros(num);
-  console.log(`Total zeros in ${num} is ${result}`);
+  Log.info(`Total zeros in ${num} is ${result}`);
 
   num = 100001;
   result = countZeros(num);
-  console.log(`Total zeros in ${num} is ${result}`);
+  Log.info(`Total zeros in ${num} is ${result}`);
 })();

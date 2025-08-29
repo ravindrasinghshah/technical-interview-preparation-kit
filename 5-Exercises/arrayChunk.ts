@@ -13,6 +13,9 @@
     // Chunk size 10:
     chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
  */
+
+import { Log } from "../Log";
+
 //=== use 2 arrays
 function chunk(arr: Array<number>, size: number) {
   let ans = [];
@@ -56,13 +59,13 @@ function chunk3(arr: Array<number>, size: number) {
   let arr = [1, 2, 3, 4],
     n = 2;
   let result = chunk(arr, n);
-  console.log(`${arr} : subset size ${n} :`, result);
+  Log.info(`${arr} : subset size ${n} :`, result);
 
   (arr = [1, 2, 3, 4, 5, 6, 7, 8]), (n = 3);
   result = chunk2(arr, n);
-  console.log(`${arr} : subset size ${n} :`, result);
+  Log.info(`${arr} : subset size ${n} :`, result);
 
   (arr = [1, 2, 3, 4, 5]), (n = 4);
   result = chunk3(arr, n);
-  console.log(`${arr} : subset size ${n} :`, result);
+  Log.info(`${arr} : subset size ${n} :`, result);
 })();

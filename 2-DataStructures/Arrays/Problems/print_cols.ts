@@ -4,14 +4,14 @@
  * Length of array is number of rows.
  * Worst case complexity - O(n*m)
  */
-
+import { Log } from "../../../Log";
 function print_cols(nums: number[][]) {
   for (let i = 0; i < nums.length; i++) {
     let columns = [];
     for (let row = 0; row < nums.length; row++) {
       if (nums[row][i]) columns.push(nums[row][i]);
     }
-    console.log("Items in column ", i, " : ", columns);
+    Log.info("Items in column ", i, " : ", columns);
   }
 }
 
@@ -22,7 +22,7 @@ function print_cols(nums: number[][]) {
     [7, 8, 9],
   ];
   print_cols(matrix);
-  console.log("-----------------------------------");
+  Log.info("-----------------------------------");
   matrix = [
     [1, 2, 3],
     [4, 5],

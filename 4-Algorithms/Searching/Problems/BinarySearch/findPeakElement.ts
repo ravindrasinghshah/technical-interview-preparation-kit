@@ -5,6 +5,8 @@
  * Worst case complexity - O(log n)
  */
 
+import { Log } from "../../../../Log";
+
 function findPeakElement(nums: Array<number>) {
   let left = 0,
     right = nums.length - 1;
@@ -19,9 +21,9 @@ function findPeakElement(nums: Array<number>) {
 (() => {
   let nums = [1, 2, 1, 3, 5, 6, 4];
   let result = findPeakElement(nums); //== -1
-  console.log(`# Peak in an array [${nums}] is ${result}`);
+  Log.info(`# Peak in an array [${nums}] is ${result}`);
 
   nums = [1, 2, 3, 1];
   result = findPeakElement(nums); //== 3
-  console.log(`# Peak in an array [${nums}] is ${result}`);
+  Log.info(`# Peak in an array [${nums}] is ${result}`);
 })();

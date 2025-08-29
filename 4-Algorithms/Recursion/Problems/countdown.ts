@@ -2,13 +2,15 @@
  * cd to Recursion and run npx ts-node countdown.ts
  */
 
+import { Log } from "../../../Log";
+
 function countdown(n: number) {
   if (n === 0) {
-    console.log(n);
-    console.log("~~~ Hurray ~~~");
+    Log.info(n);
+    Log.info("~~~ Hurray ~~~");
     return;
   }
-  console.log(n);
+  Log.info(n);
   countdown(n - 1);
 }
 

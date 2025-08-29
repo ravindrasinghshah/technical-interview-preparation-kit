@@ -3,6 +3,8 @@
  * Implement a class to add movies, create a watchlist and once watched then remove from the list and to watched.
  */
 
+import { Log } from "../Log";
+
 class Movies {
   title: string;
   rating: number | null;
@@ -27,23 +29,23 @@ class Movies {
     }
   };
   printWatchlist = () => {
-    console.log("Movies in watchlist are: ");
+    Log.info("Movies in watchlist are: ");
     for (let i = 0; i < this.watchlist_queue.length; i++)
-      console.log(
+      Log.info(
         `${i + 1}. ${this.watchlist_queue[i][0]} - ${
           this.watchlist_queue[i][1]
         }`
       );
   };
   printWatched = () => {
-    console.log("Movies watched are: ");
+    Log.info("Movies watched are: ");
     for (let i = 0; i < this.watched_stack.length; i++)
-      console.log(
+      Log.info(
         `${i + 1}. ${this.watched_stack[i][0]} - ${this.watched_stack[i][1]}`
       );
   };
   toString = () => {
-    console.log(`Movie title is ${this.title} and rating is ${this.rating}`);
+    Log.info(`Movie title is ${this.title} and rating is ${this.rating}`);
   };
 }
 

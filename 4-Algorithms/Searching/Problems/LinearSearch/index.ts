@@ -5,6 +5,8 @@
    Worst case complexity - O(n)
  */
 
+import { Log } from "../../../../Log";
+
 function search(nums: Array<number>, target: number) {
   for (const num of nums) {
     if (num === target) return true;
@@ -16,9 +18,9 @@ function search(nums: Array<number>, target: number) {
   let nums = [3, 2, 5, 8, 1, 9],
     target = 1;
   let result = search(nums, target);
-  console.log(`Does ${target} exists in [${nums}] array? ${result}`);
+  Log.info(`Does ${target} exists in [${nums}] array? ${result}`);
 
   (nums = [3, 2, 5, 8, 1, 9]), (target = 10);
   result = search(nums, target);
-  console.log(`Does ${target} exists in [${nums}] array? ${result}`);
+  Log.info(`Does ${target} exists in [${nums}] array? ${result}`);
 })();
