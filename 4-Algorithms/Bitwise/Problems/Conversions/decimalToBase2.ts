@@ -15,7 +15,7 @@ function decimalToBase2(num: number) {
 }
 
 function decimalToBase2_recursion(num: number, remainder: string = "") {
-  if (num === 1) return 1 + b;
+  if (num === 1) return 1;
 
   remainder = (num % 2) + remainder; //== add latest remainder before
   num = Math.floor(num / 2);
