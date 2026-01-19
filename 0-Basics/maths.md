@@ -57,7 +57,7 @@ Example: (((-3 % 5) + 5) % 5) = 2;
 ### Math log10
 
 Returns the number of times can divide a number by 10 before we get 1.
-Whenever want to [find the length](../Bitwise/NumberSystem/findNoOfDigits.js) of the number can use this function with floor to get the length.
+Whenever want to [find the length](../4-Algorithms/Bitwise/Problems/NumberSystem/findNoOfDigits.ts) of the number can use this function with floor to get the length.
 
 ```
 Example:
