@@ -45,7 +45,7 @@ while(l < h){
     if(condition){
         l++;
     }
-    h++;
+    h--;
 }
 return ans;
 ```
@@ -53,7 +53,7 @@ return ans;
 Two input, exhaust both.
 
 ```
-i = 0, j= 0, ans = [];
+i = 0, j = 0, ans = [];
 while(i < arr1.length && j < arr2.length){
     if(condition) i++;
     else j++;
@@ -91,7 +91,7 @@ for(let i = 1; i < arr.length; i++){
 return preSum;
 ```
 
-#### [Binary Search (->)](../Searching/BinarySearch/index.js)
+#### [Binary Search (->)](../4-Algorithms\Searching\Problems\BinarySearch\index.ts)
 
 ```
 l = 0, h = arr.length - 1;
