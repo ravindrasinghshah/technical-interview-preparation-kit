@@ -40,7 +40,7 @@
 One input, opposite ends.
 
 ```
-l = 0, h = arr.length, ans = [];
+l = 0, h = arr.length-1, ans = [];
 while(l < h){
     if(condition){
         l++;
