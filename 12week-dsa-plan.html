@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12-Week DSA Battle Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+  :root {
+    --bg: #f5f2eb;
+    --surface: #ffffff;
+    --surface2: #f0ece3;
+    --ink: #1a1614;
+    --ink2: #3d3630;
+    --muted: #9a8f85;
+    --border: #ddd8cf;
+    --red: #c93a2a;
+    --orange: #d4621a;
+    --yellow: #c9a82a;
+    --green: #2a7a4a;
+    --blue: #1a4fc9;
+    --purple: #6a2ac9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 48px 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: 'DSA';
+    position: absolute;
+    right: -20px; bottom: -40px;
+    font-size: 200px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+    font-family: 'Syne', sans-serif;
+  }
+
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--muted);
+  }
+
+  h1 {
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .h1-accent { color: var(--red); }
+
+  .header-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.9;
+    margin-top: 16px;
+  }
+
+  .target-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+
+  .target-chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .target-chip.priority { background: rgba(201,58,42,0.25); border-color: rgba(201,58,42,0.4); color: #ff9988; }
+
+  /* CONTAINER */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
+
+  /* STATS BAR */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 40px 0;
+    background: var(--surface);
+  }
+
+  .stat {
+    padding: 24px 20px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-val {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .sv-red { color: var(--red); }
+  .sv-blue { color: var(--blue); }
+  .sv-green { color: var(--green); }
+  .sv-orange { color: var(--orange); }
+  .sv-purple { color: var(--purple); }
+
+  /* SECTION HEADERS */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 52px 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+  }
+
+  .sec-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+
+  .sec-tag {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .t-red { background: rgba(201,58,42,0.1); color: var(--red); border: 1px solid rgba(201,58,42,0.2); }
+  .t-blue { background: rgba(26,79,201,0.1); color: var(--blue); border: 1px solid rgba(26,79,201,0.2); }
+  .t-green { background: rgba(42,122,74,0.1); color: var(--green); border: 1px solid rgba(42,122,74,0.2); }
+  .t-orange { background: rgba(212,98,26,0.1); color: var(--orange); border: 1px solid rgba(212,98,26,0.2); }
+  .t-purple { background: rgba(106,42,201,0.1); color: var(--purple); border: 1px solid rgba(106,42,201,0.2); }
+
+  /* WEEK BLOCKS */
+  .week-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  @media(max-width:640px) { .week-grid { grid-template-columns: 1fr; } }
+
+  .week-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    position: relative;
+  }
+
+  .week-block.active {
+    border-color: var(--red);
+  }
+
+  .week-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .week-tag .wdot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+  }
+
+  .wdot-red { background: var(--red); }
+  .wdot-orange { background: var(--orange); }
+  .wdot-blue { background: var(--blue); }
+  .wdot-green { background: var(--green); }
+
+  .week-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  .week-topics {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+
+  .week-topics li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink2);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--surface2);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .week-topics li:last-child { border-bottom: none; }
+
+  .week-topics li::before {
+    content: '→';
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .week-quota {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .quota-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .qp-easy { background: rgba(42,122,74,0.1); color: var(--green); border: 1px solid rgba(42,122,74,0.2); }
+  .qp-med { background: rgba(212,98,26,0.1); color: var(--orange); border: 1px solid rgba(212,98,26,0.2); }
+  .qp-hard { background: rgba(201,58,42,0.1); color: var(--red); border: 1px solid rgba(201,58,42,0.2); }
+  .qp-total { background: rgba(26,26,20,0.06); color: var(--ink2); border: 1px solid var(--border); }
+
+  /* DAILY PLAN */
+  .daily-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  @media(max-width:640px) { .daily-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .day {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+
+  .day.weekend {
+    background: var(--surface2);
+  }
+
+  .day-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .day-task {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .day-hrs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--red);
+  }
+
+  /* PATTERN TABLE */
+  .pattern-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .pt-head {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    padding: 12px 20px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .pt-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+  }
+
+  .pt-row:last-child { border-bottom: none; }
+  .pt-row:hover { background: var(--surface2); }
+
+  .pt-pattern { font-weight: 700; font-size: 13px; }
+  .pt-freq { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .pt-companies { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); }
+
+  .freq-crit { color: var(--red); font-weight: 600; }
+  .freq-high { color: var(--orange); }
+  .freq-med { color: var(--blue); }
+
+  /* CALLOUT */
+  .callout {
+    border-left: 4px solid var(--red);
+    background: var(--surface);
+    padding: 18px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+  }
+
+  .callout.blue { border-left-color: var(--blue); }
+  .callout.green { border-left-color: var(--green); }
+  .callout.orange { border-left-color: var(--orange); }
+
+  .callout-txt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink2);
+    line-height: 1.9;
+  }
+
+  .callout-txt strong { color: var(--ink); font-weight: 500; }
+
+  /* COMPANY SPECIFICS */
+  .company-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .co-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .co-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .co-header.meta { background: #0082fb14; border-bottom: 1px solid #0082fb30; }
+  .co-header.google { background: #4285f414; border-bottom: 1px solid #4285f430; }
+  .co-header.nvidia { background: #76b90014; border-bottom: 1px solid #76b90030; }
+  .co-header.netflix { background: #e5091414; border-bottom: 1px solid #e5091430; }
+  .co-header.stripe { background: #635bff14; border-bottom: 1px solid #635bff30; }
+  .co-header.airbnb { background: #ff585814; border-bottom: 1px solid #ff585830; }
+
+  .co-name { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+  .co-level { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 1px; }
+
+  .co-body { padding: 16px 20px; }
+
+  .co-list { list-style: none; }
+  .co-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink2);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--surface2);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .co-list li:last-child { border-bottom: none; }
+  .co-list li::before { content: '▸'; color: var(--muted); flex-shrink: 0; }
+
+  /* RESOURCES */
+  .res-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .res-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .res-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .res-name { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+
+  .res-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: var(--muted);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 60px;
+  }
+
+  .footer-note { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .footer-mark { font-size: 22px; font-weight: 800; color: rgba(255,255,255,0.15); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">Let's Get Started!</div>
+  <h1>12-WEEK<br><span class="h1-accent">DSA</span><br>BATTLE PLAN</h1>
+  <p class="header-sub">Precision-tuned for Meta / Google / NVIDIA / Netflix / Stripe / Airbnb.<br>
+  Primary gap: DSA. Strategy: pattern mastery over volume. 3hr/day, 6 days/week.</p>
+  <div class="target-row">
+    <span class="target-chip priority">DSA PRIMARY GAP</span>
+    <span class="target-chip">Meta · Google</span>
+    <span class="target-chip">NVIDIA · AI Labs</span>
+    <span class="target-chip">Netflix · Stripe · Airbnb</span>
+    <span class="target-chip">12 Weeks · ~250 Problems</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val sv-green">75</div><div class="stat-label">Easy LC</div></div>
+    <div class="stat"><div class="stat-val sv-orange">130</div><div class="stat-label">Medium LC</div></div>
+    <div class="stat"><div class="stat-val sv-red">45</div><div class="stat-label">Hard LC</div></div>
+    <div class="stat"><div class="stat-val sv-blue">14</div><div class="stat-label">Core Patterns</div></div>
+    <div class="stat"><div class="stat-val sv-purple">12</div><div class="stat-label">Mock Sessions</div></div>
+  </div>
+
+  <!-- STRATEGY -->
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <span class="sec-title">THE CORE STRATEGY</span>
+    <span class="sec-tag t-red">READ THIS FIRST</span>
+  </div>
+
+  <div class="callout">
+    <div class="callout-txt">
+      <strong>Pattern mastery over problem volume.</strong> Most candidates grind 400+ problems randomly and still fail. At Staff level, interviewers want to see you recognize the pattern in 2 min, explain your approach clearly, and write clean optimal code. The goal is to master 14 core patterns so deeply that every problem becomes a pattern-matching exercise — not a creative puzzle.
+    </div>
+  </div>
+
+  <div class="callout blue">
+    <div class="callout-txt">
+      <strong>The 3-pass method for every problem:</strong> Pass 1 → brute force + explain Big-O. Pass 2 → optimize to target complexity. Pass 3 → edge cases + clean code. Always talk out loud. Silence kills Staff-level interviews more than wrong answers.
+    </div>
+  </div>
+
+  <!-- DAILY RHYTHM -->
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <span class="sec-title">DAILY RHYTHM (3HR/DAY)</span>
+    <span class="sec-tag t-orange">6 DAYS / WEEK</span>
+  </div>
+
+  <div class="daily-grid">
+    <div class="day">
+      <div class="day-label">MON</div>
+      <div class="day-task">New Pattern<br>Intro + 3 Easy</div>
+      <div class="day-hrs">3hr</div>
+    </div>
+    <div class="day">
+      <div class="day-label">TUE</div>
+      <div class="day-task">Pattern Deep<br>4 Mediums</div>
+      <div class="day-hrs">3hr</div>
+    </div>
+    <div class="day">
+      <div class="day-label">WED</div>
+      <div class="day-task">System Design<br>or GenAI Design</div>
+      <div class="day-hrs">2hr SD + 1hr review</div>
+    </div>
+    <div class="day">
+      <div class="day-label">THU</div>
+      <div class="day-task">Pattern Drill<br>2 Mediums + 1 Hard</div>
+      <div class="day-hrs">3hr</div>
+    </div>
+    <div class="day">
+      <div class="day-label">FRI</div>
+      <div class="day-task">Company-Tagged<br>Mixed Difficulty</div>
+      <div class="day-hrs">3hr</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">SAT</div>
+      <div class="day-task">Full Mock<br>Interview (timed)</div>
+      <div class="day-hrs">2–3hr</div>
+    </div>
+    <div class="day weekend">
+      <div class="day-label">SUN</div>
+      <div class="day-task">Review all<br>wrong answers</div>
+      <div class="day-hrs">1hr</div>
+    </div>
+  </div>
+
+  <div class="callout green">
+    <div class="callout-txt">
+      <strong>The Sunday Rule:</strong> Every Sunday, re-do every problem you got wrong or couldn't solve in under 25 min that week — from scratch, no hints. Repetition with reflection is what builds the pattern instinct. Don't just read solutions; retype them blind.
+    </div>
+  </div>
+
+  <!-- 12 WEEK BREAKDOWN -->
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <span class="sec-title">12-WEEK BREAKDOWN</span>
+    <span class="sec-tag t-red">WEEK BY WEEK</span>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="callout orange">
+    <div class="callout-txt"><strong>PHASE 1 — Weeks 1–4: Foundation Patterns.</strong> Build the core 8 patterns that appear in 80% of all LC problems. No Hards yet. Speed and recognition over complexity.</div>
+  </div>
+
+  <div class="week-grid">
+    <div class="week-block active">
+      <div class="week-tag"><span class="wdot wdot-red"></span>WEEK 1</div>
+      <div class="week-title">Arrays + Two Pointers + Sliding Window</div>
+      <ul class="week-topics">
+        <li>Two Sum, Three Sum, Container With Most Water</li>
+        <li>Maximum Subarray (Kadane's)</li>
+        <li>Minimum Window Substring</li>
+        <li>Longest Substring Without Repeat</li>
+        <li>Product of Array Except Self</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×8</span>
+        <span class="quota-pill qp-med">Med ×6</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-red"></span>WEEK 2</div>
+      <div class="week-title">Stack + Monotonic Stack + Queue</div>
+      <ul class="week-topics">
+        <li>Valid Parentheses, Min Stack</li>
+        <li>Daily Temperatures (monotonic)</li>
+        <li>Largest Rectangle in Histogram</li>
+        <li>Sliding Window Maximum</li>
+        <li>Evaluate Reverse Polish Notation</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×5</span>
+        <span class="quota-pill qp-med">Med ×7</span>
+        <span class="quota-pill qp-hard">Hard ×2</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-red"></span>WEEK 3</div>
+      <div class="week-title">Binary Search (All Variants)</div>
+      <ul class="week-topics">
+        <li>Classic BS, First/Last occurrence</li>
+        <li>Search in Rotated Sorted Array</li>
+        <li>Find Minimum in Rotated Array</li>
+        <li>Koko Eating Bananas (BS on answer)</li>
+        <li>Median of Two Sorted Arrays (Hard)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×4</span>
+        <span class="quota-pill qp-med">Med ×8</span>
+        <span class="quota-pill qp-hard">Hard ×2</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-red"></span>WEEK 4</div>
+      <div class="week-title">Trees: BFS + DFS + BST</div>
+      <ul class="week-topics">
+        <li>Invert Tree, Max Depth, Level Order</li>
+        <li>Validate BST, Kth Smallest in BST</li>
+        <li>Lowest Common Ancestor</li>
+        <li>Binary Tree Right Side View</li>
+        <li>Serialize and Deserialize Binary Tree</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×5</span>
+        <span class="quota-pill qp-med">Med ×7</span>
+        <span class="quota-pill qp-hard">Hard ×2</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="callout orange">
+    <div class="callout-txt"><strong>PHASE 2 — Weeks 5–8: Deep & Hard Patterns.</strong> The patterns that separate average from exceptional. Graphs, DP, and Heaps are heavy here. First Hards introduced at scale.</div>
+  </div>
+
+  <div class="week-grid">
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-orange"></span>WEEK 5</div>
+      <div class="week-title">Graphs: BFS + DFS + Union-Find</div>
+      <ul class="week-topics">
+        <li>Number of Islands, Clone Graph</li>
+        <li>Course Schedule I & II (Topological Sort)</li>
+        <li>Pacific Atlantic Water Flow</li>
+        <li>Redundant Connection (Union-Find)</li>
+        <li>Word Ladder (BFS shortest path)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×3</span>
+        <span class="quota-pill qp-med">Med ×8</span>
+        <span class="quota-pill qp-hard">Hard ×3</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-orange"></span>WEEK 6</div>
+      <div class="week-title">Heaps + Top-K + Advanced Priority Queue</div>
+      <ul class="week-topics">
+        <li>Kth Largest Element, Top K Frequent Words</li>
+        <li>Merge K Sorted Lists</li>
+        <li>Find Median from Data Stream</li>
+        <li>Task Scheduler</li>
+        <li>Smallest Range Covering K Lists (Hard)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×2</span>
+        <span class="quota-pill qp-med">Med ×7</span>
+        <span class="quota-pill qp-hard">Hard ×5</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-orange"></span>WEEK 7</div>
+      <div class="week-title">Dynamic Programming: 1D + 2D</div>
+      <ul class="week-topics">
+        <li>Climbing Stairs, House Robber I & II</li>
+        <li>Longest Common Subsequence (2D)</li>
+        <li>Coin Change, Word Break</li>
+        <li>Longest Increasing Subsequence</li>
+        <li>Edit Distance (Hard)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-easy">Easy ×3</span>
+        <span class="quota-pill qp-med">Med ×7</span>
+        <span class="quota-pill qp-hard">Hard ×4</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-orange"></span>WEEK 8</div>
+      <div class="week-title">DP Advanced: Intervals + Knapsack + State Machine</div>
+      <ul class="week-topics">
+        <li>Burst Balloons (Interval DP)</li>
+        <li>0/1 Knapsack + Partition Equal Subset</li>
+        <li>Best Time to Buy & Sell Stock III/IV</li>
+        <li>Regular Expression Matching (Hard)</li>
+        <li>Scramble String (Hard)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-med">Med ×6</span>
+        <span class="quota-pill qp-hard">Hard ×8</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="callout orange">
+    <div class="callout-txt"><strong>PHASE 3 — Weeks 9–12: Company-Specific + Mock Domination.</strong> Shift from learning to performing. Company-tagged problems, timed mocks, full interview simulation.</div>
+  </div>
+
+  <div class="week-grid">
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-blue"></span>WEEK 9</div>
+      <div class="week-title">Backtracking + Trie + Advanced Strings</div>
+      <ul class="week-topics">
+        <li>Subsets, Permutations, Combination Sum</li>
+        <li>N-Queens, Sudoku Solver</li>
+        <li>Implement Trie, Word Search II</li>
+        <li>Palindrome Partitioning</li>
+        <li>Word Search (backtrack on grid)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-med">Med ×7</span>
+        <span class="quota-pill qp-hard">Hard ×7</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-blue"></span>WEEK 10</div>
+      <div class="week-title">Meta + Google Tagged — Targeted Drill</div>
+      <ul class="week-topics">
+        <li>Meta: Dot Product of Sparse Vectors, Moving Average from Data Stream</li>
+        <li>Meta: Find All Anagrams in String, Nested List Iterator</li>
+        <li>Google: Minimum Cost to Connect Sticks, Fruit into Baskets</li>
+        <li>Google: Maximum Points You Can Obtain from Cards</li>
+        <li>Mixed: 3 full timed sessions (45 min each)</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-med">Med ×8</span>
+        <span class="quota-pill qp-hard">Hard ×6</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-blue"></span>WEEK 11</div>
+      <div class="week-title">Netflix + Stripe + Airbnb Tagged</div>
+      <ul class="week-topics">
+        <li>Netflix: Skyline Problem, Merge Intervals</li>
+        <li>Stripe: Making Change, Sorted Merge of K Lists</li>
+        <li>Airbnb: Meeting Rooms II, Alien Dictionary</li>
+        <li>2× full mock sessions with feedback</li>
+        <li>Review + redo all Hards you struggled with</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-med">Med ×6</span>
+        <span class="quota-pill qp-hard">Hard ×8</span>
+        <span class="quota-pill qp-total">14 total</span>
+      </div>
+    </div>
+    <div class="week-block">
+      <div class="week-tag"><span class="wdot wdot-blue"></span>WEEK 12</div>
+      <div class="week-title">Final Simulation Week — Interview Mode Only</div>
+      <ul class="week-topics">
+        <li>Mon–Wed: 3× full 90-min mock coding loops</li>
+        <li>Thu: Review every weak pattern — 1 final drill set</li>
+        <li>Fri: Behavioral stories polish, system design recap</li>
+        <li>Sat: One final complete mock loop with live interviewer</li>
+        <li>Sun: REST. Mental clarity beats one more LeetCode.</li>
+      </ul>
+      <div class="week-quota">
+        <span class="quota-pill qp-total">~10 problems + mocks only</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PATTERN FREQUENCY TABLE -->
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <span class="sec-title">PATTERN FREQUENCY BY COMPANY</span>
+    <span class="sec-tag t-blue">PRIORITIZE ACCORDINGLY</span>
+  </div>
+
+  <div class="pattern-table">
+    <div class="pt-head">
+      <div>Pattern</div>
+      <div>Frequency</div>
+      <div>Difficulty</div>
+      <div>Seen At</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Sliding Window</div>
+      <div class="pt-freq freq-crit">★★★★★ Critical</div>
+      <div class="pt-companies">E–M</div>
+      <div class="pt-companies">Meta, Google, Stripe, Airbnb</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Two Pointers</div>
+      <div class="pt-freq freq-crit">★★★★★ Critical</div>
+      <div class="pt-companies">E–M</div>
+      <div class="pt-companies">All companies</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">BFS / Graph Traversal</div>
+      <div class="pt-freq freq-crit">★★★★★ Critical</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Meta, Google, Airbnb</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">DFS + Backtracking</div>
+      <div class="pt-freq freq-crit">★★★★★ Critical</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Google, Netflix, Airbnb</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Dynamic Programming</div>
+      <div class="pt-freq freq-crit">★★★★★ Critical</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Google, Meta, Stripe</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Heap / Priority Queue</div>
+      <div class="pt-freq freq-high">★★★★☆ High</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Meta, Google, NVIDIA</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Binary Search (on answer)</div>
+      <div class="pt-freq freq-high">★★★★☆ High</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Google, NVIDIA, Stripe</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Topological Sort</div>
+      <div class="pt-freq freq-high">★★★★☆ High</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Airbnb, Google, Meta</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Monotonic Stack</div>
+      <div class="pt-freq freq-high">★★★☆☆ High</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Meta, Google</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Union-Find (DSU)</div>
+      <div class="pt-freq freq-med">★★★☆☆ Medium</div>
+      <div class="pt-companies">M</div>
+      <div class="pt-companies">Google, NVIDIA</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Trie</div>
+      <div class="pt-freq freq-med">★★★☆☆ Medium</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">Google, Airbnb</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Interval Merge / Sweep</div>
+      <div class="pt-freq freq-med">★★★☆☆ Medium</div>
+      <div class="pt-companies">M</div>
+      <div class="pt-companies">Netflix, Stripe, Airbnb</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Fast & Slow Pointers</div>
+      <div class="pt-freq freq-med">★★☆☆☆ Medium</div>
+      <div class="pt-companies">E–M</div>
+      <div class="pt-companies">Meta, Google</div>
+    </div>
+    <div class="pt-row">
+      <div class="pt-pattern">Bit Manipulation</div>
+      <div class="pt-freq freq-med">★★☆☆☆ Medium</div>
+      <div class="pt-companies">M–H</div>
+      <div class="pt-companies">NVIDIA, Google</div>
+    </div>
+  </div>
+
+  <!-- COMPANY INTEL -->
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <span class="sec-title">COMPANY DSA PROFILES</span>
+    <span class="sec-tag t-orange">KNOW THEIR STYLE</span>
+  </div>
+
+  <div class="company-row">
+    <div class="co-card">
+      <div class="co-header meta">
+        <div>
+          <div class="co-name">META</div>
+          <div class="co-level">E6 TARGET · 2 ROUNDS · 45 MIN EACH</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>Heavy on arrays, strings, sliding window, graphs</li>
+          <li>Expect 2 problems per round — solve both to pass</li>
+          <li>Interviewers follow a strict rubric: correctness + optimal + clean</li>
+          <li>Top tagged: Merge Intervals, Meeting Rooms, Find All Anagrams</li>
+          <li>No "trick" questions — straightforward pattern application</li>
+          <li>Time complexity discussion is non-negotiable</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co-card">
+      <div class="co-header google">
+        <div>
+          <div class="co-name">GOOGLE</div>
+          <div class="co-level">L6 TARGET · 4–5 ROUNDS · 45 MIN EACH</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>Hardest coding bar of all targets — expect 2 Hards at L6</li>
+          <li>Problems are often disguised — read carefully before coding</li>
+          <li>Strong DP + graph + backtracking emphasis</li>
+          <li>Top tagged: Word Break, Course Schedule, LRU Cache</li>
+          <li>Interviewers probe extensions: "What if input is a stream?"</li>
+          <li>Elegance matters — messy AC is not the same as clean AC</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co-card">
+      <div class="co-header nvidia">
+        <div>
+          <div class="co-name">NVIDIA</div>
+          <div class="co-level">STAFF / SENIOR · ROLE-DEPENDENT</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>DSA bar slightly lower than FAANG but still solid Mediums</li>
+          <li>Heavy emphasis on systems + ML design for GenAI roles</li>
+          <li>Bit manipulation and performance-critical code may appear</li>
+          <li>Top tagged: Matrix problems, parallel computation patterns</li>
+          <li>Expect discussions about memory efficiency and cache behavior</li>
+          <li>Read JD carefully — coding round structure varies by team</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co-card">
+      <div class="co-header netflix">
+        <div>
+          <div class="co-name">NETFLIX</div>
+          <div class="co-level">SENIOR/STAFF · BALANCED LOOP</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>Coding bar is Medium-heavy — Hards are rare but possible</li>
+          <li>Preference for clean, production-quality code over clever tricks</li>
+          <li>Interval problems, heap, design-your-own-data-structure</li>
+          <li>Top tagged: Skyline Problem, LRU Cache, Merge K Sorted Lists</li>
+          <li>Strong behavioral component (Keeper Test culture)</li>
+          <li>Expect system design to carry significant weight</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co-card">
+      <div class="co-header stripe">
+        <div>
+          <div class="co-name">STRIPE</div>
+          <div class="co-level">STAFF · UNIQUE FORMAT</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>Often uses take-home + live review instead of classic LC</li>
+          <li>Code quality, extensibility, and tests matter enormously</li>
+          <li>Problems are often business-domain adjacent (payments, fraud)</li>
+          <li>Top themes: graph/dependency resolution, interval scheduling</li>
+          <li>Expect to refactor and extend your code live</li>
+          <li>Write production-ready code with error handling</li>
+        </ul>
+      </div>
+    </div>
+    <div class="co-card">
+      <div class="co-header airbnb">
+        <div>
+          <div class="co-name">AIRBNB</div>
+          <div class="co-level">STAFF · DESIGN-HEAVY LOOP</div>
+        </div>
+      </div>
+      <div class="co-body">
+        <ul class="co-list">
+          <li>Known for creative, real-world-flavored coding problems</li>
+          <li>Search, scheduling, and geolocation problem themes</li>
+          <li>Top tagged: Meeting Rooms II, Alien Dictionary, Word Ladder</li>
+          <li>Expect system design to be equally weighted as coding</li>
+          <li>Strong product thinking expected during design rounds</li>
+          <li>Collaborative style — think out loud, build on hints</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="sec-head">
+    <span class="sec-num">06</span>
+    <span class="sec-title">CURATED DSA RESOURCE STACK</span>
+    <span class="sec-tag t-green">ONLY WHAT YOU NEED</span>
+  </div>
+
+  <div class="res-grid">
+    <div class="res-card">
+      <div class="res-type">Primary Platform</div>
+      <div class="res-name">LeetCode Premium</div>
+      <div class="res-note">Company tags + mock assessments. Filter by company before Week 10. Worth every dollar for targeted prep.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Video + Roadmap</div>
+      <div class="res-name">NeetCode.io</div>
+      <div class="res-note">Follow NeetCode 150 exactly in order. Best video explanations for patterns. Use the roadmap as your weekly guide.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Pattern Reference</div>
+      <div class="res-name">Grokking Patterns (Educative)</div>
+      <div class="res-note">Best for understanding the "why" behind sliding window, two pointers, merge intervals. Use alongside NeetCode.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Mock Interviews</div>
+      <div class="res-name">Interviewing.io</div>
+      <div class="res-note">Anonymous mocks with real FAANG engineers. Use Weeks 9–12. The feedback quality is unmatched. Book early.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Free Mocks</div>
+      <div class="res-name">Pramp</div>
+      <div class="res-note">Peer-to-peer mocks. Great for reps in Weeks 6–9 before paid sessions. Gives you the talking-while-coding habit.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Flashcards</div>
+      <div class="res-name">Anki + LC Deck</div>
+      <div class="res-note">Use spaced repetition for pattern recognition. Review 10 cards/morning. Builds the 2-minute pattern-ID muscle over time.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Company Intel</div>
+      <div class="res-name">Blind + Glassdoor</div>
+      <div class="res-note">Check recent interview reports before each company target phase. Patterns shift — check posts from last 3 months only.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-type">Tracking</div>
+      <div class="res-name">Notion Problem Tracker</div>
+      <div class="res-note">Log every problem: date, difficulty, pattern, time taken, result. Review your tracker every Sunday. Shows real progress.</div>
+    </div>
+  </div>
+
+  <div class="callout blue" style="margin-top: 32px;">
+    <div class="callout-txt">
+      <strong>AI will not replace the requirement of fundamental knowledge of DSA.</strong> Even if AI tools are provided for interviews, you must understand the core patterns to use them effectively under pressure. AI can assist with syntax but not with pattern recognition or problem-solving strategy.
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-note">12-Week DSA Battle Plan · Meta · Google · NVIDIA · Netflix · Stripe · Airbnb</div>
+  <div class="footer-mark">12 WEEKS TO READY</div>
+</div>
+
+</body>
+</html>
