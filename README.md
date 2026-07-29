@@ -142,8 +142,8 @@ technical-interview-preparation-kit/
 ### For Intermediate
 
 1. Review and strengthen data structure knowledge
-2. Focus on [Algorithm Implementation](./4-Algorithms/)
-3. Learn [Problem Patterns](./3-Patterns/)
+2. Learn [Problem Patterns](./3-Patterns/)
+3. Focus on [Algorithm Implementation](./4-Algorithms/)
 4. Tackle [Medium Problems](./5-Exercises/)
 
 ### For Advanced
@@ -183,9 +183,9 @@ technical-interview-preparation-kit/
 ### 🏢 Company-Specific Preparation
 
 - **Google**: Focus on [Graph Algorithms](./4-Algorithms/GraphAlgorithms/) and [System Design](./0-SystemDesign/)
-- **Amazon**: Emphasize [Trees](./2-DataStructures/Trees/) and [Dynamic Programming](./4-Algorithms/DynamicProgramming/)
-- **Microsoft**: Practice [Arrays](./2-DataStructures/Arrays/) and [String Problems](./2-DataStructures/Strings/)
-- **Facebook/Meta**: Master [Graph Problems](./2-DataStructures/Graphs/) and [DFS/BFS](./4-Algorithms/GraphAlgorithms/)
+- **Amazon**: Emphasize [Trees](./2-DataStructures/8-Tree/) and [Dynamic Programming](./4-Algorithms/DynamicProgramming/)
+- **Microsoft**: Practice [Arrays](./2-DataStructures/2-Arrays/) and [String Problems](./2-DataStructures/1-Strings/)
+- **Facebook/Meta**: Master [Graph Problems](./2-DataStructures/10-Graphs/) and [DFS/BFS](./4-Algorithms/GraphAlgorithms/)
 
 ## 🛠️ Practice Resources
 
@@ -254,23 +254,22 @@ Use the following template to track your progress:
 - [ ] Hash Tables
 - [ ] Heaps
 
-### Algorithms
-
-- [ ] Sorting
-- [ ] Searching
-- [ ] Recursion
-- [ ] Dynamic Programming
-- [ ] Greedy
-- [ ] Graph Algorithms
-
 ### Problem Patterns
 
 - [ ] Two Pointers
 - [ ] Sliding Window
+- [ ] Recursion
 - [ ] Fast & Slow Pointers
 - [ ] Merge Intervals
-- [ ] Cyclic Sort
+- [ ] Searching and Sorting
 - [ ] Tree BFS/DFS
+
+### Algorithms
+
+- [ ] Dynamic Programming
+- [ ] Greedy
+- [ ] Graph Algorithms
+
 ```
 
 ## 📄 License
