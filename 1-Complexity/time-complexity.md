@@ -3,12 +3,12 @@
 TC is not about the time taken to complete the task.
 It's a relationship between the input size and time - to measure how time will grow as the input grows.
 
-`TC !=== Time Taken`
+TC ≠ Time Taken
 
 In general we are not concerned about the small input size as anyways it will be computed with minor time variation. But, when input grows it will matter how efficient algorithm is.
 
 ```
-10 users using website Vs 1 Million users using it. We will care to support for 1M as that can bring the worst case out of it.
+10 users using a website vs. 1 million users using it. We care about supporting 1M users, as that can reveal the worst-case performance.
 ```
 
 Time complexity in increasing cost order:
@@ -52,3 +52,5 @@ Rule 3: O(n^3)
 6. Hashmap lookup: O(1)
 
 ![Big-O-Chart](complexity-chart.png)
+
+[Big-O Cheatsheet](http://bigocheatsheet.com/)
