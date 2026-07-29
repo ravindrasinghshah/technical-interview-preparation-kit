@@ -53,18 +53,15 @@ Rather than just reading theory, you’ll **learn by solving real interview-styl
 ### How to Get Started
 
 1. **Follow the Learning Path**
-
    - Start with **Basics** to build a solid foundation.
    - Move through **Complexity Analysis**, **Core Data Structures** and **Algorithms**.
    - Progress into **Problem Patterns** and **System Design** for advanced preparation.
 
 2. **Practice with Purpose**
-
    - Use the **Exercises** folder to code hands-on solutions.
    - Review explanations, analyze time/space complexity and test with provided cases.
 
 3. **Customize Your Notes**
-
    - Fork the repo and add your own solutions or optimizations.
    - Bookmark tricky problems for quick revision before interviews.
 
@@ -153,6 +150,10 @@ technical-interview-preparation-kit/
 3. Solve [Hard Problems](./5-Exercises/)
 
 ## 💼 Interview Preparation
+
+### Learning roadmap and patterns
+
+[View in figma](https://www.figma.com/board/HcXbOWV8CmrG4kFKQXvPlw/Data-structure---Algorithm?node-id=0-1&t=cYxK5pwea48qjMgW-1)
 
 ### 📝 Coding Interview Checklist
 
@@ -269,7 +270,6 @@ Use the following template to track your progress:
 - [ ] Dynamic Programming
 - [ ] Greedy
 - [ ] Graph Algorithms
-
 ```
 
 ## 📄 License
