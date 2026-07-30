@@ -31,3 +31,8 @@ Parent-child relationship are done using math with the indices. Then first eleme
 ```
 node at index i has children at indices 2i + 1 and 2i + 2
 ```
+
+### Common problems
+
+One common type of interview problem is one that asks you to find the k best elements, with "best" being defined by the problem. The easiest way to solve these problems is to just sort the input according to the criteria defined in the problem, and then return the top k elements. This has a time complexity of
+O(n log⁡ n) if n is the length of the input.
