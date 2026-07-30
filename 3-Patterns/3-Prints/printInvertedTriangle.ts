@@ -1,0 +1,26 @@
+/**
+ * cd to Patterns folder and then run "npx ts-node 3-Patterns\3-Prints\printInvertedTriangle.ts"
+ *
+ *   *
+ *  *  *
+ */
+
+import { Log } from "../../Log";
+
+function printInvertedTriangle(n: number) {
+  for (let row = 1; row <= n; row++) {
+    let rowPattern = "";
+    const cols = n - row;
+    const spaces = n - cols;
+    for (let s = 1; s <= spaces; s++) {
+      rowPattern += " ";
+    }
+    for (let col = 1; col <= cols; col++) {
+      rowPattern += "* ";
+    }
+    Log.info(rowPattern);
+  }
+}
+(() => {
+  printInvertedTriangle(5);
+})();

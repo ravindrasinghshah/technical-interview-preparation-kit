@@ -1,17 +1,21 @@
 {
-  "name": "dsalgo",
+  "name": "technical-interview-preparation-kit",
   "version": "1.0.0",
-  "description": "DS Algo Exercise",
-  "main": "index.js",
-  "type": "module",
+  "description": "Technical Interview - Preparation Kit",
   "scripts": {
-    "test": "jest",
+    "test": "vitest run",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
   "author": "Ravindra Singh Shah",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@types/node": "^24.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.4.0",
+    "vitest": "^3.2.7"
   }
 }
