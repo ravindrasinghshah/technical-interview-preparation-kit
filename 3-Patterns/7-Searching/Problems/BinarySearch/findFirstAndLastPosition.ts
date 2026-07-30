@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node findFirstAndLastPosition.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\findFirstAndLastPosition.ts"
    Find first and last index of target.
  * Complexity - O(log n)
  */

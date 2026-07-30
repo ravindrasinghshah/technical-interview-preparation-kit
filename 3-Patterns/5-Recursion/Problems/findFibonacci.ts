@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run node findFibonacci.ts
+ * cd to Recursion and run node 3-Patterns\5-Recursion\Problems\findFibonacci.ts
  * fib: 0, 1, 1, 2, 3, 5, 8, 13....
  */
 

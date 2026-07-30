@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 2-DataStructures\Arrays\Problems\print_max.ts"
+ * run "npx ts-node 2-DataStructures\2-Arrays\Problems\print_max.ts"
  * Swap item in array
  * Worst case complexity - O(n)
  */

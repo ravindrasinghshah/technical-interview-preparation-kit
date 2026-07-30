@@ -1,5 +1,5 @@
 /**
- * run npx ts-node 2-DataStructures\Strings\Problems\printPermutations.ts
+ * run npx ts-node 2-DataStructures\1-Strings\Problems\printPermutations.ts
  */
 
 import { Log } from "../../../Log";

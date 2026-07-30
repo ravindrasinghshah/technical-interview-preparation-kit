@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node duplicate.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\duplicate.ts"
    Find the left-most index of duplicate item.
  * Worst case complexity - O(log n)
  */

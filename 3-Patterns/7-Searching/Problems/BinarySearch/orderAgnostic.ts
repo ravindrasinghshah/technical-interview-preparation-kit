@@ -1,7 +1,7 @@
 import { Log } from "../../../../Log";
 
 /**
- * cd to algos folder and then run "npx ts-node orderAgnostic.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\orderAgnostic.ts"
    Find the left-most index of duplicate item.
  * Worst case complexity - O(log n)
  */

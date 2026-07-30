@@ -1,5 +1,5 @@
 /**
- * cd to Recursion/array and run npx ts-node findAllIndexesOfK.ts
+ * cd to Recursion/array and run npx ts-node 3-Patterns\5-Recursion\Problems\findAllIndexesOfK.ts
  */
 
 import { Log } from "../../../Log";

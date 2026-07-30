@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node countdown.ts
+ * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\countdown.ts
  */
 
 import { Log } from "../../../Log";

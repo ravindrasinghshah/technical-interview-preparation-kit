@@ -1,5 +1,5 @@
 /**
- * cd to Patterns folder and then run "npx ts-node printInvertedTriangle.ts"
+ * cd to Patterns folder and then run "npx ts-node 3-Patterns\3-Prints\printInvertedTriangle.ts"
  *
  *   *
  *  *  *

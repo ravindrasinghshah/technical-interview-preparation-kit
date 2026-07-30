@@ -1,5 +1,5 @@
 /**
- * cd to Recursion/array and run npx ts-node findKthElement.ts
+ * cd to Recursion/array and run npx ts-node 3-Patterns\5-Recursion\Problems\findKthElement.ts
  */
 
 import { Log } from "../../../Log";

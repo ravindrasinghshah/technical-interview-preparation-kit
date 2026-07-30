@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node rotatedArray.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\rotatedArray.ts"
    Search num in rotated sorted array.
    https://leetcode.com/problems/search-in-rotated-sorted-array/description/
  * Complexity - O(log n)

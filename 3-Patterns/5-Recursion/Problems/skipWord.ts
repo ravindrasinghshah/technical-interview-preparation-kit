@@ -1,5 +1,5 @@
 /**
- * run npx ts-node 4-Algorithms\Recursion\Problems\skipWord.ts
+ * run npx ts-node 3-Patterns\5-Recursion\Problems\skipWord.ts
  * Skip word from a string
  * TC: O(n) - size of the string
  */

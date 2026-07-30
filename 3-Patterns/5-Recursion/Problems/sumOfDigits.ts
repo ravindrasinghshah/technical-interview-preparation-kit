@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run node sumOfDigits.ts
+ * cd to Recursion and run node 3-Patterns\5-Recursion\Problems\sumOfDigits.ts
  */
 
 import { Log } from "../../../Log";

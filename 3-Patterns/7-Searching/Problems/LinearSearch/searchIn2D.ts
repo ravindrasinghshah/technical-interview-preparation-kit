@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node searchIn2D.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\LinearSearch\searchIn2D.ts"
  */
 
 import { Log } from "../../../../Log";

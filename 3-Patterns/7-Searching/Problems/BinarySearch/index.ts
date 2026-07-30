@@ -1,5 +1,5 @@
 /**
- * cd to BinarySearch folder and then run "npx ts-node index.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\index.ts"
    BinarySearch is a searching algorithm, which is usually done on an array of sorted elements.
  * Worst case complexity - O(log n)
  */

@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node palindrome.ts
+ * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\palindrome.ts
  */
 
 import { Log } from "../../../Log";

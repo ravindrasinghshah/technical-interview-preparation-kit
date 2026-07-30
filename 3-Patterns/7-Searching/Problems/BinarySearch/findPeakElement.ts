@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node findPeakElement.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\findPeakElement.ts"
    A peak element is an element that is strictly greater than its neighbors.
    https://leetcode.com/problems/find-peak-element/description/
  * Worst case complexity - O(log n)

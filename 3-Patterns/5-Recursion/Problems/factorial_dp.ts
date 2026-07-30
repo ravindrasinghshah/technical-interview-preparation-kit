@@ -1,7 +1,7 @@
 import { Log } from "../../../Log";
 
 /**
- * run npx ts-node 4-Algorithms\Recursion\Problems\factorial_dp.ts
+ * run npx ts-node 3-Patterns\5-Recursion\Problems\factorial_dp.ts
  */
 function factorial_dp(n: number) {
   function memo(n: number, m: Map<number, number>): number {

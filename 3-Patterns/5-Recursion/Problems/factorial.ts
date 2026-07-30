@@ -1,5 +1,5 @@
 /**
- * run npx ts-node 4-Algorithms\Recursion\Problems\factorial.ts
+ * run npx ts-node 3-Patterns\5-Recursion\Problems\factorial.ts
  */
 
 import { Log } from "../../../Log";

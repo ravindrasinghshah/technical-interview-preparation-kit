@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 2-DataStructures\LinkedList\Problems\midpoint.ts"
+ * run "npx ts-node 2-DataStructures\5-LinkedList\Problems\midpoint.ts"
  */
 // find the midpoint of the linked list
 import { Log } from "../../../Log";

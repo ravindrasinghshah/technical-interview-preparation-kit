@@ -1,5 +1,5 @@
 /**
- * cd to Patterns folder and then run "npx ts-node pascalTriangle.ts"
+ * cd to Patterns folder and then run "npx ts-node 3-Patterns\3-Prints\pascalTriangle.ts"
  * https://leetcode.com/problems/pascals-triangle/
     1 
   1   1 

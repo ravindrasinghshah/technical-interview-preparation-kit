@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node printFibonacci.ts
+ * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\printFibonacci.ts
  * fib: 0, 1, 1, 2, 3, 5, 8, 13....
  * Generator functions concept used to print the fib series
  */

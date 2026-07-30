@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 2-DataStructures\LinkedList\Problems\reverse.ts"
+ * run "npx ts-node 2-DataStructures\5-LinkedList\Problems\reverse.ts"
  * Given a linked list, return reversed list.
  */
 import { Log } from "../../../Log";

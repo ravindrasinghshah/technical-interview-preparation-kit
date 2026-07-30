@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 3-Patterns\SlidingWindow\containsNearbyDuplicate.ts"
+ * run "npx ts-node 3-Patterns\2-SlidingWindow\containsNearbyDuplicate.ts"
 Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k. 
 https://leetcode.com/problems/contains-duplicate-ii/description/?envType=problem-list-v2&envId=sliding-window
 */

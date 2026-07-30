@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 2-DataStructures\Arrays\Problems\rotateMatrix.ts"
+ * run "npx ts-node 2-DataStructures\2-Arrays\Problems\rotateMatrix.ts"
  * rotate matrix by 90degree
  * https://leetcode.com/problems/rotate-image/
  * Worst case complexity - O(n^2)

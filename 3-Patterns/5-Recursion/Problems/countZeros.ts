@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run npx ts-node countZeros.ts
+ * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\countZeros.ts
  */
 
 import { Log } from "../../../Log";

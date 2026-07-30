@@ -1,5 +1,5 @@
 /**
- * cd to Patterns folder and then run "npx ts-node printTriangle.ts"
+ * cd to Patterns folder and then run "npx ts-node 3-Patterns\3-Prints\printTriangle.ts"
  *
  *   *
  *  *  *

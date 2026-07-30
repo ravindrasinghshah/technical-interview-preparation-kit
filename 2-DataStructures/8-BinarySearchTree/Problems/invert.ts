@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 2-DataStructures\BinarySearchTree\Problems\invert.ts"
+ * run "npx ts-node 2-DataStructures\8-BinarySearchTree\Problems\invert.ts"
  * Given the root of a binary tree, invert the tree, and return its root.
 https://leetcode.com/problems/invert-binary-tree/description/
 

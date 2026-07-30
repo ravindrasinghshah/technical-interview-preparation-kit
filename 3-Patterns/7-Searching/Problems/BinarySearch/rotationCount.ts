@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node rotationCount.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\rotationCount.ts"
    Rotation Count in a Rotated Sorted array
 https://www.geeksforgeeks.org/dsa/find-rotation-count-rotated-sorted-array/
  * Complexity - O(log n)

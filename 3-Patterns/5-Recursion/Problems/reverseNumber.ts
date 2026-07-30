@@ -1,5 +1,5 @@
 /**
- * cd to Recursion and run node reverseNumber.ts
+ * cd to Recursion and run node 3-Patterns\5-Recursion\Problems\reverseNumber.ts
  */
 
 import { Log } from "../../../Log";

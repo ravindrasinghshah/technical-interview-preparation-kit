@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node findMin.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\LinearSearch\findMin.ts"
  */
 
 import { Log } from "../../../../Log";

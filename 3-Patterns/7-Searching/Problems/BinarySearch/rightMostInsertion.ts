@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node rightMostInsertion.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\rightMostInsertion.ts"
    Find the right most insertion index.
  * Worst case complexity - O(log n)
  */

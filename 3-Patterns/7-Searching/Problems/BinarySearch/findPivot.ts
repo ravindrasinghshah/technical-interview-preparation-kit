@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node findPivot.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\findPivot.ts"
    Find the index position of pivot in rotated array.
  * Worst case complexity - O(log n)
  */

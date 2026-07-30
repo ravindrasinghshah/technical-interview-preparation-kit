@@ -1,5 +1,5 @@
 /**
- * run npx ts-node 2-DataStructures\Arrays\Problems\returnSubSequence.ts
+ * run npx ts-node 2-DataStructures\2-Arrays\Problems\returnSubSequence.ts
  */
 
 import { Log } from "../../../Log";

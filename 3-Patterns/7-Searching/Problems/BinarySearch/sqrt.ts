@@ -1,5 +1,5 @@
 /**
- * cd to algos folder and then run "npx ts-node sqrt.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\BinarySearch\sqrt.ts"
  * Square root is a number which is multiplied by itself, equals the original number
  * Absolute sqrt value - not precision
  * Worst case complexity - O(log n)

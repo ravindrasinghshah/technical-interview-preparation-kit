@@ -1,5 +1,5 @@
 /**
- * cd to LinearSearch folder and then run "npx ts-node index.ts"
+ * "npx ts-node 3-Patterns\7-Searching\Problems\LinearSearch\index.ts"
    LinearSearch is a searching algorithm, which is usually done on an array of sorted elements.
  * Best case - O(1)
    Worst case complexity - O(n)

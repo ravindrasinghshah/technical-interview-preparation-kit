@@ -1,5 +1,5 @@
 /**
- * run "npx ts-node 3-Patterns\TwoPointers\isValidPalindrome.ts"
+ * run "npx ts-node 3-Patterns\1-TwoPointers\isValidPalindrome.ts"
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. 
 Alphanumeric characters include letters and numbers.
 https://leetcode.com/problems/valid-palindrome/description/
