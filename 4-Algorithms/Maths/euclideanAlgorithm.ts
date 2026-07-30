@@ -18,13 +18,14 @@ function findGCD(num1: number, num2: number) {
   return findGCD(num2, num1 % num2);
 }
 
-(() => {
-  let num1 = 5,
-    num2 = 3;
-  let result = findGCD(num1, num2);
-  Log.info(`GCD of ${num1} and ${num2} is ${result}`);
+export { findGCD };
+// (() => {
+//   let num1 = 5,
+//     num2 = 3;
+//   let result = findGCD(num1, num2);
+//   Log.info(`GCD of ${num1} and ${num2} is ${result}`);
 
-  (num1 = 18), (num2 = 9);
-  result = findGCD(num1, num2);
-  Log.info(`GCD of ${num1} and ${num2} is ${result}`);
-})();
+//   (num1 = 18), (num2 = 9);
+//   result = findGCD(num1, num2);
+//   Log.info(`GCD of ${num1} and ${num2} is ${result}`);
+// })();

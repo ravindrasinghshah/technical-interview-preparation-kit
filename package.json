@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Technical Interview - Preparation Kit",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "Ravindra Singh Shah",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@datastructures-js/priority-queue": "^6.4.0"
+    "@datastructures-js/priority-queue": "^6.4.0",
+    "vitest": "^3.2.7"
   }
 }
