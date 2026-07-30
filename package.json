@@ -4,8 +4,7 @@
   "description": "Technical Interview - Preparation Kit",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:watch": "vitest --watch"
   },
   "author": "Ravindra Singh Shah",
   "license": "ISC",
