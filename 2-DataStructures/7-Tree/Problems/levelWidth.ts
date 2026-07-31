@@ -15,20 +15,16 @@
     [1, 3, 2]
  */
 
-import { Tree, TreeNode } from "./index";
-//== todo
-function levelWidth(root: TreeNode) {}
+import { TreeNode } from "./index";
 
-(() => {
-  let tree = new Tree();
-  tree.root = new TreeNode(0);
-  const one = new TreeNode(1);
-  one.add(4);
-  const three = new TreeNode(3);
-  three.add(5);
-  tree.root.children.push(one);
-  tree.root.add(2);
-  tree.root.children.push(three);
+export function levelWidth(root: TreeNode | null): number[] {
+  if (!root) return [];
 
-  tree.traverseBF();
-})();
+  const widths: number[] = [];
+  let level = [root];
+  while (level.length) {
+    widths.push(level.length);
+    level = level.flatMap((node) => node.children);
+  }
+  return widths;
+}

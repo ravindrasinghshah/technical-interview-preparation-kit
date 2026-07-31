@@ -6,9 +6,7 @@
  * https://leetcode.com/problems/group-anagrams/description/
  */
 
-import { Log } from "../../../Log";
-
-function groupAnagrams(words: Array<string>): Array<string>[] {
+export function groupAnagrams(words: Array<string>): Array<string>[] {
   let anagram: Array<string>[] = [],
     dict: Map<string, Array<string>> = new Map();
 
@@ -23,9 +21,3 @@ function groupAnagrams(words: Array<string>): Array<string>[] {
   return anagram;
 }
 
-(() => {
-  let words = ["eat", "tea", "tan", "ate", "nat", "bat"]; // [["bat"],["nat","tan"],["ate","eat","tea"]]
-  Log.info(`Words: [${words}]`);
-  let anagrams = groupAnagrams(words);
-  Log.info("Group Anagrams:", anagrams);
-})();

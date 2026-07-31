@@ -10,10 +10,8 @@
  * https://leetcode.com/problems/count-and-say/
  */
 
-import { Log } from "../../../Log";
-
 //== TC = O(n * m) - m is the max length of the str.
-function countAndSay(n: number): string {
+export function countAndSay(n: number): string {
   let str = "1";
   for (let i = 1; i < n; i++) {
     let newStr = "",
@@ -32,12 +30,3 @@ function countAndSay(n: number): string {
   return str;
 }
 
-(() => {
-  let n = 4;
-  let result = countAndSay(n); // "1211"
-  Log.info(`The ${n} element of count and say is, ${result}`);
-
-  n = 1;
-  result = countAndSay(n); // "1"
-  Log.info(`The ${n} element of count and say is, ${result}`);
-})();
