@@ -2,9 +2,7 @@
  * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\numberOfSteps.ts
  */
 
-import { Log } from "../../../Log";
-
-function numberOfSteps_s(n: number, steps: number = 0) {
+export function numberOfSteps_s(n: number, steps: number = 0) {
   if (n === 0) {
     return steps;
   }
@@ -12,7 +10,7 @@ function numberOfSteps_s(n: number, steps: number = 0) {
   else return numberOfSteps_s(n - 1, ++steps);
 }
 
-function numberOfSteps(n: number): number {
+export function numberOfSteps(n: number): number {
   if (n === 0) {
     return 0;
   }
@@ -20,12 +18,3 @@ function numberOfSteps(n: number): number {
   else return 1 + numberOfSteps(n - 1);
 }
 
-(() => {
-  let num = 5;
-  let result = numberOfSteps(num);
-  Log.info(`Total zeros in ${num} is ${result}`);
-
-  num = 10;
-  result = numberOfSteps(num);
-  Log.info(`Total zeros in ${num} is ${result}`);
-})();

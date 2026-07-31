@@ -2,18 +2,7 @@
  * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\countdown.ts
  */
 
-import { Log } from "../../../Log";
-
-function countdown(n: number) {
-  if (n === 0) {
-    Log.info(n);
-    Log.info("~~~ Hurray ~~~");
-    return;
-  }
-  Log.info(n);
-  countdown(n - 1);
+export function countdown(n: number): number[] {
+  if (n <= 0) return [0];
+  return [n, ...countdown(n - 1)];
 }
-
-(() => {
-  countdown(10);
-})();

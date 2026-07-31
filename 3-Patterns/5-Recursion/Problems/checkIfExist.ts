@@ -2,9 +2,7 @@
  * cd to Recursion/array and run npx ts-node 3-Patterns\5-Recursion\Problems\checkIfExist.ts
  */
 
-import { Log } from "../../../Log";
-
-function checkIfExist(nums: Array<number>, target: number): boolean {
+export function checkIfExist(nums: Array<number>, target: number): boolean {
   function findElement(arr: Array<number>, i: number): boolean {
     //== base condition: traversed all indexes
     if (i >= arr.length) return false;
@@ -12,14 +10,3 @@ function checkIfExist(nums: Array<number>, target: number): boolean {
   }
   return findElement(nums, 0);
 }
-(() => {
-  let nums = [1, 2, 4, 8, 10];
-  let target = 8;
-  let result = checkIfExist(nums, target);
-  Log.info(`Does ${target} exist in [${nums}] array? ${result}`);
-
-  nums = [1, 2, 4, 5, 1];
-  target = 0;
-  result = checkIfExist(nums, target);
-  Log.info(`Does ${target} exist in [${nums}] array? ${result}`);
-})();

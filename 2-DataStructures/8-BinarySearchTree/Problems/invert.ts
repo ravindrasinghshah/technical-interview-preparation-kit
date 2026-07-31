@@ -11,10 +11,9 @@ https://leetcode.com/problems/invert-binary-tree/description/
  1   3 6   8       8   6 3   1 
  */
 
-import { Log } from "../../../Log";
 import { Node } from "./index";
 
-function invertBinaryTree(root: Node | null): Node | null {
+export function invertBinaryTree(root: Node | null): Node | null {
   if (root === null) return null;
   let queue = [root];
   let inverted = root;
@@ -29,15 +28,3 @@ function invertBinaryTree(root: Node | null): Node | null {
   return inverted;
 }
 
-(() => {
-  let root = new Node(4);
-  root.insert(2);
-  root.insert(1);
-  root.insert(3);
-  root.insert(7);
-  root.insert(8);
-  root.insert(6);
-  Log.info("Binary Tree: ", root);
-  let result = invertBinaryTree(root); //=  [4,2,7,1,3,6,8] --> [4,7,2,8,6,3,1]
-  Log.info("Inverted Tree: ", result);
-})();

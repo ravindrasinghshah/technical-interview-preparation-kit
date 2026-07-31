@@ -5,7 +5,7 @@
 import { Log } from "../../../Log";
 
 //== TC = O(n!)
-function printPermutations(str: string, processed: string = ""): void {
+export function printPermutations(str: string, processed: string = ""): void {
   if (!str) {
     Log.info(processed.trim());
     return;
@@ -22,7 +22,3 @@ function printPermutations(str: string, processed: string = ""): void {
   }
 }
 
-(() => {
-  let str = "abc";
-  printPermutations(str); //== cba,bca,bac,cab,acb,abc;
-})();

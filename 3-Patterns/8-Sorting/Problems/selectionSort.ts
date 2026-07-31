@@ -7,13 +7,11 @@
  * https://www.geeksforgeeks.org/dsa/selection-sort-algorithm-2/
  */
 
-import { Log } from "../../../Log";
-
-function selectionSort(arr: Array<number>) {
+export function selectionSort(arr: Array<number>) {
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[minIndex] < arr[j]) {
+      if (arr[minIndex] > arr[j]) {
         minIndex = j;
       }
     }
@@ -26,9 +24,3 @@ function selectionSort(arr: Array<number>) {
   return arr;
 }
 
-(() => {
-  const nums = [100, -40, 500, -124, 0, 21, 7];
-  Log.info(`Array provided: ${nums}`);
-  const result = selectionSort(nums);
-  Log.info(`Sorted array: ${result}`);
-})();
