@@ -2,17 +2,10 @@
  * run npx ts-node 3-Patterns\5-Recursion\Problems\factorial.ts
  */
 
-import { Log } from "../../../Log";
-
-function factorial(n: number): number {
+export function factorial(n: number): number {
   if (n === 1 || n === 0) {
     return 1;
   }
   return n * factorial(n - 1);
 }
 
-(() => {
-  let num = 4;
-  let result = factorial(num);
-  Log.info(`factorial of ${num} is ${result}`);
-})();

@@ -5,7 +5,7 @@
  * Worst case complexity - O(n*m)
  */
 import { Log } from "../../../Log";
-function print_cols(nums: number[][]) {
+export function print_cols(nums: number[][]) {
   for (let i = 0; i < nums.length; i++) {
     let columns = [];
     for (let row = 0; row < nums.length; row++) {
@@ -15,18 +15,3 @@ function print_cols(nums: number[][]) {
   }
 }
 
-(() => {
-  let matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-  ];
-  print_cols(matrix);
-  Log.info("-----------------------------------");
-  matrix = [
-    [1, 2, 3],
-    [4, 5],
-    [7, 8, 9],
-  ];
-  print_cols(matrix);
-})();

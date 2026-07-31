@@ -9,9 +9,7 @@
  *      If range is [1,N] then element will be at index = value - 1; [1,2,3,4...N] -> N values;
  */
 
-import { Log } from "../../../Log";
-
-function cyclicSort(arr: Array<number>) {
+export function cyclicSort(arr: Array<number>) {
   let i = 0;
   while (i < arr.length) {
     const idx = arr[i] - 1;
@@ -23,14 +21,3 @@ function cyclicSort(arr: Array<number>) {
   }
   return arr;
 }
-(() => {
-  let nums = [3, 5, 2, 1, 4]; // 1,2,3,4,5
-  Log.info(`[${nums}] sorted: `);
-  let result = cyclicSort(nums);
-  Log.info(`[${result}]`);
-
-  nums = [7, 5, 4, 1, 2, 6, 3]; // 1,2,3,4,5,6,7
-  Log.info(`[${nums}] sorted: `);
-  result = cyclicSort(nums);
-  Log.info(`[${result}]`);
-})();

@@ -1,14 +1,11 @@
 /**
- * run "npx ts-node 2-DataStructures\3-HashTables\Problems\groupAnagrams.ts"
  * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.
  * Time complexity - O(n + w log(w)) -> n - array length, w - word length
  * Space complexity - O(m)
  * https://leetcode.com/problems/group-anagrams/description/
  */
 
-import { Log } from "../../../Log";
-
-function groupAnagrams(words: Array<string>): Array<string>[] {
+export function groupAnagrams(words: Array<string>): Array<string>[] {
   let anagram: Array<string>[] = [],
     dict: Map<string, Array<string>> = new Map();
 
@@ -23,9 +20,3 @@ function groupAnagrams(words: Array<string>): Array<string>[] {
   return anagram;
 }
 
-(() => {
-  let words = ["eat", "tea", "tan", "ate", "nat", "bat"]; // [["bat"],["nat","tan"],["ate","eat","tea"]]
-  Log.info(`Words: [${words}]`);
-  let anagrams = groupAnagrams(words);
-  Log.info("Group Anagrams:", anagrams);
-})();

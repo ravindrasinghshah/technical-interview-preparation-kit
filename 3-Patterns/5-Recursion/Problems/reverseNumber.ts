@@ -2,10 +2,8 @@
  * cd to Recursion and run node 3-Patterns\5-Recursion\Problems\reverseNumber.ts
  */
 
-import { Log } from "../../../Log";
-
 //== if we have to pass additional values then better create a new function
-function reverseNumber(n: number) {
+export function reverseNumber(n: number) {
   let sum = 0;
   function reverse(n: number) {
     if (n % 10 === n && n / 10 === n) return;
@@ -18,20 +16,3 @@ function reverseNumber(n: number) {
   return sum;
 }
 
-(() => {
-  let num = 12345;
-  let result = reverseNumber(num);
-  Log.info(`Reverse of digits ${num} is ${result}`);
-
-  num = 123;
-  result = reverseNumber(num);
-  Log.info(`Reverse of digits ${num} is ${result}`);
-
-  num = 100;
-  result = reverseNumber(num);
-  Log.info(`Reverse of digits ${num} is ${result}`);
-
-  num = 102;
-  result = reverseNumber(num);
-  Log.info(`Reverse of digits ${num} is ${result}`);
-})();

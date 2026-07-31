@@ -6,9 +6,7 @@ It picks an element as a pivot & partitions the given array around the pivot by 
 * https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/
  */
 
-import { Log } from "../../../Log";
-
-function quickSort(arr: Array<number>): Array<number> {
+export function quickSort(arr: Array<number>): Array<number> {
   if (arr.length <= 1) return arr;
   let pivot = arr[arr.length - 1];
   let left = [],
@@ -24,9 +22,3 @@ function quickSort(arr: Array<number>): Array<number> {
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 
-(() => {
-  const nums = [2, 3, 5, 7, 0, 1];
-  Log.info(`Array provided: ${nums}`);
-  const result = quickSort(nums);
-  Log.info(`Sorted array: ${result}`);
-})();

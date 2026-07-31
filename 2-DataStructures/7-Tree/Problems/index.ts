@@ -48,14 +48,3 @@ export class Tree {
   }
 }
 
-(() => {
-//   const tree = new Tree();
-//   tree.root = new TreeNode(2);
-//   tree.root.add(1);
-//   tree.root.add(3);
-
-//   Log.info("Tree:", JSON.stringify(tree));
-//   tree.traverseBF();
- //tree.traverseDF();
-  //tree.root.remove(3); Log.info("Tree after remove:", JSON.stringify(tree));
-})();

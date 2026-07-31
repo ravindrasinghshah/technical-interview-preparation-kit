@@ -22,11 +22,10 @@ Answer: True
 Answer: false
  */
 
-import { Log } from "../../../Log";
 import { Node } from "./index";
 
 //== Depth First Search - recursive
-function validate_dfs(
+export function validate_dfs(
   node: Node,
   min: number | null = null,
   max: number | null = null
@@ -37,13 +36,14 @@ function validate_dfs(
     return false;
   }
 
-  if (node.left) return !validate_dfs(node.left, min, node.data);
-  if (node.right) return !validate_dfs(node.right, node.data, max);
-  return true;
+  return (
+    (!node.left || validate_dfs(node.left, min, node.data)) &&
+    (!node.right || validate_dfs(node.right, node.data, max))
+  );
 }
 
 //== Depth First Search - new recursive function
-function validate_dfs_2(root: Node): boolean {
+export function validate_dfs_2(root: Node): boolean {
   function dfs(node: Node | null, min: number, max: number): boolean {
     if (node === null || node === undefined) return true;
     if (node.data <= min || node.data >= max) return false;
@@ -53,39 +53,18 @@ function validate_dfs_2(root: Node): boolean {
 }
 
 //== Breadth First Search
-function validate_bfs(root: Node) {
-  let queue = [root];
+export function validate_bfs(root: Node) {
+  let queue: Array<[Node, number, number]> = [[root, -Infinity, Infinity]];
   while (queue.length) {
-    let len = queue.length;
-    let nextQ = [];
-
-    for (let i = 0; i < len; i++) {
-      let node = queue[i];
-      if (node.left) {
-        if (node.data < node.left.data) return false;
-        nextQ.push(node.left);
-      }
-      if (node.right) {
-        if (node.data > node.right.data) return false;
-        nextQ.push(node.right);
-      }
+    const [node, min, max] = queue.shift()!;
+    if (node.data <= min || node.data >= max) return false;
+    if (node.left) {
+      queue.push([node.left, min, node.data]);
     }
-    queue = nextQ;
+    if (node.right) {
+      queue.push([node.right, node.data, max]);
+    }
   }
   return true;
 }
 
-(() => {
-  let root = new Node(2);
-  root.insert(1);
-  root.insert(0);
-  root.insert(3);
-  root.insert(5);
-  Log.info("BST 1: ", root);
-  const result1 = validate_bfs(root);
-  Log.info("Is BST 1 valid? ", result1);
-  root.left = new Node(10);
-  Log.info("BST 2: ", root);
-  const result2 = validate_bfs(root);
-  Log.info("Is BST 2 valid? ", result2);
-})();
