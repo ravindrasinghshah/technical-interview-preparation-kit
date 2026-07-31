@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\3-HashTables\Problems\groupAnagrams.ts"
  * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.
  * Time complexity - O(n + w log(w)) -> n - array length, w - word length
  * Space complexity - O(m)

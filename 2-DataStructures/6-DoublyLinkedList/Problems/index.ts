@@ -1,6 +1,3 @@
-/**
- * run npx ts-node 2-DataStructures\DoublyLinkedList\Problems\index.ts
- */
 
 import { Log } from "../../../Log";
 

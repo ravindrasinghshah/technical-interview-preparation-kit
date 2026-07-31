@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\5-LinkedList\Problems\reverse.ts"
  * Given a linked list, return reversed list.
  */
 import { LinkedList } from "./index";
@@ -14,4 +13,3 @@ export function reverse(list: LinkedList) {
   }
   return reverseList;
 }
-

@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\4-Stacks-Queues\isPalindromeStack.ts"
    Palindrome is a string which is same after reversing characters.
  */
 

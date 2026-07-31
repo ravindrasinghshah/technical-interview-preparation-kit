@@ -1,5 +1,4 @@
 /*
- * run npx ts-node 2-DataStructures\3-HashTables\Problems\twoSum.ts
  * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
  * https://leetcode.com/problems/two-sum/
  * Time complexity - O(n)

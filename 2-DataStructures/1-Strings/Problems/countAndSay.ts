@@ -1,5 +1,4 @@
 /**
- * run npx ts-node 2-DataStructures\1-Strings\Problems\countAndSay.ts
  * The count-and-say sequence is a sequence of digit strings defined by the recursive formula:
  * countAndSay(1) = "1"
  * countAndSay(n) is the run-length encoding of countAndSay(n - 1).

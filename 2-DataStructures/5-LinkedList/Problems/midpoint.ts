@@ -1,6 +1,3 @@
-/**
- * run "npx ts-node 2-DataStructures\5-LinkedList\Problems\midpoint.ts"
- */
 // find the midpoint of the linked list
 import { LinkedList } from "./index";
 

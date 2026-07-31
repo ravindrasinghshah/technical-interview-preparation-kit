@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\1-Strings\Problems\lengthOfLongestSubstring.ts"
  * Given a string s, find the length of the longest substring without duplicate characters.
  * A substring is a contiguous non-empty sequence of characters within a string.
  *  https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
