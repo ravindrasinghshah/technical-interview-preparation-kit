@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\9-Heaps\Problems\last_stone_weight.ts"
  * https://leetcode.com/problems/last-stone-weight/
  * You are given an array of integers stones where stones[i] is the weight of the ith stone.
    We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. 
@@ -12,7 +11,6 @@
  * Worst case complexity - 
  */
 import { MaxPriorityQueue } from "@datastructures-js/priority-queue";
-import { Log } from "../../../Log";
 function last_stone_weight(stones: number[]): number {
   let heap = new MaxPriorityQueue<number>();
   for (const stone of stones) heap.enqueue(stone);
@@ -29,15 +27,4 @@ function last_stone_weight(stones: number[]): number {
 
   return ans;
 }
-
-(() => {
-  let stones = [2, 7, 4, 1, 8, 1]; // output 1
-  let result = last_stone_weight(stones);
-  Log.info("Last remaining stone weight is: " + result);
-  Log.info("-----------------------------------");
-
-  stones = [4, 3, 4, 3, 2]; // output 2
-  result = last_stone_weight(stones);
-  Log.info("Last remaining stone weight is: " + result);
-  Log.info("-----------------------------------");
-})();
+export { last_stone_weight };

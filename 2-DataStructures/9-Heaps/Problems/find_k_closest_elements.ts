@@ -1,5 +1,4 @@
 /**
- * run "npx ts-node 2-DataStructures\9-Heaps\Problems\find_k_closest_elements.ts"
  * https://leetcode.com/problems/find-k-closest-elements/description/
  * Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array. The result should also be sorted in ascending order.
     An integer a is closer to x than an integer b if:
@@ -8,7 +7,6 @@
  * complexity - O((n+k) . log(k))
  */
 import { MaxPriorityQueue } from "@datastructures-js/priority-queue";
-import { Log } from "../../../Log";
 
 function find_k_closest_elements(
   nums: number[],
@@ -34,17 +32,4 @@ function find_k_closest_elements(
 
   return ans.sort((a, b) => a - b);
 }
-
-(() => {
-  let nums = [1, 2, 3, 4, 5],
-    k = 2,
-    x = 3; // output [1,2,3,4]
-  let result = find_k_closest_elements(nums, k, x);
-  Log.info("Minimum operations required: " + result);
-  Log.info("-----------------------------------");
-
-  ((nums = [1, 1, 2, 3, 4, 5]), (k = 4), (x = -1)); // output [1, 1, 2, 3]
-  result = find_k_closest_elements(nums, k, x);
-  Log.info("Minimum operations required: " + result);
-  Log.info("-----------------------------------");
-})();
+export { find_k_closest_elements };

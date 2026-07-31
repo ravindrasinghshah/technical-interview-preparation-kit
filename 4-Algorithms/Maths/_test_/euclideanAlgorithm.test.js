@@ -1,16 +1,4 @@
-/**
- * Test suite for Euclidean Algorithm
- * Tests the findGCD function for finding Greatest Common Divisor
- */
-
-// Mock implementation since we need to refactor the original file
-// In a full implementation, this would import from the refactored euclideanAlgorithm.js
-// function findGCD(num1, num2) {
-//     if (num2 === 0) return num1;
-//     return findGCD(num2, (num1 % num2));
-// }
-
-import { findGCD } from "./4-Algorithms/Maths/euclideanAlgorithm"
+import { findGCD } from "../Problems/euclideanAlgorithm"
 
 describe('Euclidean Algorithm - findGCD', () => {
     it('should find GCD of two positive integers', () => {
@@ -35,7 +23,3 @@ describe('Euclidean Algorithm - findGCD', () => {
         expect(findGCD(9, 18)).toBe(9);
     });
 });
-
-// TODO: Once euclideanAlgorithm.js is refactored to export findGCD function,
-// replace the mock implementation with:
-// import { findGCD } from './3-Algorithms/euclideanAlgorithm.js';
