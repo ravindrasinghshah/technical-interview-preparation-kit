@@ -2,9 +2,7 @@
  * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\palindrome.ts
  */
 
-import { Log } from "../../../Log";
-
-function palindrome(n: number) {
+export function palindrome(n: number) {
   function isPalindrome(n: number) {
     if (Math.floor(n / 10) === 0) return true;
     let s = Math.floor(n / Math.pow(10, Math.floor(Math.log10(n))));
@@ -20,12 +18,3 @@ function palindrome(n: number) {
   return isPalindrome(n);
 }
 
-(() => {
-  let num = 12321;
-  let result = palindrome(num);
-  Log.info(`Is ${num} a palindrome? ${result}`);
-
-  num = 12310211;
-  result = palindrome(num);
-  Log.info(`Is ${num} a palindrome? ${result}`);
-})();

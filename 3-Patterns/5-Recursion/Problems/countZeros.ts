@@ -2,9 +2,7 @@
  * cd to Recursion and run npx ts-node 3-Patterns\5-Recursion\Problems\countZeros.ts
  */
 
-import { Log } from "../../../Log";
-
-function countZeros_without_arg(n: number) {
+export function countZeros_without_arg(n: number) {
   let zeros = 0;
   function rec(n: number) {
     if (n === 0) return;
@@ -17,7 +15,7 @@ function countZeros_without_arg(n: number) {
   return zeros;
 }
 
-function countZeros(n: number, zeros = 0) {
+export function countZeros(n: number, zeros = 0) {
   //== this passes the value to above calls;
   if (n === 0) return zeros;
   let remainder = n % 10;
@@ -28,12 +26,3 @@ function countZeros(n: number, zeros = 0) {
   return countZeros(remainingNumber, zeros);
 }
 
-(() => {
-  let num = 12321;
-  let result = countZeros(num);
-  Log.info(`Total zeros in ${num} is ${result}`);
-
-  num = 100001;
-  result = countZeros(num);
-  Log.info(`Total zeros in ${num} is ${result}`);
-})();

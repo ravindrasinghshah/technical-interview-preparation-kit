@@ -1,9 +1,7 @@
-import { Log } from "../../../Log";
-
 /**
  * run npx ts-node 3-Patterns\5-Recursion\Problems\factorial_dp.ts
  */
-function factorial_dp(n: number) {
+export function factorial_dp(n: number) {
   function memo(n: number, m: Map<number, number>): number {
     if (m.has(n)) {
       return m.get(n)!;
@@ -19,12 +17,3 @@ function factorial_dp(n: number) {
   return memo(n, m);
 }
 
-(() => {
-  let num = 4;
-  let result = factorial_dp(num);
-  Log.info(`factorial of ${num} is ${result}`);
-
-  num = 20;
-  result = factorial_dp(num);
-  Log.info(`factorial of ${num} is ${result}`);
-})();

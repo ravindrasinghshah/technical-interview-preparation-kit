@@ -2,8 +2,6 @@
  * cd to Recursion/array and run npx ts-node 3-Patterns\5-Recursion\Problems\findAllIndexesOfK.ts
  */
 
-import { Log } from "../../../Log";
-
 // function findAllIndexesOfK(nums, target) {
 //     function findElement(arr, i, indexes) {
 //         //== base condition: traversed all indexes
@@ -17,7 +15,7 @@ import { Log } from "../../../Log";
 
 //== if want to use list within body of recursion, then have to return back and update the calling function list
 //==== this is not optimized approach because list is created for each recursive calls.
-function findAllIndexesOfK(nums: Array<number>, target: number) {
+export function findAllIndexesOfK(nums: Array<number>, target: number): number[] {
   function findElement(arr: Array<number>, i: number) {
     let list: Array<number> = [];
     //== base condition: traversed all indexes
@@ -28,18 +26,5 @@ function findAllIndexesOfK(nums: Array<number>, target: number) {
 
     return [...list, ...retList];
   }
-  let allIndexes = findElement(nums, 0, []);
-  return allIndexes;
+  return findElement(nums, 0);
 }
-
-(() => {
-  let nums = [1, 2, 4, 8, 10];
-  let target = 8;
-  let result = findAllIndexesOfK(nums, target);
-  Log.info(`Index position of ${target} in [${nums}] array is: [${result}]`);
-
-  nums = [1, 2, 4, 5, 1];
-  target = 1;
-  result = findAllIndexesOfK(nums, target);
-  Log.info(`Index position of ${target} in [${nums}] array is: [${result}]`);
-})();
