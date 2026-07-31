@@ -9,6 +9,7 @@
 ## 📚 Table of Contents
 
 - [Quick Start](#-quick-start)
+- [Testing](#-testing)
 - [How to use this repository?](#-how-to-use-this-repository)
 - [Repository Structure](#-repository-structure)
 - [Learning Path](#-learning-path)
@@ -49,6 +50,59 @@ npm install
 
 This is your **all-in-one interview preparation notebook** for **system design**, **data structures** and **algorithms** in TypeScript.  
 Rather than just reading theory, you’ll **learn by solving real interview-style problems** — organized for maximum efficiency.
+
+## Testing
+
+This repository uses [Vitest](https://vitest.dev/) for automated tests. Tests live beside their topic in an `_test_` folder and use the `.test.js` extension.
+
+```text
+3-Patterns/
+  5-Recursion/
+    Problems/
+      countdown.ts
+    _test_/
+      countdown.test.js
+```
+
+### Run tests
+
+```bash
+# Run the complete test suite once
+npm test
+
+# Re-run affected tests while you work
+npm run test:watch
+
+# Run one test file
+npx vitest run 3-Patterns/5-Recursion/_test_/countdown.test.js
+```
+
+### Add a test for a problem method
+
+Export functions or classes from problem files, and do not run example calls when the module is imported. Return a value whenever practical so tests assert results rather than console output.
+
+```ts
+// Problems/countdown.ts
+export function countdown(n: number): number[] {
+  if (n <= 0) return [0];
+  return [n, ...countdown(n - 1)];
+}
+```
+
+Create a matching test file in the topic's `_test_` directory:
+
+```js
+// _test_/countdown.test.js
+import { countdown } from "../Problems/countdown";
+
+describe("countdown", () => {
+  it("returns values from n through zero", () => {
+    expect(countdown(3)).toEqual([3, 2, 1, 0]);
+  });
+});
+```
+
+For in-place methods, assert the changed input after calling the method—for example, `expect(values).toEqual([1, 2, 3])` after sorting `values`.
 
 ### How to Get Started
 
