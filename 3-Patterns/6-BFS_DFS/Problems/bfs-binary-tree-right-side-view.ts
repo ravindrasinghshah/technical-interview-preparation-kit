@@ -4,7 +4,7 @@
  */
 import { Node } from "../../../2-DataStructures/8-BinarySearchTree/Problems";
 
-export function bfs_binary_tree_right_side_view(root: Node | null): number[] {
+export default function bfs_binary_tree_right_side_view(root: Node | null): number[] {
   if (!root) return [];
 
   let ans: number[] = [];
