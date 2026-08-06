@@ -1,4 +1,4 @@
-import { bfs_binary_tree_right_side_view } from "../Problems/bfs-binary-tree-right-side-view";
+import bfs_binary_tree_right_side_view from "../Problems/bfs-binary-tree-right-side-view";
 import { Node } from "../../../2-DataStructures/8-BinarySearchTree/Problems";
 import { expect } from "vitest";
 
