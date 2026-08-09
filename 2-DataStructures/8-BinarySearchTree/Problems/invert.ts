@@ -1,7 +1,7 @@
 /**
- * run "npx ts-node 2-DataStructures\8-BinarySearchTree\Problems\invert.ts"
+ * https://leetcode.com/problems/invert-binary-tree/description/
  * Given the root of a binary tree, invert the tree, and return its root.
-https://leetcode.com/problems/invert-binary-tree/description/
+
 
   Example 1:
       4                 4
@@ -27,4 +27,3 @@ export function invertBinaryTree(root: Node | null): Node | null {
   }
   return inverted;
 }
-
