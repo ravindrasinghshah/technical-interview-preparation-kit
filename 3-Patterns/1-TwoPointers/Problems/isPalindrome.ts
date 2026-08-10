@@ -1,11 +1,8 @@
 /**
- * run "npx ts-node 3-Patterns\1-TwoPointers\isPalindrome.ts"
    Palindrome is a string which is same after reversing characters.
  */
 
-import { Log } from "../../Log";
-
-function isPalindrome(str: string) {
+export default function isPalindrome(str: string): boolean {
   let start = 0;
   let end = str.length - 1;
   while (start < end) {
@@ -17,9 +14,3 @@ function isPalindrome(str: string) {
   }
   return true;
 }
-
-(() => {
-  const str = "1001";
-  const result = isPalindrome(str);
-  Log.info(`Is ${str} palindrome? ${result}`);
-})();
