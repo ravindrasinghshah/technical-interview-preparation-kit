@@ -18,20 +18,23 @@ export interface ValidationContext {
 const isLoop = (node: ts.Node): node is LoopNode =>
   ts.isForStatement(node) || ts.isForInStatement(node) || ts.isForOfStatement(node) || ts.isWhileStatement(node) || ts.isDoStatement(node);
 
-function topLevelFunction(source: ts.SourceFile): PrimaryFunction | null {
+function topLevelFunctions(source: ts.SourceFile): PrimaryFunction[] {
+  const functions: PrimaryFunction[] = [];
   for (const statement of source.statements) {
-    if (ts.isFunctionDeclaration(statement) && statement.body) return statement;
+    if (ts.isFunctionDeclaration(statement) && statement.body) {
+      functions.push(statement);
+      continue;
+    }
     if (!ts.isVariableStatement(statement)) continue;
     for (const declaration of statement.declarationList.declarations) {
       const initializer = declaration.initializer;
-      if (initializer && (ts.isArrowFunction(initializer) || ts.isFunctionExpression(initializer))) return initializer;
+      if (initializer && (ts.isArrowFunction(initializer) || ts.isFunctionExpression(initializer))) functions.push(initializer);
     }
   }
-  return null;
+  return functions;
 }
 
-export function createValidationContext(source: ts.SourceFile): ValidationContext {
-  const primaryFunction = topLevelFunction(source);
+function contextFor(source: ts.SourceFile, primaryFunction: PrimaryFunction | null): ValidationContext {
   const context: ValidationContext = {
     source,
     primaryFunction,
@@ -59,6 +62,15 @@ export function createValidationContext(source: ts.SourceFile): ValidationContex
 
   visit(primaryFunction);
   return context;
+}
+
+export function createValidationContexts(source: ts.SourceFile): ValidationContext[] {
+  const functions = topLevelFunctions(source);
+  return functions.length > 0 ? functions.map((fn) => contextFor(source, fn)) : [contextFor(source, null)];
+}
+
+export function createValidationContext(source: ts.SourceFile): ValidationContext {
+  return createValidationContexts(source)[0];
 }
 
 export function isDescendantOf(node: ts.Node, ancestor: ts.Node): boolean {

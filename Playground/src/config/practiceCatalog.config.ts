@@ -13,6 +13,7 @@ const common = [
   rule("loop-with-comparison", "Use a loop controlled by a comparison."),
   rule("returns-value", "Return the result from the template."),
 ] satisfies ValidationRule[];
+const returns = [rule("returns-value", "Return the result from the template.")] satisfies ValidationRule[];
 
 export interface PatternInfo {
   title: string;
@@ -31,10 +32,30 @@ export const patternInfo: Record<PatternId, PatternInfo> = {
     description: "Maintain a useful contiguous range as it moves.",
     accent: "violet",
   },
-  "binary-search": {
-    title: "Binary Search",
-    description: "Discard half of an ordered search space each step.",
-    accent: "cyan",
+  "prefix-sum": {
+    title: "Prefix Sum",
+    description: "Carry forward cumulative state for fast range and subarray work.",
+    accent: "amber",
+  },
+  "string-building": {
+    title: "String Building",
+    description: "Assemble characters with a reusable output accumulator.",
+    accent: "rose",
+  },
+  "linked-list": {
+    title: "Linked List",
+    description: "Navigate and rewire nodes without losing the remaining chain.",
+    accent: "green",
+  },
+  "monotonic-stack": {
+    title: "Monotonic Stack",
+    description: "Keep only candidates that can still answer a later query.",
+    accent: "blue",
+  },
+  "binary-tree": {
+    title: "Binary Tree",
+    description: "Traverse hierarchical data recursively or with explicit worklists.",
+    accent: "plum",
   },
 };
 
@@ -50,37 +71,7 @@ export const drills: TemplateDrill[] = [
     rules: [rule("two-index-initializers", "Initialize one index at 0 and another from the input length."), rule("conditional-branch", "Choose which pointer to move with a condition."), rule("two-directional-updates", "Move one pointer forward and the other backward."), ...common],
   },
   {
-    id: "two-pointers-same-direction", patternId: "two-pointers", eyebrow: "FOUNDATION 02", title: "Same direction",
-    validation: { schemaVersion: 1, variant: "same-direction" },
-    prompt: "Write the slow/fast pointer skeleton used to scan an array while compacting or filtering values in place.",
-    starterCode: `function compact(values: number[]) {\n  // Add slow and fast pointers\n\n  return 0;\n}`,
-    canonicalCode: `function compact(values: number[]) {\n  let slow = 0;\n  for (let fast = 0; fast < values.length; fast++) {\n    if (values[fast] !== 0) {\n      values[slow] = values[fast];\n      slow++;\n    }\n  }\n  return slow;\n}`,
-    explanation: "The fast pointer explores every value while the slow pointer marks the next output position.",
-    referenceUrl: "https://leetcode.com/tag/two-pointers/",
-    rules: [rule("two-index-initializers", "Initialize two index variables."), rule("conditional-branch", "Conditionally accept or process the fast pointer value."), rule("same-direction-updates", "Advance both indices in the forward direction."), ...common],
-  },
-  {
-    id: "two-pointers-sorted-pair", patternId: "two-pointers", eyebrow: "FOUNDATION 03", title: "Sorted pair search",
-    validation: { schemaVersion: 1, variant: "sorted-pair" },
-    prompt: "Create the template for finding a target pair in sorted input by comparing a sum and narrowing from either side.",
-    starterCode: `function findPair(values: number[], target: number) {\n  // Search inward from both sides\n\n  return false;\n}`,
-    canonicalCode: `function findPair(values: number[], target: number) {\n  let low = 0;\n  let high = values.length - 1;\n  while (low < high) {\n    const sum = values[low] + values[high];\n    if (sum === target) return true;\n    if (sum < target) low++;\n    else high--;\n  }\n  return false;\n}`,
-    explanation: "Sorted order tells you whether a sum can only improve by raising the low value or lowering the high value.",
-    referenceUrl: "https://leetcode.com/tag/two-pointers/",
-    rules: [rule("two-index-initializers", "Initialize the low and high boundaries."), rule("conditional-branch", "Compare the current pair against the target."), rule("two-directional-updates", "Narrow the pair from both possible directions."), ...common],
-  },
-  {
-    id: "sliding-window-fixed", patternId: "sliding-window", eyebrow: "WINDOW 01", title: "Fixed-size window",
-    validation: { schemaVersion: 1, variant: "fixed-window" },
-    prompt: "Write a template that expands one item at a time and removes the item leaving a window of size k.",
-    starterCode: `function maxWindow(values: number[], k: number) {\n  // Track a fixed-size window\n\n  return 0;\n}`,
-    canonicalCode: `function maxWindow(values: number[], k: number) {\n  let left = 0;\n  let sum = 0;\n  let best = 0;\n  for (let right = 0; right < values.length; right++) {\n    sum += values[right];\n    if (right - left + 1 === k) {\n      best = Math.max(best, sum);\n      sum -= values[left];\n      left++;\n    }\n  }\n  return best;\n}`,
-    explanation: "A fixed window adds the entering element and removes the departing element instead of recalculating the range.",
-    referenceUrl: "https://leetcode.com/tag/sliding-window/",
-    rules: [rule("window-boundaries", "Track left and right window boundaries."), rule("conditional-branch", "React when the desired window size is reached."), rule("same-direction-updates", "Move both boundaries forward over time."), ...common],
-  },
-  {
-    id: "sliding-window-variable", patternId: "sliding-window", eyebrow: "WINDOW 02", title: "Variable-size window",
+    id: "sliding-window-variable", patternId: "sliding-window", eyebrow: "WINDOW 01", title: "Sliding window",
     validation: { schemaVersion: 1, variant: "variable-window" },
     prompt: "Write the expand-and-shrink template: expand right, then repeatedly move left while the window violates a condition.",
     starterCode: `function shortestWindow(values: number[], target: number) {\n  // Expand right and shrink left\n\n  return 0;\n}`,
@@ -90,43 +81,328 @@ export const drills: TemplateDrill[] = [
     rules: [rule("window-boundaries", "Track the left and right edges of the window."), rule("window-shrink-loop", "Use a nested loop to shrink the window while its invariant is broken."), rule("same-direction-updates", "Advance both window boundaries."), ...common],
   },
   {
-    id: "sliding-window-frequency", patternId: "sliding-window", eyebrow: "WINDOW 03", title: "Frequency-map window",
-    validation: { schemaVersion: 1, variant: "frequency-window" },
-    prompt: "Write a variable-window template that records element frequencies as the window expands and shrinks.",
-    starterCode: `function longestUnique(values: string) {\n  // Track window frequencies\n\n  return 0;\n}`,
-    canonicalCode: `function longestUnique(values: string) {\n  let left = 0;\n  let best = 0;\n  const counts = new Map<string, number>();\n  for (let right = 0; right < values.length; right++) {\n    counts.set(values[right], (counts.get(values[right]) ?? 0) + 1);\n    while ((counts.get(values[right]) ?? 0) > 1) {\n      counts.set(values[left], (counts.get(values[left]) ?? 0) - 1);\n      left++;\n    }\n    best = Math.max(best, right - left + 1);\n  }\n  return best;\n}`,
-    explanation: "A Map or Set gives the window memory: update it for both the entering and departing elements.",
-    referenceUrl: "https://leetcode.com/tag/sliding-window/",
-    rules: [rule("window-boundaries", "Track both window boundaries."), rule("frequency-collection", "Create and update a Map or Set for window membership."), rule("window-shrink-loop", "Shrink repeatedly when the frequency constraint is broken."), ...common],
+    id: "two-pointers-two-inputs", patternId: "two-pointers", eyebrow: "FOUNDATION 02", title: "Two inputs, exhaust both",
+    validation: { schemaVersion: 1, variant: "two-input-exhaustion" },
+    prompt: "Write the two-input traversal template: process both inputs together, then finish whichever input still has values.",
+    starterCode: `function traverse(first: number[], second: number[]) {
+  // Track one position in each input
+
+  // Traverse together, then exhaust each remainder
+
+  return 0;
+}`,
+    canonicalCode: `function traverse(first: number[], second: number[]) {
+  let i = 0;
+  let j = 0;
+  let answer = 0;
+
+  while (i < first.length && j < second.length) {
+    if (first[i] <= second[j]) {
+      i++;
+    } else {
+      j++;
+    }
+  }
+
+  while (i < first.length) {
+    i++;
+  }
+  while (j < second.length) {
+    j++;
+  }
+
+  return answer;
+}`,
+    explanation: "A shared loop handles paired work; two cleanup loops guarantee that neither input is abandoned.",
+    referenceUrl: "https://leetcode.com/tag/two-pointers/",
+    rules: [rule("two-index-initializers", "Initialize one index for each input."), rule("joint-traversal", "Traverse both inputs while each still has values."), rule("conditional-branch", "Choose which input index to advance."), rule("same-direction-updates", "Advance both input indices through their own data."), rule("tail-exhaustion", "Use cleanup loops to exhaust both remaining inputs."), ...common],
   },
   {
-    id: "binary-search-exact", patternId: "binary-search", eyebrow: "SEARCH 01", title: "Exact match",
-    validation: { schemaVersion: 1, variant: "exact-match" },
-    prompt: "Write classic binary search over a sorted array, returning the target index or -1.",
-    starterCode: `function search(values: number[], target: number) {\n  // Search the ordered range\n\n  return -1;\n}`,
-    canonicalCode: `function search(values: number[], target: number) {\n  let low = 0;\n  let high = values.length - 1;\n  while (low <= high) {\n    const mid = low + Math.floor((high - low) / 2);\n    if (values[mid] === target) return mid;\n    if (values[mid] < target) low = mid + 1;\n    else high = mid - 1;\n  }\n  return -1;\n}`,
-    explanation: "Midpoint comparison removes one ordered half on every iteration.",
-    referenceUrl: "https://leetcode.com/tag/binary-search/",
-    rules: [rule("two-index-initializers", "Initialize lower and upper search boundaries."), rule("binary-midpoint", "Compute a midpoint from both boundaries."), rule("conditional-branch", "Compare the midpoint value with the target."), rule("binary-boundary-updates", "Move a boundary relative to the midpoint."), ...common],
+    id: "prefix-sum-build", patternId: "prefix-sum", eyebrow: "PREFIX 01", title: "Build a prefix sum",
+    validation: { schemaVersion: 1, variant: "prefix-array" },
+    prompt: "Build an output array whose value at each index contains the sum through that input position.",
+    starterCode: `function buildPrefix(values: number[]) {
+  // Seed and build the prefix array
+
+  return [];
+}`,
+    canonicalCode: `function buildPrefix(values: number[]) {
+  const prefix = [values[0]];
+  for (let i = 1; i < values.length; i++) {
+    prefix.push(prefix[prefix.length - 1] + values[i]);
+  }
+  return prefix;
+}`,
+    explanation: "Seed the first prefix, then combine the previous prefix with the current input value.",
+    referenceUrl: "https://leetcode.com/tag/prefix-sum/",
+    rules: [rule("prefix-seed", "Seed the prefix collection from the first input value."), rule("prefix-accumulation", "Append the previous prefix plus the current input value."), ...common],
   },
   {
-    id: "binary-search-boundary", patternId: "binary-search", eyebrow: "SEARCH 02", title: "Boundary search",
-    validation: { schemaVersion: 1, variant: "boundary-search" },
-    prompt: "Write a binary-search template that remembers a valid candidate and continues left to find the first occurrence.",
-    starterCode: `function firstIndex(values: number[], target: number) {\n  // Find the leftmost valid index\n\n  return -1;\n}`,
-    canonicalCode: `function firstIndex(values: number[], target: number) {\n  let low = 0;\n  let high = values.length - 1;\n  let answer = -1;\n  while (low <= high) {\n    const mid = low + Math.floor((high - low) / 2);\n    if (values[mid] >= target) {\n      if (values[mid] === target) answer = mid;\n      high = mid - 1;\n    } else {\n      low = mid + 1;\n    }\n  }\n  return answer;\n}`,
-    explanation: "Boundary search saves a candidate, then keeps searching the side where an earlier valid answer may exist.",
-    referenceUrl: "https://leetcode.com/tag/binary-search/",
-    rules: [rule("two-index-initializers", "Initialize lower and upper boundaries."), rule("binary-midpoint", "Compute a midpoint."), rule("tracks-candidate", "Keep a separate candidate answer while searching."), rule("binary-boundary-updates", "Continue narrowing relative to the midpoint."), ...common],
+    id: "prefix-sum-exact-subarrays", patternId: "prefix-sum", eyebrow: "PREFIX 02", title: "Count exact subarrays",
+    validation: { schemaVersion: 1, variant: "frequency-map-count" },
+    prompt: "Write the prefix-frequency template for counting subarrays whose accumulated value matches an exact target.",
+    starterCode: `function countSubarrays(values: number[], target: number) {
+  // Track previously seen prefix values
+
+  return 0;
+}`,
+    canonicalCode: `function countSubarrays(values: number[], target: number) {
+  const counts = new Map<number, number>();
+  counts.set(0, 1);
+  let answer = 0;
+  let current = 0;
+
+  for (const value of values) {
+    current += value;
+    answer += counts.get(current - target) ?? 0;
+    counts.set(current, (counts.get(current) ?? 0) + 1);
+  }
+
+  return answer;
+}`,
+    explanation: "A previous prefix of current minus target identifies a subarray ending at the current position.",
+    referenceUrl: "https://leetcode.com/tag/prefix-sum/",
+    rules: [rule("frequency-map-seed", "Create a frequency map and seed the empty prefix."), rule("iterates-input", "Visit every input value."), rule("prefix-frequency-count", "Count matching earlier prefixes and record the current prefix."), ...returns],
   },
   {
-    id: "binary-search-answer-space", patternId: "binary-search", eyebrow: "SEARCH 03", title: "Answer-space search",
-    validation: { schemaVersion: 1, variant: "answer-space" },
-    prompt: "Write a template that binary-searches a numeric answer range using an isFeasible predicate.",
-    starterCode: `function minimize(low: number, high: number) {\n  const isFeasible = (candidate: number) => true;\n  // Search for the smallest feasible answer\n\n  return low;\n}`,
-    canonicalCode: `function minimize(low: number, high: number) {\n  const isFeasible = (candidate: number) => candidate >= 0;\n  let answer = high;\n  while (low <= high) {\n    const mid = low + Math.floor((high - low) / 2);\n    if (isFeasible(mid)) {\n      answer = mid;\n      high = mid - 1;\n    } else {\n      low = mid + 1;\n    }\n  }\n  return answer;\n}`,
-    explanation: "When feasibility is monotonic, search candidate answers just as you would search sorted values.",
-    referenceUrl: "https://leetcode.com/tag/binary-search/",
-    rules: [rule("binary-midpoint", "Compute the midpoint of the answer range."), rule("predicate-call", "Test the midpoint with a feasibility predicate."), rule("tracks-candidate", "Remember the best feasible candidate."), rule("binary-boundary-updates", "Narrow the answer range around the midpoint."), ...common],
+    id: "string-building-array-join", patternId: "string-building", eyebrow: "STRING 01", title: "Buffer then join",
+    validation: { schemaVersion: 1, variant: "array-join" },
+    prompt: "Build a string by collecting characters in an array and joining the finished buffer.",
+    starterCode: `function buildString(characters: string[]) {
+  // Collect each character, then join the buffer
+
+  return "";
+}`,
+    canonicalCode: `function buildString(characters: string[]) {
+  const result: string[] = [];
+  for (const character of characters) {
+    result.push(character);
+  }
+  return result.join("");
+}`,
+    explanation: "An array buffer makes repeated appends explicit and converts to a string once at the end.",
+    referenceUrl: "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/join",
+    rules: [rule("accumulator-initializer", "Initialize an empty array accumulator."), rule("iterates-input", "Iterate over the input characters."), rule("appends-character", "Append each visited character to the accumulator."), rule("joins-characters", "Return the accumulator joined into a string."), ...returns],
+  },
+  {
+    id: "string-building-concatenation", patternId: "string-building", eyebrow: "STRING 02", title: "Concatenate characters",
+    validation: { schemaVersion: 1, variant: "concatenation" },
+    prompt: "Build a string with a string accumulator that receives each character from the input.",
+    starterCode: `function buildString(characters: string[]) {
+  // Append every character to a string accumulator
+
+  return "";
+}`,
+    canonicalCode: `function buildString(characters: string[]) {
+  let result = "";
+  for (const character of characters) {
+    result += character;
+  }
+  return result;
+}`,
+    explanation: "A string accumulator is the compact alternative when direct concatenation is clear enough.",
+    referenceUrl: "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Addition_assignment",
+    rules: [rule("accumulator-initializer", "Initialize an empty string accumulator."), rule("iterates-input", "Iterate over the input characters."), rule("concatenates-character", "Append each visited character to the string accumulator."), ...returns],
+  },
+  {
+    id: "linked-list-fast-slow", patternId: "linked-list", eyebrow: "LIST 01", title: "Fast and slow pointers",
+    validation: { schemaVersion: 1, variant: "fast-slow" },
+    prompt: "Write the linked-list traversal where one pointer advances one node and another advances two nodes.",
+    starterCode: `type ListNode = { value: number; next: ListNode | null };
+
+function inspectList(head: ListNode | null) {
+  // Add slow and fast pointers
+
+  return 0;
+}`,
+    canonicalCode: `type ListNode = { value: number; next: ListNode | null };
+
+function inspectList(head: ListNode | null) {
+  let slow = head;
+  let fast = head;
+  let answer = 0;
+
+  while (fast && fast.next) {
+    slow = slow!.next;
+    fast = fast.next.next;
+  }
+
+  return answer;
+}`,
+    explanation: "The guard protects the two-step pointer; the different speeds expose cycles and midpoint relationships.",
+    referenceUrl: "https://leetcode.com/tag/linked-list/",
+    rules: [rule("fast-slow-initializers", "Initialize two distinct pointers from the list head."), rule("fast-slow-guard", "Guard both the fast pointer and its next node."), rule("fast-slow-steps", "Advance one pointer once and the other pointer twice."), ...returns],
+  },
+  {
+    id: "linked-list-reverse", patternId: "linked-list", eyebrow: "LIST 02", title: "Reverse a linked list",
+    validation: { schemaVersion: 1, variant: "reverse" },
+    prompt: "Reverse a list in place while preserving the next node before changing each link.",
+    starterCode: `type ListNode = { value: number; next: ListNode | null };
+
+function reverseList(head: ListNode | null) {
+  // Reverse each next link without losing the remainder
+
+  return head;
+}`,
+    canonicalCode: `type ListNode = { value: number; next: ListNode | null };
+
+function reverseList(head: ListNode | null) {
+  let current = head;
+  let previous: ListNode | null = null;
+
+  while (current) {
+    const nextNode = current.next;
+    current.next = previous;
+    previous = current;
+    current = nextNode;
+  }
+
+  return previous;
+}`,
+    explanation: "Save the remaining chain first, reverse the current link, then advance both working pointers.",
+    referenceUrl: "https://leetcode.com/tag/linked-list/",
+    rules: [rule("reversal-initializers", "Start the current pointer at head and the previous pointer at null."), rule("saves-next-node", "Save the next node before changing the current link."), rule("reverses-link", "Point the current node back to the previous node."), rule("advances-reversal", "Advance previous and current through the saved chain in order."), ...returns],
+  },
+  {
+    id: "monotonic-stack-increasing", patternId: "monotonic-stack", eyebrow: "STACK 01", title: "Monotonic increasing stack",
+    validation: { schemaVersion: 1, variant: "increasing-stack" },
+    prompt: "Maintain an increasing stack by removing larger top values before pushing each new input value.",
+    starterCode: `function scan(values: number[]) {
+  // Maintain a monotonic stack
+
+  return 0;
+}`,
+    canonicalCode: `function scan(values: number[]) {
+  const stack: number[] = [];
+  let answer = 0;
+
+  for (const value of values) {
+    while (stack.length && stack[stack.length - 1] > value) {
+      stack.pop();
+    }
+    stack.push(value);
+  }
+
+  return answer;
+}`,
+    explanation: "Pop values that can no longer help, then add the current value after the invariant is restored.",
+    referenceUrl: "https://leetcode.com/tag/monotonic-stack/",
+    rules: [rule("stack-initializer", "Initialize an empty stack."), rule("iterates-input", "Visit every input value."), rule("monotonic-shrink-loop", "Shrink while the stack top violates the monotonic order."), rule("stack-pop", "Pop invalid stack candidates inside the shrink loop."), rule("stack-push", "Push the current value after shrinking."), ...returns],
+  },
+  {
+    id: "binary-tree-dfs-recursive", patternId: "binary-tree", eyebrow: "TREE 01", title: "DFS, recursive",
+    validation: { schemaVersion: 1, variant: "dfs-recursive" },
+    prompt: "Write recursive depth-first traversal with a null base case and visits to both child subtrees.",
+    starterCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function dfs(root: TreeNode | null): number {
+  // Add the base case and visit both children
+
+  return 0;
+}`,
+    canonicalCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function dfs(root: TreeNode | null): number {
+  if (!root) {
+    return 0;
+  }
+
+  const leftResult = dfs(root.left);
+  const rightResult = dfs(root.right);
+  return 1 + leftResult + rightResult;
+}`,
+    explanation: "The null case ends each branch; recursive calls solve the left and right subtrees.",
+    referenceUrl: "https://leetcode.com/tag/depth-first-search/",
+    rules: [rule("null-base-case", "Return from a base case when the current node is absent."), rule("recursive-child-visits", "Recursively visit both left and right children."), ...returns],
+  },
+  {
+    id: "binary-tree-dfs-iterative", patternId: "binary-tree", eyebrow: "TREE 02", title: "DFS, iterative",
+    validation: { schemaVersion: 1, variant: "dfs-iterative" },
+    prompt: "Write iterative depth-first traversal with a stack: pop a node and push each child that exists.",
+    starterCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function dfs(root: TreeNode) {
+  // Traverse with an explicit stack
+
+  return 0;
+}`,
+    canonicalCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function dfs(root: TreeNode) {
+  const stack = [root];
+  let answer = 0;
+
+  while (stack.length) {
+    const node = stack.pop()!;
+    if (node.left) {
+      stack.push(node.left);
+    }
+    if (node.right) {
+      stack.push(node.right);
+    }
+  }
+
+  return answer;
+}`,
+    explanation: "The explicit stack replaces the call stack and preserves depth-first processing.",
+    referenceUrl: "https://leetcode.com/tag/depth-first-search/",
+    rules: [rule("traversal-stack", "Seed a stack with the root and pop nodes while it is non-empty."), rule("visits-tree-children", "Guard and add both children to the traversal stack."), ...returns],
+  },
+  {
+    id: "binary-tree-bfs", patternId: "binary-tree", eyebrow: "TREE 03", title: "BFS by level",
+    validation: { schemaVersion: 1, variant: "bfs-level-order" },
+    prompt: "Write breadth-first traversal that snapshots each level size and builds the queue for the next level.",
+    starterCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function bfs(root: TreeNode) {
+  // Process one queue level at a time
+
+  return 0;
+}`,
+    canonicalCode: `type TreeNode = { value: number; left: TreeNode | null; right: TreeNode | null };
+
+function bfs(root: TreeNode) {
+  let queue = [root];
+  let answer = 0;
+
+  while (queue.length) {
+    const currentLength = queue.length;
+    const nextQueue: TreeNode[] = [];
+
+    for (let i = 0; i < currentLength; i++) {
+      const node = queue[i];
+      if (node.left) {
+        nextQueue.push(node.left);
+      }
+      if (node.right) {
+        nextQueue.push(node.right);
+      }
+    }
+
+    queue = nextQueue;
+  }
+
+  return answer;
+}`,
+    explanation: "A level-size snapshot fixes the current breadth; a fresh queue gathers the following level.",
+    referenceUrl: "https://leetcode.com/tag/breadth-first-search/",
+    rules: [rule("level-queue", "Seed a queue with the root and process it while non-empty."), rule("captures-level-size", "Snapshot the current queue length before processing the level."), rule("level-loop", "Use the snapshot to process exactly one level."), rule("visits-tree-children", "Guard and enqueue both children for the next level."), rule("replaces-level-queue", "Replace the current queue with the completed next-level queue."), ...returns],
   },
 ];
+
+/** Drills implementing the current requirements in src/data/code-templates.md. */
+export const codeTemplateRequirementDrillIds = [
+  "two-pointers-opposite-ends",
+  "two-pointers-two-inputs",
+  "sliding-window-variable",
+  "prefix-sum-build",
+  "string-building-array-join",
+  "string-building-concatenation",
+  "linked-list-fast-slow",
+  "linked-list-reverse",
+  "prefix-sum-exact-subarrays",
+  "monotonic-stack-increasing",
+  "binary-tree-dfs-recursive",
+  "binary-tree-dfs-iterative",
+  "binary-tree-bfs",
+] as const;

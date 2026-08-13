@@ -1,14 +1,22 @@
 import type { TemplateDrill, ValidationRuleId } from "../types";
 import { commonRuleValidators } from "./common.validator";
-import { binarySearchValidator } from "./patterns/binarySearch.validator";
+import { binaryTreeValidator } from "./patterns/binaryTree.validator";
+import { linkedListValidator } from "./patterns/linkedList.validator";
+import { monotonicStackValidator } from "./patterns/monotonicStack.validator";
+import { prefixSumValidator } from "./patterns/prefixSum.validator";
 import { slidingWindowValidator } from "./patterns/slidingWindow.validator";
+import { stringBuildingValidator } from "./patterns/stringBuilding.validator";
 import { twoPointersValidator } from "./patterns/twoPointers.validator";
 import type { PatternValidator, RuleValidator } from "./types";
 
 const patternValidators = new Map<string, PatternValidator>([
   [twoPointersValidator.patternId, twoPointersValidator],
   [slidingWindowValidator.patternId, slidingWindowValidator],
-  [binarySearchValidator.patternId, binarySearchValidator],
+  [prefixSumValidator.patternId, prefixSumValidator],
+  [stringBuildingValidator.patternId, stringBuildingValidator],
+  [linkedListValidator.patternId, linkedListValidator],
+  [monotonicStackValidator.patternId, monotonicStackValidator],
+  [binaryTreeValidator.patternId, binaryTreeValidator],
 ]);
 
 const commonRules: Partial<Record<ValidationRuleId, RuleValidator>> = commonRuleValidators;

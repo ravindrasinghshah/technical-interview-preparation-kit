@@ -4,15 +4,21 @@ A local React playground for recalling common coding-interview templates from me
 
 ## Included drills
 
-- Two Pointers: opposite ends, same direction, sorted pair search
-- Sliding Window: fixed size, variable size, frequency map
-- Binary Search: exact match, boundary search, answer-space search
+- Two Pointers: opposite ends, two-input exhaustion
+- Sliding Window: expand and shrink
+- Prefix Sum: build a prefix array, count exact subarrays
+- String Building: array buffer and join, direct concatenation
+- Linked List: fast/slow pointers, in-place reversal
+- Monotonic Stack: increasing stack
+- Binary Tree: recursive DFS, iterative DFS, level-order BFS
 
 Progress is stored in `localStorage` as completed drill IDs. Revealing an answer does not complete a drill.
 
 ## Content configuration
 
-Patterns and drills are defined in `src/config/practiceCatalog.config.ts`. This typed catalog is the MVP's local content source and keeps content separate from UI behavior. A future database or CMS integration can replace it while preserving the same `PatternInfo` and `TemplateDrill` shapes.
+`src/data/code-templates.md` is the source of truth for practice templates. Its current 13 implementations map one-to-one to entries in `codeTemplateRequirementDrillIds`; tests reject both missing and extra catalog drills.
+
+Patterns and drills are defined in `src/config/practiceCatalog.config.ts`. This typed catalog enriches the source templates with stable IDs, prompts, explanations, links, and validation descriptors while keeping content separate from UI behavior. A future database or CMS integration can replace it while preserving the same `PatternInfo` and `TemplateDrill` shapes.
 
 Each drill has a serializable, versioned validation descriptor such as:
 
@@ -35,10 +41,14 @@ src/validation/
   patterns/
     twoPointers.validator.ts
     slidingWindow.validator.ts
-    binarySearch.validator.ts
+    prefixSum.validator.ts
+    stringBuilding.validator.ts
+    linkedList.validator.ts
+    monotonicStack.validator.ts
+    binaryTree.validator.ts
 ```
 
-Pattern validators infer meaningful roles and check that the same variables participate throughout the template. For example, binary-search boundaries must control the loop, produce the midpoint, and both be updated from that midpoint. Nested helper functions cannot contribute unrelated syntax to make a submission pass.
+Pattern validators infer meaningful roles and check that the same variables participate throughout the template. For example, linked-list reversal must save the next node before rewiring the current link, then advance the inferred pointers in the correct order. Nested helper functions cannot contribute unrelated syntax to make a submission pass.
 
 To add a pattern, define its serializable variant and rule IDs, implement a `PatternValidator`, register it in `validation/registry.ts`, and add canonical plus adversarial fixtures.
 

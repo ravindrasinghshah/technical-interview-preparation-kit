@@ -1,4 +1,3 @@
-import ts from "typescript";
 import type { LoopNode, ValidationContext } from "../ast/context";
 import { isDescendantOf } from "../ast/context";
 import {
@@ -62,16 +61,6 @@ const traversalLoop: RuleValidator = (context) => {
   return Boolean(condition && containsComparison(condition) && referencesLength(condition, context));
 };
 
-const branchUsesWindow: RuleValidator = (context) => {
-  const model = findWindowModel(context);
-  if (!model) return false;
-  return context.branches.some((branch) => {
-    if (!isDescendantOf(branch, model.traversalLoop)) return false;
-    const names = resolvedIdentifiers(branch.expression, context);
-    return names.has(model.left) && names.has(model.right);
-  });
-};
-
 const boundariesAdvance: RuleValidator = (context) => {
   const model = findWindowModel(context);
   if (!model) return false;
@@ -85,33 +74,6 @@ const shrinkLoop: RuleValidator = (context) => {
   return Boolean(model && findShrinkLoop(context, model));
 };
 
-function collectionName(declaration: ts.VariableDeclaration): string | null {
-  const name = declarationName(declaration);
-  const value = declaration.initializer;
-  if (!name || !value || !ts.isNewExpression(value) || !ts.isIdentifier(value.expression)) return null;
-  return value.expression.text === "Map" || value.expression.text === "Set" ? name : null;
-}
-
-function isCollectionUpdate(call: ts.CallExpression, collection: string): boolean {
-  if (!ts.isPropertyAccessExpression(call.expression) || !ts.isIdentifier(call.expression.expression)) return false;
-  return call.expression.expression.text === collection && ["set", "add", "delete"].includes(call.expression.name.text);
-}
-
-const frequencyCollection: RuleValidator = (context) => {
-  const model = findWindowModel(context);
-  if (!model) return false;
-  const shrink = findShrinkLoop(context, model);
-  if (!shrink) return false;
-  const collections = context.variables.map(collectionName).filter((name): name is string => Boolean(name));
-  return collections.some((collection) => {
-    const enteringUpdate = context.calls.some((call) => isCollectionUpdate(call, collection)
-      && isDescendantOf(call, model.traversalLoop)
-      && !isDescendantOf(call, shrink));
-    const leavingUpdate = context.calls.some((call) => isCollectionUpdate(call, collection) && isDescendantOf(call, shrink));
-    return enteringUpdate && leavingUpdate;
-  });
-};
-
 const shared = {
   "window-boundaries": windowBoundaries,
   "loop-with-comparison": traversalLoop,
@@ -121,8 +83,6 @@ const shared = {
 export const slidingWindowValidator: PatternValidator = {
   patternId: "sliding-window",
   variants: {
-    "fixed-window": { ...shared, "conditional-branch": branchUsesWindow },
     "variable-window": { ...shared, "window-shrink-loop": shrinkLoop },
-    "frequency-window": { ...shared, "window-shrink-loop": shrinkLoop, "frequency-collection": frequencyCollection },
   },
 };

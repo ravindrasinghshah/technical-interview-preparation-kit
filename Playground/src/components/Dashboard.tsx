@@ -34,7 +34,7 @@ export function Dashboard({ completedIds, onOpen, onReset }: Props) {
           const info = patternInfo[patternId];
           return (
             <article className={`pattern-card ${info.accent}`} key={patternId}>
-              <div className="card-number">0{index + 1}</div>
+              <div className="card-number">{String(index + 1).padStart(2, "0")}</div>
               <div className="card-top"><span>{completed}/{items.length} complete</span><div className="mini-progress"><i style={{ width: `${completed / items.length * 100}%` }} /></div></div>
               <h3>{info.title}</h3><p>{info.description}</p>
               <div className="drill-list">

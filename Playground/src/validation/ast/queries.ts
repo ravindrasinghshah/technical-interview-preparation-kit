@@ -173,25 +173,3 @@ export function callsWithin(node: ts.Node): ts.CallExpression[] {
   });
   return result;
 }
-
-export function hasHalvingOperation(node: ts.Node): boolean {
-  let found = false;
-  walk(node, (current) => {
-    if (!ts.isBinaryExpression(current)) return;
-    const kind = current.operatorToken.kind;
-    if ((kind === ts.SyntaxKind.SlashToken || kind === ts.SyntaxKind.GreaterThanGreaterThanToken || kind === ts.SyntaxKind.GreaterThanGreaterThanGreaterThanToken)
-      && ts.isNumericLiteral(current.right) && Number(current.right.text) === (kind === ts.SyntaxKind.SlashToken ? 2 : 1)) found = true;
-  });
-  return found;
-}
-
-export function expressionIsNamePlusOrMinusOne(expression: ts.Expression, name: string, direction: "increment" | "decrement"): boolean {
-  if (!ts.isBinaryExpression(expression)) return false;
-  const expected = direction === "increment" ? ts.SyntaxKind.PlusToken : ts.SyntaxKind.MinusToken;
-  if (expression.operatorToken.kind !== expected) return false;
-  const nameThenOne = ts.isIdentifier(expression.left) && expression.left.text === name
-    && ts.isNumericLiteral(expression.right) && Number(expression.right.text) === 1;
-  const oneThenName = direction === "increment" && ts.isNumericLiteral(expression.left) && Number(expression.left.text) === 1
-    && ts.isIdentifier(expression.right) && expression.right.text === name;
-  return nameThenOne || oneThenName;
-}

@@ -1,4 +1,11 @@
-export type PatternId = "two-pointers" | "sliding-window" | "binary-search";
+export type PatternId =
+  | "two-pointers"
+  | "sliding-window"
+  | "prefix-sum"
+  | "string-building"
+  | "linked-list"
+  | "monotonic-stack"
+  | "binary-tree";
 
 export type ValidationRuleId =
   | "two-index-initializers"
@@ -8,11 +15,36 @@ export type ValidationRuleId =
   | "same-direction-updates"
   | "window-boundaries"
   | "window-shrink-loop"
-  | "frequency-collection"
-  | "binary-midpoint"
-  | "binary-boundary-updates"
-  | "tracks-candidate"
-  | "predicate-call"
+  | "joint-traversal"
+  | "tail-exhaustion"
+  | "prefix-seed"
+  | "prefix-accumulation"
+  | "frequency-map-seed"
+  | "prefix-frequency-count"
+  | "accumulator-initializer"
+  | "iterates-input"
+  | "appends-character"
+  | "joins-characters"
+  | "concatenates-character"
+  | "fast-slow-initializers"
+  | "fast-slow-guard"
+  | "fast-slow-steps"
+  | "reversal-initializers"
+  | "saves-next-node"
+  | "reverses-link"
+  | "advances-reversal"
+  | "stack-initializer"
+  | "monotonic-shrink-loop"
+  | "stack-pop"
+  | "stack-push"
+  | "null-base-case"
+  | "recursive-child-visits"
+  | "traversal-stack"
+  | "visits-tree-children"
+  | "level-queue"
+  | "captures-level-size"
+  | "level-loop"
+  | "replaces-level-queue"
   | "returns-value";
 
 export interface ValidationRule {
@@ -22,14 +54,18 @@ export interface ValidationRule {
 
 export type ValidatorVariant =
   | "opposite-ends"
-  | "same-direction"
-  | "sorted-pair"
-  | "fixed-window"
   | "variable-window"
-  | "frequency-window"
-  | "exact-match"
-  | "boundary-search"
-  | "answer-space";
+  | "two-input-exhaustion"
+  | "prefix-array"
+  | "frequency-map-count"
+  | "array-join"
+  | "concatenation"
+  | "fast-slow"
+  | "reverse"
+  | "increasing-stack"
+  | "dfs-recursive"
+  | "dfs-iterative"
+  | "bfs-level-order";
 
 export interface ValidationDescriptorV1 {
   schemaVersion: 1;

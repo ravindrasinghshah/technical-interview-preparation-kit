@@ -10,6 +10,7 @@ export default function App() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [progress, setProgress] = useState<SavedProgressV1>(() => loadProgress());
   const active = drills.find((drill) => drill.id === activeId);
+  const knownCompletedIds = progress.completedDrillIds.filter((id) => drills.some((drill) => drill.id === id));
   const markComplete = (id: string) => setProgress((current) => {
     const next = completeDrill(current, id);
     saveProgress(next);
@@ -26,7 +27,7 @@ export default function App() {
         <button className="brand" onClick={() => setActiveId(null)}><span><Braces size={19} /></span>pattern/playground</button>
         <span className="local-badge"><i /> local practice</span>
       </nav>
-      {active ? <DrillWorkspace key={active.id} drill={active} completed={progress.completedDrillIds.includes(active.id)} onBack={() => setActiveId(null)} onComplete={markComplete} /> : <Dashboard completedIds={progress.completedDrillIds} onOpen={setActiveId} onReset={resetProgress} />}
+      {active ? <DrillWorkspace key={active.id} drill={active} completed={knownCompletedIds.includes(active.id)} onBack={() => setActiveId(null)} onComplete={markComplete} /> : <Dashboard completedIds={knownCompletedIds} onOpen={setActiveId} onReset={resetProgress} />}
       <footer><span>Pattern Playground</span><span>Your code never leaves this browser.</span></footer>
     </div>
   );
