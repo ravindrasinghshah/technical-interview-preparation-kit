@@ -2,10 +2,7 @@
    Palindrome is a string which is same after reversing characters.
  */
 
-import { Log } from "../../Log";
-
-function isPalindromeStack(str: string): boolean {
-  let start = 0;
+export default function isPalindromeStack(str: string): boolean {
   let end = str.length;
   let mid = Math.floor(end / 2);
   let stack = [];
@@ -19,13 +16,3 @@ function isPalindromeStack(str: string): boolean {
   }
   return stack.length === 0;
 }
-
-(() => {
-  let str = "10s01";
-  let result = isPalindromeStack(str);
-  Log.info(`Is ${str} palindrome? ${result}`);
-
-  str = "10sa01";
-  result = isPalindromeStack(str);
-  Log.info(`Is ${str} palindrome? ${result}`);
-})();
