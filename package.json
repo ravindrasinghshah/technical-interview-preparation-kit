@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "dev": "npx vitepress dev"
   },
   "author": "Ravindra Singh Shah",
   "license": "ISC",
