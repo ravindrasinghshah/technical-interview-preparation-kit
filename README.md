@@ -1,4 +1,4 @@
-# Technical Interview Study Repository
+# Technical Interview Prepartion Kit
 
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue.svg)](https://github.com/ravindrasinghshah/technical-interview-preparation-kit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -340,4 +340,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Happy Coding! 🚀**
 
-_Star ⭐ this repository if you find it helpful for your interview preparation!_
+_Star ⭐ [this repository](https://github.com/ravindrasinghshah/technical-interview-preparation-kit) if you find it helpful for your interview preparation!_
