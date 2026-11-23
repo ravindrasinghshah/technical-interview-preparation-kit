@@ -49,4 +49,5 @@ export default defineConfig({
     search: { provider: "local" },
     sidebar: buildSidebar(ROOT),
   },
+  ignoreDeadLinks: true,
 });

@@ -186,7 +186,7 @@ technical-interview-preparation-kit/
 ### For Beginners
 
 1. Start with [Basics](./0-Basics/) - programming fundamentals
-2. Learn [Complexity Analysis](./1-Complexity/) - understand Big O
+2. Learn [Complexity Analysis](./1-Complexity/time-complexity) - understand Big O
 3. Master core [Data Structures](./2-DataStructures/) one by one
 4. Practice [Easy Problems](./5-Exercises/) regularly
 
@@ -234,13 +234,6 @@ technical-interview-preparation-kit/
 - Dynamic Programming
 - Two Pointers and Sliding Window
 - Binary Search variations
-
-### 🏢 Company-Specific Preparation
-
-- **Google**: Focus on [Graph Algorithms](./4-Algorithms/GraphAlgorithms/) and [System Design](./0-SystemDesign/)
-- **Amazon**: Emphasize [Trees](./2-DataStructures/8-Tree/) and [Dynamic Programming](./4-Algorithms/DynamicProgramming/)
-- **Microsoft**: Practice [Arrays](./2-DataStructures/2-Arrays/) and [String Problems](./2-DataStructures/1-Strings/)
-- **Facebook/Meta**: Master [Graph Problems](./2-DataStructures/10-Graphs/) and [DFS/BFS](./4-Algorithms/GraphAlgorithms/)
 
 ## 🛠️ Practice Resources
 
