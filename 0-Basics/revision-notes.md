@@ -93,7 +93,7 @@ for(let i = 1; i < arr.length; i++){
 return preSum;
 ```
 
-#### [Binary Search (->)](../2-DataStructures/8-BinarySearchTree)
+#### [Binary Search (->)](../3-Patterns/7-Searching/Problems/BinarySearch)
 
 ```
 l = 0, h = arr.length - 1;
